@@ -1,0 +1,1317 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="style/lib/html5.js"></script>
+<script type="text/javascript" src="style/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="style/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+<title>汽车产品参数</title>
+<link href="style/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+	h4{
+		margin: 0;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+<div class="page-container">
+	<form action="b_param_modifyParam" method="post" class="form form-horizontal" id="form-config-modify">
+		<div id="config-list" class="row cl">
+			<input type="hidden" name="param.id">
+			<label class="form-label col-xs-4 col-sm-3">车型：</label>
+			<div class="formControls col-xs-8 col-sm-3">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="param.car_model">
+			</div>
+		</div>
+		<h4>报价信息</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">厂商报价(万)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.price">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">补贴后参考价(万)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.after_subsidy">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">国家补贴(万)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.subsidy">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">地方补贴(万)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.subsidy_local">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">厂商补贴(万)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.subsidy_factory">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">总补贴(万)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.subsidy_total">
+		    </div>
+		</div>
+		<h4>基本参数</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">厂商：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="厂商" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">品牌：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="品牌" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">产品名称：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="产品名称" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">级别：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="级别" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车型分类：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车型分类" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">长*宽*高(mm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="长*宽*高mm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">系统总功率(kW)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="系统总功率kW" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">系统总扭矩(N·m)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="系统总扭矩Nm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">纯电续航(km)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="纯电续航km" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">慢充时间(h)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.charging_time">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">快充时间(h)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.fast_charge">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">工信部综合油耗(L/100km)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="工信部综合油耗L/100km" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">最高车速(km/h)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.max_speed">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">官方0-100Km加速时间(s)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.accelerate">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">实测续航里程(km)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="实测续航里程km" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">实测满电时间(h)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="实测满电时间h" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">实测0-100Km/h加速时间(s)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="实测0-100Km/h加速时间s" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">实测100Km/h-0制动距离(m)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="实测100Km/h-0制动距离m" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">整车质保：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="整车质保" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">电池质保：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="电池质保" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">保养周期(月/公里)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="保养周期月/公里" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">首保里程(km)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="首保里程km" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">免费保养政策：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="免费保养政策" name="param_name">
+		    </div>
+		</div>
+		<h4>车身参数</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">长(mm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="长mm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">宽(mm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="宽mm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">高(mm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="高mm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">轴距(mm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="轴距mm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前轮距(mm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前轮距mm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后轮距(mm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后轮距mm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">整备质量(kg)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="整备质量kg" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">最小转弯半径(m)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="最小转弯半径m" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">最大爬坡角(°)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="最大爬坡角" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">最小离地间隙(mm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="最小离地间隙mm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车身结构：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车身结构" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车门数：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车门数" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">座位数：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="座位数" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">油箱容积(L)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="油箱容积L" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">行李箱容积(L)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="行李箱容积L" name="param_name">
+		    </div>
+		</div>
+		<h4>发动机</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">发动机排量(ml)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="发动机排量ml" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">工作方式：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="工作方式" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">气缸排列结构：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="气缸排列结构" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">气缸数：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="气缸数" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">每气缸气门数(个)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="每气缸气门数个" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">压缩比：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="压缩比" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">气门结构：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="气门结构" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">最大马力(Ps)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="最大马力Ps" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">最大功率(Kw)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="最大功率Kw" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">最大功率转速(rpm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="最大功率转速rpm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">最大扭矩(Nm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="最大扭矩Nm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">最大扭矩转速(rpm)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="最大扭矩转速rpm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">环保标准：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="环保标准" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">燃油标号：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="燃油标号" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">供油方式：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="供油方式" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">缸体材料：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="缸体材料" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">自动启停：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="自动启停" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">动能回收：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="动能回收" name="param_name">
+		    </div>
+		</div>
+		<h4>电机/电池</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">电机类型：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="电机类型" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">电动机最大功率(kW)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="电动机最大功率kW" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">电动机最大扭矩(N·m)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text number" value="" placeholder="请输入数字" id="" name="param.max_power">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前电机最大功率(kW)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前电机最大功率kW" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前电机最大扭矩(N·m)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前电机最大扭矩Nm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后电机最大功率(kW)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后电机最大功率kW" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后电机最大扭矩(N·m)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后电机最大扭矩Nm" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">驱动电机个数：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="驱动电机个数" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">电机布局：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="电机布局" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">混动方式：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="混动方式" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">驱动模式：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="驱动模式" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">电池类型：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="电池类型" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">电池容量(kW·h)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param.battery_capacity">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">续航里程(Km)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="续航里程Km" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">快充电量(%)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="快充电量%" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">百公里耗电量(KWh/100km)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="百公里耗电量KWh/100km" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">支持家用电压充电：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="支持家用电压充电" name="param_name">
+		    </div>
+		</div>
+		<h4>变速箱</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">变速箱类型：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="变速箱类型" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">档位数：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="档位数" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">驾驶模式：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="驾驶模式" name="param_name">
+		    </div>
+		</div>
+		<h4>底盘转向</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">驱动形式：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="驱动形式" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">助力形式：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="助力形式" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前悬挂类型：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前悬挂类型" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后悬挂类型：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后悬挂类型" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车身结构(底盘方向)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车身结构底盘方向" name="param_name">
+		    </div>
+		</div>
+		<h4>车轮制动</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">前轮制动装置：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前轮制动装置" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后轮制动装置：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后轮制动装置" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">驻车制动器：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="驻车制动器" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前轮胎规格：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前轮胎规格" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后轮胎规格：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后轮胎规格" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">轮毂材质：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="轮毂材质" name="param_name">
+		    </div>
+		</div>
+		<h4>安全/操作</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">主/副驾驶座安全气囊：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="主/副驾驶座安全气囊" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前/后排头部安全气囊：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前/后排头部安全气囊" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前/后排侧气囊：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前/后排侧气囊" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">膝部气囊：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="膝部气囊" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">行人保护气囊：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="行人保护气囊" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">副驾气囊开关：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="副驾气囊开关" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">胎压监测：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="胎压监测" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">主/副驾驶座安全带未系提醒：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="主/副驾驶座安全带未系提醒" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">燃爆式安全带：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="燃爆式安全带" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后排气囊安全带：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后排气囊安全带" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车内中控锁：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车内中控锁" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">ISOFIX儿童安全座椅接口：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="ISOFIX儿童安全座椅接口" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">LATCH儿童安全座椅接口：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="LATCH儿童安全座椅接口" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前排主动头枕：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前排主动头枕" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前/后驻车雷达：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前/后驻车雷达" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">倒车影像：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="倒车影像" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">全景摄像头：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="全景摄像头" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">行李箱逃逸功能：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="行李箱逃逸功能" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">ABS防抱死：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="ABS防抱死" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">制动力分配(EBD/CBC等)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="制动力分配EBD/CBC等" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">刹车辅助(EBA/BAS/BA等)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="刹车辅助EBA/BAS/BA等" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">牵引力控制(ASR/TCS等)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="牵引力控制ASR/TCS等" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车身稳定控制(ESP/ESC/DSC等)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车身稳定控制ESP/ESC/DSC等" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">自动驻车：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="自动驻车" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">上坡辅助：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="上坡辅助" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">陡坡缓降：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="陡坡缓降" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">主动转向系统：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="主动转向系统" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">主动防侧倾系统：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="主动防侧倾系统" name="param_name">
+		    </div>
+		</div>
+		<h4>外观配置</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">电动天窗：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="电动天窗" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">全景天窗：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="全景天窗" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前/后电动车窗：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前/后电动车窗" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">防紫外线玻璃：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="防紫外线玻璃" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">隔热玻璃：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="隔热玻璃" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车窗防夹功能：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车窗防夹功能" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后窗遮阳帘：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后窗遮阳帘" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后风挡遮阳帘：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后风挡遮阳帘" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后风挡加热：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后风挡加热" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后排隐私玻璃：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后排隐私玻璃" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">感应雨刷：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="感应雨刷" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后雨刷：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后雨刷" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">运动外观套件：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="运动外观套件" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">电动吸合门：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="电动吸合门" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">行李架：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="行李架" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后视镜电动调节：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后视镜电动调节" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后视镜加热：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后视镜加热" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后视镜电动折叠：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后视镜电动折叠" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后视镜记忆：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后视镜记忆" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">外后视镜自动防眩目：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="外后视镜自动防眩目" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">卤素大灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="卤素大灯" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">氙气大灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="氙气大灯" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">激光大灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="激光大灯" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">LED前大灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="LED前大灯" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">自适应远近光：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="自适应远近光" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">自动头灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="自动头灯" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">延迟关闭：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="延迟关闭" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">转向辅助灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="转向辅助灯" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">大灯随动转向：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="大灯随动转向" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">日间行车灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="日间行车灯" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">大灯高度可调：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="大灯高度可调" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">大灯清洗装置：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="大灯清洗装置" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前雾灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前雾灯" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">LED尾灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="LED尾灯" name="param_name">
+		    </div>
+		</div>
+		<h4>内饰配置</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">真皮方向盘：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="真皮方向盘" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">方向盘电动调节：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="方向盘电动调节" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">方向盘上下/前后调节：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="方向盘上下/前后调节" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">多功能方向盘：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="多功能方向盘" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">换挡拨片：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="换挡拨片" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">方向盘加热：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="方向盘加热" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">无钥匙进入：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="无钥匙进入" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">无钥匙启动：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="无钥匙启动" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">遮阳板化妆镜：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="遮阳板化妆镜" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">化妆镜照明：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="化妆镜照明" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后排化妆镜：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后排化妆镜" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">定速巡航：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="定速巡航" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">行车电脑显示屏：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="行车电脑显示屏" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">HUD抬头显示：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="HUD抬头显示" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">全液晶仪表盘：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="全液晶仪表盘" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">自动空调：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="自动空调" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">温度分区控制：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="温度分区控制" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后排独立空调：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后排独立空调" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后排出风口：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后排出风口" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">空气净化/花粉过滤：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="空气净化/花粉过滤" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车载冰箱：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车载冰箱" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">内后视镜自动防眩目：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="内后视镜自动防眩目" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车内氛围灯：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车内氛围灯" name="param_name">
+		    </div>
+		</div>
+		<h4>座椅配置</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">皮质座椅：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="皮质座椅" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">运动座椅：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="运动座椅" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前排座椅靠背角度调节：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前排座椅靠背角度调节" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">腰部支撑调节：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="腰部支撑调节" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">肩部支撑调节：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="肩部支撑调节" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">主/副驾驶座电动调节：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="主/副驾驶座电动调节" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">第二排座椅靠背角度调节：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="第二排座椅靠背角度调节" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">第二排座椅移动：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="第二排座椅移动" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">第二排座椅电动调节：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="第二排座椅电动调节" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">主驾电动座椅记忆：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="主驾电动座椅记忆" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前/后排座椅加热：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前/后排座椅加热" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前/后排座椅通风：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前/后排座椅通风" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前后排座椅按摩：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前后排座椅按摩" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后排座椅放倒：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后排座椅放倒" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前/后排腿部支撑：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前/后排腿部支撑" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">一体式儿童安全座椅：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="一体式儿童安全座椅" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">第三排座椅：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="第三排座椅" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">前/后排中央扶手：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="前/后排中央扶手" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后排杯架：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后排杯架" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">一体式前排头枕：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="一体式前排头枕" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">第二排中央头枕：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="第二排中央头枕" name="param_name">
+		    </div>
+		</div>
+		<h4>多媒体配置</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">扬声器品牌：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="扬声器品牌" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">扬声器数量(个)：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="扬声器数量个" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">单碟CD：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="单碟CD" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">多碟CD：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="多碟CD" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">中控彩色屏幕：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="中控彩色屏幕" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">GPS导航：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="GPS导航" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">蓝牙/车载电话：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="蓝牙/车载电话" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车载电视：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车载电视" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">内置硬盘：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="内置硬盘" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">后排液晶屏：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="后排液晶屏" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">音频接口：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="音频接口" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">DVD系统：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="DVD系统" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车载电源220v：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车载电源220v" name="param_name">
+		    </div>
+		</div>
+		<h4>人机交互</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">系统名称：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="系统名称" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">远程救援：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="远程救援" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">语音控制：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="语音控制" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">无线上网/WIFI热点：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="无线上网/WIFI热点" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">手机控制：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="手机控制" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">定位防盗：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="定位防盗" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">人工导航：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="人工导航" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车辆检测：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车辆检测" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">特有功能：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="特有功能" name="param_name">
+		    </div>
+		</div>
+		<h4>高科技配置</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">自动泊车入位：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="自动泊车入位" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">并线辅助：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="并线辅助" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">车道偏离预警系统：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="车道偏离预警系统" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">主动刹车：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="主动刹车" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">整体主动转向系统：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="整体主动转向系统" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">夜视系统：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="夜视系统" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">中控液晶屏多屏显示：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="中控液晶屏多屏显示" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">自适应巡航：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="自适应巡航" name="param_name">
+		    </div>
+		    <label class="form-label col-xs-4 col-sm-3">右前方盲区监测：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="右前方盲区监测" name="param_name">
+		    </div>
+		</div>
+		<h4>颜色</h4>
+		<div class="row cl">
+		    <label class="form-label col-xs-4 col-sm-3">外观颜色：</label>
+		    <div class="formControls col-xs-8 col-sm-3">
+		        <input type="text" class="input-text" value="" placeholder="" id="" name="param_value">
+		        <input type="hidden" value="外观颜色" name="param_name">
+		    </div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-5">
+				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i>提交</button>
+				<button onClick="article_save();" class="btn btn-danger radius" type="button"><i class="Hui-iconfont">&#xe632;</i>取消</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="style/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="style/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="style/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="style/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript" src="style/lib/jquery-ui.js"></script>
+<script type="text/javascript" src="style/lib/jquery.formFill.js"></script>
+<script type="text/javascript">
+$(function(){
+	var id = getArgs().id;
+	var url = 'b_param_singleById?param.id=' + id;
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json'
+    })
+    .done(function(data) {
+    	var param = data.response.data.param_table;
+    	var paramTable = data.response.data.param_table_detail;
+		$("#form-config-modify").fill(param);
+		for (var name in paramTable) {
+			$('input[name="param_name"]').each(function(){
+				if ($(this).val() === name) {
+					$(this).siblings('input').val(paramTable[name]);
+				}
+			})
+		}
+    });
+});
+
+
+$().ready(function() {
+	$("#form-config-modify").validate({
+        rules: {
+        	param_value: {
+        		maxlength: 100
+        	},
+        	"param.car_model": {
+        		required: true,
+        		maxlength: "60"
+        	}
+        }
+    });
+});
+
+
+
+
+
+
+
+function getArgs(){
+    var args = {};
+    var match = null;
+    var search = decodeURIComponent(location.search.substring(1));
+    var reg = /(?:([^&]+)=([^&]+))/g;
+    while((match = reg.exec(search))!==null){
+        args[match[1]] = match[2];
+    }
+    return args;
+}
+
+
+</script>
+
+</body>
+</html>

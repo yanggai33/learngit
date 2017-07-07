@@ -1,0 +1,437 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="style/lib/html5.js"></script>
+<script type="text/javascript" src="style/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="style/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<style type="text/css">
+    #search-result{
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 15px;
+        width: 400px;
+        background-color: #eee;
+        z-index: 99;
+    }
+    #search-result li:hover{
+        background-color: #a9a9a9;
+    }
+    #search-result li{
+        line-height: 30px;
+    }
+</style>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<link href="style/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<title>新增配件产品</title>
+
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+<!--/_header 作为公共模版分离出去-->
+
+<!--_menu 作为公共模版分离出去-->
+<div class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 主页 <span class="c-gray en">&gt;</span> 标准件 <span class="c-gray en">&gt;</span> 添加产品 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div>
+		<div id="tab_parts" class="HuiTab">
+			<div class="tabBar clearfix">
+				<span>基本信息</span>
+				<span>产品详情</span>
+				<span>产品参数</span>
+				<span>新闻资讯</span>
+			</div>
+			<div class="tabCon">
+				<iframe name="demoIframe" style="display:none"  id="frame1"></iframe>
+				<form action="b_parts_add" method="post" class="form form-horizontal" id="partsAddForm" enctype="multipart/form-data"  target="demoIframe">
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>产品标题</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" value="" placeholder="" id="" name="parts.name" maxlength="150">
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">产品描述</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" value="" placeholder="" id="" name="parts.brief" maxlength="255">
+						</div>
+					</div>
+			        <div class="row cl">
+			            <label class="form-label col-xs-4 col-sm-2">生产企业：</label>
+			            <div style="position: relative;" class="formControls col-xs-8 col-sm-9">
+			                <input type="text" class="input-text" value="" placeholder="" id="choose-company" autocomplete="off">
+			                <input type="hidden" value="" id="companyId" name="parts.company.id">
+			                <div id="search-result">
+			                </div>
+			            </div>
+			        </div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">价格</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="" name="parts.price" >
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">联系人</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="" name="parts.charge" maxlength="20">
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">联系方式</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="" name="parts.tel" maxlength="30">
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">联系QQ</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="" name="parts.qq" maxlength="20">
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">企业地址</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="" name="parts.address" maxlength="255">
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>产品类型</label>
+						<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+							<select name="parts.category.id" class="select" >
+								<option value="6">标准件</option>
+								<option value="7">辅助件</option>
+								<option value="8">车身系统</option>
+								<option value="9">电气系统</option>
+								<option value="10">转向系统</option>
+								<option value="11">底盘系统</option>
+								<option value="12">密封系统</option>
+								<option value="13">内饰系统</option>
+							</select>
+							</span>
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">二级分类</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="" name="parts.ct2" >
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>生产状态</label>
+						<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+							<select name="parts.product_state" class="select" >
+								<option >在产在售</option>
+								<option >停产在售</option>
+								<option >在产停售</option>
+								<option >停产停售</option>
+							</select>
+							</span>
+						</div>
+					</div>
+			        <div class="row cl">
+			            <label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+			            <div class="formControls col-xs-8 col-sm-9">
+			                <input type="file" multiple="true" value="" placeholder="" id="" name="pic">
+			            </div>
+			        </div>
+					<div class="row cl">
+						<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+							<button onClick="checkState(event);" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存信息</button>
+							<a href="#" id="partsReset" class="btn btn-secondary radius"><i class="Hui-iconfont">&#xe632;</i> 重置</a>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="tabCon">
+				<form action="b_parts_addDetail" method="post" class="form form-horizontal" id="articleAddForm">
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"></label>
+						<div class="formControls col-xs-8 col-sm-9"> 
+							<script id="editor" type="text/plain" style="width:100%;height:400px;" name="parts.detail"></script> 
+						</div>
+					</div>
+					<div class="row cl">
+						<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+							<button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存信息</button>
+							<!-- <a href="#" id="articleReset" class="btn btn-secondary radius"><i class="Hui-iconfont">&#xe632;</i> 重置</a> -->
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="tabCon">
+				<form action="b_parts_addPartsFields" method="post" class="form form-horizontal" id="partsDetailAddForm" enctype="multipart/form-data">
+					<!--<div>
+						<h4 class="text-c">通用属性</h4>
+						<div>
+							<label class="col-xs-4 col-sm-2">产品名称</label>
+							<div class="col-xs-8 col-sm-10">
+								<input type="text" class="input-text" value="" placeholder="" id="" name="">
+							</div>
+						</div>
+						<div>
+							<label class="col-xs-4 col-sm-2">品牌</label>
+							<div class="col-xs-8 col-sm-10">
+								<select class="select">
+									<option></option>
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div>
+							<label class="col-xs-4 col-sm-2">产品类型</label>
+							<div class="col-xs-8 col-sm-10">
+								<select class="select">
+									<option></option>
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div>
+							<label class="col-xs-4 col-sm-2">适用对象</label>
+							<div class="col-xs-8 col-sm-10">
+								<textarea class="textarea"></textarea>
+							</div>
+						</div>
+					</div>-->
+					<div>
+						<h4 class="text-c">选填属性</h4>
+						<div>
+							<div id="config-name" class="col-sm-3"> 
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="param_name">
+							</div>
+							<div id="config-value" class="col-sm-9">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="param_value">
+							</div>
+							<div class="col-sm-2">
+								<a href="javascript:" onClick="addConfig();" class="btn btn-primary">添加新参数</a>
+							</div>
+						</div>
+					</div>
+					<div class="row cl">
+						<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+							<button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存信息</button>
+							<a href="#" id="partsDetailReset" class="btn btn-secondary radius"><i class="Hui-iconfont">&#xe632;</i> 重置</a>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="tabCon"></div>
+		</div>
+	</div>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="style/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="style/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="style/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="style/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<script type="text/javascript" src="style/lib/mustache.js"></script> 
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<!-- <script type="text/javascript" src="style/lib/webuploader/0.1.5/webuploader.min.js"></script>  -->
+<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="style/lib/fileUpload.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+    $('#partsAddForm').validate({
+		rules:{
+			"parts.name":{
+				required:true,
+				maxlength:60
+			},
+			"parts.brief":{maxlength:255},
+			"parts.charge":{maxlength:20},
+			"parts.tel":{maxlength:30},
+			"parts.qq":{maxlength:20},
+			"parts.address":{maxlength:255}
+			
+		},
+		messages:{
+			"parts.name":{maxlength:'长度不能超过60个字符'},
+			"parts.brief":{maxlength:'长度不能超过255个字符'},
+			"parts.charge":{maxlength:'长度不能超过20个字符'},
+			"parts.tel":{maxlength:'长度不能超过30个字符'},
+			"parts.qq":{maxlength:'长度不能超过20个字符'},
+			"parts.address":{maxlength:'长度不能超过255个字符'},
+		}
+	})
+    // var articleValidator = $("#articleAddForm").validate();
+    var partsDetailValidator = $("#partsDetailAddForm").validate();
+    $("#partsReset").click(function() {
+        partsValidator.resetForm();
+    });
+    // $("#articleReset").click(function() {
+    //     articleValidator.resetForm();
+    // });
+    $("#partsDetailReset").click(function() {
+        partsDetailValidator.resetForm();
+    });
+});
+
+ $('#frame1').on('load', function() {
+              var responseText = $('iframe')[0].contentDocument.body.textContent; 
+              var responseData = JSON.parse(responseText) || {};
+              console.log(responseData);
+                if (responseData.response.msg.success == true || responseData.code == 200) { 
+              	     alert('表单提交成功');
+              	} else { 
+              		alert('表单提交失败');
+              	} 
+            });
+    $('#articleAddForm').submit(function(event){
+	     event.preventDefault();
+	     var form = $(this);
+			$.ajax({
+				type : 'post',
+				async: false,
+				url : form.attr("action"),
+				data: form.serialize(),
+				success : function(data){
+					console.log(data);
+					var res = data.response;
+					if(res.msg.success == true){
+						alert('表单提交成功');
+					}else{
+						alert('表单提交失败');
+					}
+				}
+			});
+    });
+    $('#partsDetailAddForm').submit(function(event){
+	     event.preventDefault();
+	     var form = $(this);
+			$.ajax({
+				type : 'post',
+				async: false,
+				url : form.attr("action"),
+				data: form.serialize(),
+				success : function(data){
+					console.log(data);
+					var res = data.response;
+					if(res.msg.success == true){
+						alert('表单提交成功');
+					}else{
+						alert('表单提交失败');
+					}
+				}
+			});
+    });
+
+
+
+var lastTime = 0;
+$('#choose-company').bind('input',function(){
+		var now = new Date().getTime();
+		var interval = now - lastTime;
+		if (interval > 2000) {
+			lastTime = now;
+		    $('#companyId').val('');
+		    var text = $(this).val();
+		    $.ajax({
+		        url: 'b_company_findByName',
+		        type: 'POST',
+		        dataType: 'json',
+		        data: {'company.name': text}
+		    })
+		    .done(function(data){
+		        console.log(data);
+		        var resData = data.response.data;
+		        var resTpl = '<ul>{{#Companys}}<li data-value="{{id}}">{{name}}</li>{{/Companys}}</ul>';
+		        var resHtml = Mustache.render(resTpl, resData);
+		        var result = $('#search-result');
+		        result.html( resHtml );
+		    })
+		}
+})
+
+
+$('#search-result').delegate('li','click',function(){
+    var value = $(this).html();
+    var dataValue = $(this).attr('data-value');
+    $('#choose-company').val(value);
+    $('#companyId').attr('value',dataValue);
+})
+$('#choose-company').click(function(event){
+    event.stopPropagation();
+    $('#search-result').show();
+});
+$(document).click(function(){
+    $('#search-result').hide();
+});
+
+function checkState(event){
+	var value = $('input[type="hidden"]').val();
+	if (!value) {
+		event.preventDefault();
+		alert('请在生产企业的下拉列表中选择企业');
+	}
+}
+
+$(function(){
+	$.Huitab("#tab_parts .tabBar span","#tab_parts .tabCon","current","click","0");
+
+});
+
+
+$(function(){
+	var ue = UE.getEditor('editor');
+});
+function addConfig(){
+	var inputName = $('<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="">');
+	var inputValue = $('<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="">');
+	var configName = $('#config-name');
+	var configValue = $('#config-value');
+	inputName.appendTo(configName);
+	inputValue.appendTo(configValue);
+}
+</script>
+</body>
+</html>

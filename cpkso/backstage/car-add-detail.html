@@ -1,0 +1,240 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="style/lib/html5.js"></script>
+<script type="text/javascript" src="style/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="style/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<style type="text/css">
+    #search-result{
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 15px;
+        width: 400px;
+        background-color: #eee;
+        z-index: 99;
+    }
+    #search-result li:hover{
+        background-color: #a9a9a9;
+    }
+    #search-result li{
+        line-height: 30px;
+    }
+</style>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>添加整车详情</title>
+
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+
+<!--/_header 作为公共模版分离出去-->
+
+<!--_menu 作为公共模版分离出去-->
+<div class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 主页 <span class="c-gray en">&gt;</span> 整车 <span class="c-gray en">&gt;</span> 添加产品 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div>
+		<div id="tab_product" class="HuiTab">
+			<form action="b_car_addDetail" method="post" class="form form-horizontal" id="carDetailForm" enctype="multipart/form-data">
+				<div class="row cl">
+					<label class="form-label col-xs-4 col-sm-2"></label>
+					<div class="formControls col-xs-8 col-sm-9"> 
+						<script id="editor" type="text/plain" style="width:100%;height:400px;" name="car.detail"></script> 
+					</div>
+				</div>
+				<div class="row cl">
+					<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+						<button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存信息</button>
+						<a href="#" id="reset" class="btn btn-secondary radius"><i class="Hui-iconfont">&#xe632;</i> 重置</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="style/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="style/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="style/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="style/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<script type="text/javascript" src="style/lib/mustache.js"></script> 
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+    var validator = $("#productAddForm").validate();
+    $("#reset").click(function() {
+        validator.resetForm();
+    });
+});
+    $('#carDetailForm').submit(function(event){
+	     event.preventDefault();
+	     var form = $(this);
+			$.ajax({
+				type : 'post',
+				async: false,
+				url : form.attr("action"),
+				data: form.serialize(),
+				success : function(data){
+					console.log(data);
+					var res = data.response;
+					if(res.msg.success == true){
+						alert('表单提交成功');
+					}else{
+						alert('表单提交失败');
+					}
+				}
+			});
+    });
+
+$(function(){
+    $.ajax({
+        url: 'ev/brand_list',
+        type: 'POST',
+        dataType: 'json'
+    })
+    .done(function(data) {
+        var resData = data.response.data;
+        var resTpl = '{{#Brands}}<option value="{{id}}">{{brand}}</option>{{/Brands}}';
+        var resHtml = Mustache.render(resTpl, resData);
+        var brand = $('#brand');
+        brand.html( resHtml );
+    })
+    .fail(function() {
+        // console.log("error");
+    })
+    .always(function() {
+        // console.log("complete");
+    });
+
+
+
+
+	var lastTime = 0;
+	$('#choose-company').bind('input',function(){
+			var now = new Date().getTime();
+			var interval = now - lastTime;
+			if (interval > 2000) {
+				lastTime = now;
+			    $('#companyId').val('');
+			    var text = $(this).val();
+			    $.ajax({
+			        url: 'ev/company_findByName',
+			        type: 'POST',
+			        dataType: 'json',
+			        data: {'company.name': text}
+			    })
+			    .done(function(data){
+			        console.log(data);
+			        var resData = data.response.data;
+			        var resTpl = '<ul>{{#Companys}}<li data-value="{{id}}">{{name}}</li>{{/Companys}}</ul>';
+			        var resHtml = Mustache.render(resTpl, resData);
+			        var result = $('#search-result');
+			        result.html( resHtml );
+			    })
+			}
+	})
+
+    
+})
+
+
+
+$('#search-result').delegate('li','click',function(){
+    var value = $(this).html();
+    var dataValue = $(this).attr('data-value');
+    $('#choose-company').val(value);
+    $('#companyId').attr('value',dataValue);
+})
+$('#choose-company').click(function(event){
+    event.stopPropagation();
+    $('#search-result').show();
+});
+$(document).click(function(){
+    $('#search-result').hide();
+});
+
+function checkState(event){
+	var value = $('input[type="hidden"]').val();
+	if (!value) {
+		event.preventDefault();
+		alert('请在生产企业的下拉列表中选择企业');
+	}
+}
+
+
+
+
+
+
+function product_edit(title,url,id){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+$(function(){
+	$.Huitab("#tab_product .tabBar span","#tab_product .tabCon","current","click","0");
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$list = $("#fileList"),
+	$btn = $("#btn-star"),
+	state = "pending"
+
+});
+
+
+$(function(){
+	var ue = UE.getEditor('editor');
+});
+function addColor(){
+	var colorName = $('#color-name').val();
+	var colorValue = $('#color-value').val();
+	var carColor = $('#car-color');
+	var saveColor = $('#saveColor');
+	var colorMsg = $('<span class="color-show" style="background-color:#'+colorValue+';"></span><span class="color-name">'+colorName+'</span>');
+	var namesInput = $('<input type="hidden" name="colors" value="'+colorValue+'"/>');
+	var colorsInput = $('<input type="hidden" name="color_names" value="'+colorName+'"/>');
+	namesInput.appendTo(saveColor);
+	colorsInput.appendTo(saveColor);
+	colorMsg.appendTo(carColor);
+}
+
+</script>
+</body>
+</html>
+
+

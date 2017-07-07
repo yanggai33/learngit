@@ -1,0 +1,379 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="style/lib/html5.js"></script>
+<script type="text/javascript" src="style/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="style/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>欢迎使用后台管理系统</title>
+<link rel="stylesheet" href="style/lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+<!--/_header 作为公共模版分离出去-->
+<!--_menu 作为公共模版分离出去-->
+
+<div>
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 数据中心<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+		</dl>
+		<dl id="menu-picture">
+			<dt><i class="Hui-iconfont">&#xe613;</i> 整车产品<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="b-car-list?ctid=3" title="电动乘用车" target="right">电动乘用车</a></li>
+					<li><a href="b-car-list?ctid=4" title="电动客车" target="right">电动客车</a></li>
+					<li><a href="b-car-list?ctid=5" title="微型电动车" target="right">微型电动车</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-product">
+			<dt><i class="Hui-iconfont">&#xe620;</i> 配件产品<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="b-parts-list?ctid=6" title="标准件"  target="right">标准件</a></li>
+					<li><a href="b-parts-list?ctid=7" title="辅助件" target="right">辅助件</a></li>
+					<li><a href="b-parts-list?ctid=8" title="车身系统" target="right">车身系统</a></li>
+					<li><a href="b-parts-list?ctid=9" title="电气系统" target="right">电气系统</a></li>
+					<li><a href="b-parts-list?ctid=10" title="转向系统" target="right">转向系统</a></li>
+					<li><a href="b-parts-list?ctid=11" title="底盘系统" target="right">底盘系统</a></li>
+					<li><a href="b-parts-list?ctid=12" title="密封系统" target="right">密封系统</a></li>
+					<li><a href="b-parts-list?ctid=13" title="内饰系统" target="right">内饰系统</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfont">&#xe622;</i> 广告推广<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li ><a href="b-ad-shouli" title="订单受理" target="right">订单受理</a></li>
+					<li ><a href="b-ad-list" title="订单记录" target="right">订单记录</a></li>
+					<li><a href="b-ad-abnormal" title="异常订单" target="right">异常订单</a></li>
+					<li ><a href="b-ad-show" title="广告展示" target="right">广告展示</a></li>
+					<!--<li><a href="b-ad-expand" title="商品推广">商品推广</a></li>-->
+					<!--<li class="current"><a href="b-ad-company" title="企业广告位">企业广告位</a></li>
+					<li><a href="b-ad-car" title="整车广告位">整车广告位</a></li>
+					<li><a href="b-ad-parts" title="配件广告位">配件广告位</a></li>
+					<li><a href="b-ad-news" title="新闻广告位">新闻广告位</a></li>-->
+					<li><a href="b-company-ad-list" title="企业广告" target="right">企业广告</a></li>
+					<li><a href="b-car-ad-list" title="整车广告" target="right">整车广告</a></li>
+					<li><a href="b-parts-ad-list" title="配件广告" target="right">配件广告</a></li>
+					<li><a href="b-news-ad-list" title="新闻广告" target="right">新闻广告</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl class="selected" id="menu-member">
+			<dt><i class="Hui-iconfont">&#xe60d;</i> 企业库管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd style="display: block;">
+				<ul>
+					<li><a href="b-company-list" title="企业列表" target="right">企业列表</a></li>
+					<!-- <li><a href="member-del.html" title="企业认证">企业认证</a></li>
+					<li><a href="member-level.html" title="等级管理">等级管理</a></li> -->
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-member">
+			<dt><i class="Hui-iconfont">&#xe60d;</i> 新闻管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="b-news-list" title="新闻列表" target="right">新闻列表</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-member">
+			<dt><i class="Hui-iconfont">&#xe60d;</i> 品牌管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="b-brand-list" title="品牌列表" target="right">品牌列表</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe62d;</i> 供求信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="b-qiugou" title="求购信息" target="right">求购信息</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-tongji">
+			<dt><i class="Hui-iconfont">&#xe61a;</i> 账户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a href="#" title="员工账户设置">员工账户设置</a></li>
+					<li><a href="#" title="Admin账户修改">Admin账户修改</a></li>
+					<li><a href="#" title="系统操作日志">系统操作日志</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+</div>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<!--/_menu 作为公共模版分离出去-->
+<!-- <div class="cover"></div>
+<div class="box1">
+	<div id="poper" class="noborder">
+		    <div class="orderTitle">产品置顶调取</div>
+		    <div class="content">
+				<div class="leftcontent">
+					<span>名称：红外夜视枪瞄</span><br>
+					<span>图片简称：红外夜视枪瞄</span><br>
+					<span class="orderlocal">品牌：北方光学</span><br>
+					<span class="adId">图片链接：http://www.outlook6.com/_d2744.html</span>
+				</div>
+				<div class="rightcontent">;
+					<span>缩略图:</span><span class="pic"></span>
+				</div>
+			</div>
+			<div class="content cons">
+				<div class="leftcontent">
+					<span>名称：红外夜视枪瞄</span><br>
+					<span>图片简称：红外夜视枪瞄</span><br>
+					<span class="orderlocal">品牌：北方光学</span><br>
+					<span class="adId";>图片链接：http://www.outlook6.com/_d2744.html</span>
+				</div>
+				<div class="rightcontent">;
+					<span>缩略图:</span><span class="pic"></span>
+				</div>
+			</div>
+			<div class="content cons">
+				<div class="leftcontent">
+					<span>名称：红外夜视枪瞄</span><br>
+					<span>图片简称：红外夜视枪瞄</span><br>
+					<span class="orderlocal">品牌：北方光学</span><br>
+					<span class="adId";>图片链接：http://www.outlook6.com/_d2744.html</span>
+				</div>
+				<div class="rightcontent">;
+					<span>缩略图:</span>
+					<span class="pic"></span>
+				</div>
+			</div>
+		
+	</div>
+	<div class="time">
+		<div class="button"><button class="backfee">确认</button><button class="cancel">取消</button></div>
+	</div>
+</div> -->
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="style/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="style/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="style/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="style/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="style/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="style/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="style/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="style/lib/area.js"></script>
+<script type="text/javascript">
+ function brand_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+$(function(){
+	$('.table-sort').dataTable({
+		"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+		"bStateSave": true,//状态保存
+		"aoColumnDefs": [
+		  {"orderable":false,"aTargets":[0,5]}// 制定列不参与排序
+		]
+	});
+})
+
+
+/*图片-添加*/
+function product_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*图片-查看*/
+function product_show(title,url,id){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*图片-审核*/
+function product_shenhe(obj,id){
+	layer.confirm('审核文章？', {
+		btn: ['通过','不通过'],
+		shade: false
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="product_start(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+		$(obj).remove();
+		layer.msg('已发布', {icon:6,time:1000});
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="product_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
+		$(obj).remove();
+    	layer.msg('未通过', {icon:5,time:1000});
+	});
+}
+/*图片-下架*/
+function product_stop(obj,id){
+	layer.confirm('确认要下架吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="product_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
+		$(obj).remove();
+		layer.msg('已下架!',{icon: 5,time:1000});
+	});
+}
+
+/*图片-发布*/
+function product_start(obj,id){
+	layer.confirm('确认要发布吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="product_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+		$(obj).remove();
+		layer.msg('已发布!',{icon: 6,time:1000});
+	});
+}
+/*图片-申请上线*/
+function product_shenqing(obj,id){
+	$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
+	$(obj).parents("tr").find(".td-manage").html("");
+	layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
+}
+/*图片-编辑*/
+function product_edit(title,url,id){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+/*图片-删除*/
+function product_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		$(obj).parents("tr").remove();
+		layer.msg('已删除!',{icon:1,time:1000});
+	});
+}
+/*数据-删除*/
+function datadel(){
+	layer.confirm('确认要删除吗？',function(){
+		
+		$('.del').parents(".caozuo").next().children().children().children("tbody").remove();
+		layer.msg('已删除!',{icon:1,time:1000});
+		
+	})
+}
+
+//产品置顶调取
+$('.td-manage .modify').click(function(){
+	$('.box1').show();
+	$('.cover').show();
+})
+
+$('.box1 .cancel').click(function(){
+	$('.box1').hide();
+	$('.cover').hide();
+})
+//发送请求
+$(document).ready(function(){
+	$.ajax({
+   type:"post",
+		url:"b_adsCompany_list",
+		success:function(backData, textStatus, ajax) {
+		 	    	//alert(2);
+		 	    	var res = backData.response;
+		 	    	
+		 	    	var $adsCompany = $("#adsCompany");
+		 	    	var l = res.data.AdsCompanys;
+		 	    	for(var i=0;i<l.length;i++){
+		 	    	$adsCompany.html('<tr><td>'+'<input name="checks" type="checkbox"  id="checks">'+'</td><td>'+l[i].name+'</td><td>'+l[i].id+'</td><td>'+l[i].price+'</td><td>'+l[i].max_number+'</td><td>'+l[i].free_place+'</td><td class="td-manage">'+'<a style="text-decoration:none" ><button class="upload">上传</button></a>' +'</td></tr>');
+		 	    	}
+		 	    	
+		 	    }
+		 	});
+
+});
+
+$('#DataTables_Table_0_previous').click(function(){
+	window.open('b_company_prevPage');
+})
+$('#DataTables_Table_0_next').click(function(){
+	window.open('b_company_nextPage');
+})
+//选择级联广告位
+function getPlate(currPage){
+    var currPagecurrPage= currPage;
+    var i,j,k;
+    for (var i = document.getElementById("plate").childNodes.length-1; i > 0; i--) {
+        document.getElementById("plate").remove(i);
+    }
+    for (i = 0 ;i <cityArray.length;i++)
+    {   
+        if(cityArray[i][0]==currPage)
+        {   //console.log(cityArray[i][1]);
+            tmpcityArray = cityArray[i][1].split("|")
+            for(j=0;j<tmpcityArray.length;j++)
+            {
+                var newoption = document.createElement("option");
+                newoption.innerText=tmpcityArray[j];
+                newoption.value = tmpcityArray[j];
+                document.getElementById("plate").appendChild(newoption);
+            }
+            document.getElementById("plate").selectedIndex=0;
+            $('#plate').selectmenu('refresh',true);
+        }
+    }
+}
+</script>
+<script type="text/javascript"  src="style/lib/mustache.js"></script>
+<script>
+//	var data={
+//		acceptAd:[
+//		  {"id":"A01","adname":"车型库产品置顶位置","price":"8008.8","maxnumber":"10","current":"1"},
+//		  {"id":"A01","adname":"车型库产品置顶位置","price":"8008.8","maxnumber":"10","current":"1"},
+//		  {"id":"A01","adname":"车型库产品置顶位置","price":"8008.8","maxnumber":"10","current":"1"},
+//		  {"id":"A01","adname":"车型库产品置顶位置","price":"8008.8","maxnumber":"10","current":"1"}
+//		],
+//		"msg":{
+//			"msg":"ok",
+//			"success":true
+//		}
+//	}
+//	
+//	var accad='{{#acceptAd}} <tr class="text-c va-m"><td><input name="" type="checkbox" value=""></td><td><a onClick="" href="javascript:;" class="buylocation">{{adname}}</a></td><td class="text-l">{{id}}</td><td><span class="price">￥{{price}}</td><td>{{maxnumber}}</td><td>{{current}}</td><td class="td-manage"><a style="text-decoration:none" ><button class="upload">上传</button></a></td></tr>{{/acceptAd}}';
+//	var acceptcontent=Mustache.render(accad,data);
+//	var adexpand=$('#adexpand');
+//	adexpand.html(acceptcontent);
+	</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

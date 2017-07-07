@@ -1,0 +1,211 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="style/lib/html5.js"></script>
+<script type="text/javascript" src="style/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="style/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<style type="text/css">
+    #search-result{
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 15px;
+        width: 400px;
+        background-color: #eee;
+        z-index: 99;
+    }
+    #search-result li:hover{
+        background-color: #a9a9a9;
+    }
+    #search-result li{
+        line-height: 30px;
+    }
+</style>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<link href="style/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<title>新增配件产品</title>
+
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+<!--/_header 作为公共模版分离出去-->
+
+<!--_menu 作为公共模版分离出去-->
+<div class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 主页 <span class="c-gray en">&gt;</span> 配件 <span class="c-gray en">&gt;</span> 修改参数 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div>
+		<div>
+			<form action="b_parts_modifyPartsParamTable" method="post" class="form form-horizontal" id="partsConfigModifyForm" enctype="multipart/form-data">
+				<div>
+					<h4 class="text-c">选填属性</h4>
+					<div>
+						<input type="hidden" name="parts.id" id="parts-id">
+						<div id="config">
+						</div>
+						<div class="col-sm-2">
+							<a href="javascript:" onClick="addConfig();" class="btn btn-primary">添加新参数</a>
+						</div>
+					</div>
+				</div>
+				<div class="row cl">
+					<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+						<button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存信息</button>
+						<a href="#" id="partsDetailReset" class="btn btn-secondary radius"><i class="Hui-iconfont">&#xe632;</i> 重置</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="style/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="style/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="style/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="style/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<script type="text/javascript" src="style/lib/mustache.js"></script> 
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<!-- <script type="text/javascript" src="style/lib/webuploader/0.1.5/webuploader.min.js"></script>  -->
+<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="style/lib/jquery-ui.js"></script>
+<script type="text/javascript" src="style/lib/jquery.formFill.js"></script>
+<script type="text/javascript">
+$().ready(function() {
+    var partsValidator = $("#partsAddForm").validate();
+    // var articleValidator = $("#articleAddForm").validate();
+    var partsDetailValidator = $("#partsDetailAddForm").validate();
+    $("#partsReset").click(function() {
+        partsValidator.resetForm();
+    });
+    // $("#articleReset").click(function() {
+    //     articleValidator.resetForm();
+    // });
+    $("#partsDetailReset").click(function() {
+        partsDetailValidator.resetForm();
+    });
+});
+
+
+
+
+var lastTime = 0;
+$('#choose-company').bind('input',function(){
+		var now = new Date().getTime();
+		var interval = now - lastTime;
+		if (interval > 2000) {
+			lastTime = now;
+		    $('#companyId').val('');
+		    var text = $(this).val();
+		    $.ajax({
+		        url: 'b_company_findByName',
+		        type: 'POST',
+		        dataType: 'json',
+		        data: {'company.name': text}
+		    })
+		    .done(function(data){
+		        console.log(data);
+		        var resData = data.response.data;
+		        var resTpl = '<ul>{{#Companys}}<li data-value="{{id}}">{{name}}</li>{{/Companys}}</ul>';
+		        var resHtml = Mustache.render(resTpl, resData);
+		        var result = $('#search-result');
+		        result.html( resHtml );
+		    })
+		}
+})
+
+
+$('#search-result').delegate('li','click',function(){
+    var value = $(this).html();
+    var dataValue = $(this).attr('data-value');
+    $('#choose-company').val(value);
+    $('#companyId').attr('value',dataValue);
+})
+$('#choose-company').click(function(event){
+    event.stopPropagation();
+    $('#search-result').show();
+});
+$(document).click(function(){
+    $('#search-result').hide();
+});
+
+
+//填充数据
+$(function(){
+	var args = getArgs();
+	id = args.id;
+	$('#parts-id').val(id);
+	var url = 'b_partsField_findByParts?parts.id=' + id;
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json'
+    })
+    .done(function(data) {
+    	var data = data.response.data;
+    	console.log(data);
+    	var tpl = '{{#PartsFields}}<div class="col-sm-3"><input type="text" class="col-sm-3 input-text" value="{{name}}" name="param_name"></div><div class="col-sm-8"><input type="text" class="col-sm-8 input-text" value="{{value}}" name="param_value"></div>{{/PartsFields}}';
+    	var configHtml = Mustache.render(tpl, data);
+    	$('#config').append(configHtml);
+    });
+})
+
+function getArgs(){
+    var args = {};
+    var match = null;
+    var search = decodeURIComponent(location.search.substring(1));
+    var reg = /(?:([^&]+)=([^&]+))/g;
+    while((match = reg.exec(search))!==null){
+        args[match[1]] = match[2];
+    }
+    return args;
+}
+
+
+function checkState(event){
+	var value = $('input[type="hidden"]').val();
+	if (!value) {
+		event.preventDefault();
+		alert('请在生产企业的下拉列表中选择企业');
+	}
+}
+
+
+
+$(function(){
+	var ue = UE.getEditor('editor');
+});
+function addConfig(){
+	var input = $('<div class="col-sm-3"><input type="text" class="col-sm-3 input-text" value="" placeholder="请输入属性名" id="" name="param_name"></div><div class="col-sm-8"><input type="text" class="col-sm-8 input-text" value="" placeholder="请输入属性值" id="" name="param_value"></div>');
+	var config = $('#config');
+	input.appendTo(config);
+}
+</script>
+</body>
+</html>
+

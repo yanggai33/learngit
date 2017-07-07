@@ -1,0 +1,406 @@
+﻿<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta HTTP-EQUIV="pragma"CONTENT="no-cache">
+
+<meta HTTP-EQUIV="Cache-Control"CONTENT="no-cache, must-revalidate">
+
+<meta HTTP-EQUIV="expires"CONTENT="0">
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="style/lib/html5.js"></script>
+<script type="text/javascript" src="style/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style/static/h-ui/css/H-ui.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="style/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<!-- <link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/style.css" /> -->
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>配件产品列表</title>
+<link rel="stylesheet" href="style/lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+<style type="text/css">
+	.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+		padding: 0;
+	}
+</style>
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+<!--/_header 作为公共模版分离出去-->
+<!--_menu 作为公共模版分离出去-->
+<!--/_menu 作为公共模版分离出去-->
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 主页 <span class="c-gray en">&gt;</span> 配件列表 <span class="c-gray en">&gt;</span> 产品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div class="Hui-article">
+		<div>
+			<div class="pd-20">
+				<!-- <form action="b_parts_search" method="post" id="searchForm">
+					<div style="height: 50px;">
+						<div class="col-sm-2 form-group clearfix">
+							<label class="col-sm-5 control-label">产品标题</label>
+							<input class="col-sm-7" type="text" placeholder="" name="partsCondition.name">
+						</div>
+						<div class="col-sm-2 form-group clearfix">
+							<label class="col-sm-5 control-label">上传人</label>
+							<input class="col-sm-7" type="email" placeholder="">
+						</div>
+						<div class="col-sm-2 form-group clearfix">
+							<label class="col-sm-5 control-label">品牌</label>
+							<input class="col-sm-7" type="email" placeholder="">
+						</div>
+						<div class="col-sm-5 form-group text-c"> 
+							<label class="col-sm-3 control-label">日期范围：</label>
+							<input class="col-sm-4 control-label" type="text" onfocus="WdatePicker()" id="logmin" class="input-text Wdate" style="width:120px;">
+							<input class="col-sm-4 control-label" type="text" onfocus="WdatePicker()" id="logmax" class="input-text Wdate" style="width:120px;">
+							<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜产品</button>
+						</div>
+					</div>
+					<div style="height: 30px;">
+						<div class="col-sm-2">
+							<label for="inputPassword3" class="col-sm-6 control-label">是否上架</label>
+							<div class="col-sm-6">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label for="inputPassword3" class="col-sm-6 control-label">是否推荐</label>
+							<div class="col-sm-6">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label for="inputPassword3" class="col-sm-6 control-label">是否热销</label>
+							<div class="col-sm-6">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label for="inputPassword3" class="col-sm-6 control-label">是否新品</label>
+							<div class="col-sm-6">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label for="inputPassword3" class="col-sm-6 control-label">是否审核</label>
+							<div class="col-sm-6">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<button name="" id="" class="btn btn-success" type="submit">重置</button>
+					</div>
+				</form> -->
+				<form action="b_parts_search" method="post" id="searchForm">
+					<div style="height: 50px;">
+						<div class="col-sm-2 form-group clearfix">
+							<label class="col-sm-7 control-label">产品标题</label>
+							<input class="col-sm-5" type="text" placeholder="" name="partsCondition.name">
+						</div>
+						<div class="col-sm-2 form-group clearfix">
+							<label class="col-sm-6 control-label">上传人</label>
+							<input class="col-sm-6" type="text" placeholder="">
+						</div>
+						<div class="col-sm-2 form-group clearfix">
+							<label class="col-sm-6 control-label">品牌</label>
+							<input class="col-sm-6" type="text" placeholder="">
+						</div>
+						<div class="col-sm-6 form-group text-c"> 
+							<label class="col-sm-3 control-label">日期范围：</label>
+							<input class="col-sm-3 control-label" type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">
+							<input class="col-sm-3 control-label" type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
+							<div class="col-sm-3">
+								<button id="search-btn" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜产品</button>
+							</div>
+						</div>
+					</div>
+					<div style="height: 30px;">
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否上架</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否推荐</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否热销</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否新品</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否审核</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>全部</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<a href="#" id="reset" class="btn btn-danger">重置</a>
+						</div>
+					</div>
+				</form>
+				<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius"  href="b-parts-add"> 添加产品</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+				<div class="mt-20">
+					<table class="table table-border table-bordered table-bg table-hover table-sort">
+						<thead>
+							<tr class="text-c">
+								<th width="30"><input name="" type="checkbox" value="">选择</th>
+								<th width="30">编号</th>
+								<th width="80">产品</th>
+								<th width="30">点击量</th>
+								<th width="30">审核</th>
+								<th width="30">上架</th>
+								<th width="30">推荐</th>
+								<th width="30">热销</th>
+								<th width="30">新品</th>
+								<!-- <th width="100">上传时间</th> -->
+								<th width="140">操作</th>
+							</tr>
+						</thead>
+						<tbody id="parts-list">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="style/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="style/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="style/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="style/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<script type="text/javascript" src="style/lib/mustache.js"></script> 
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="style/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="style/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="style/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="style/js/lib/jquery.form.js"></script>
+<script type="text/javascript">
+function toggleState(el){
+	var str = $(el).html();
+	if (str === '是') {
+		$(el).html('否').addClass('btn-danger').removeClass('btn-primary');
+	} else {
+		$(el).html('是').removeClass('btn-danger').addClass('btn-primary');
+	}
+}
+
+function parts_del(obj,id){
+	var url = 'b_parts_del?parts.id=' + id;
+	layer.confirm('确认要删除吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: url,
+			dataType: 'json',
+		})
+		.done(function(data) {
+			$(obj).parents("tr").remove();
+			layer.msg('已删除!',{icon:1,time:1000});
+		})
+		.fail(function() {
+			console.log(data.response.msg);
+		});
+	});
+}
+
+
+
+
+$(function(){
+    var url = window.location.search;
+    var id = url.substring(url.lastIndexOf('=')+1, url.length);
+    switch(id){
+    	case '6':
+	    	$('#menu-parts li:nth-child(1)').addClass('current');
+	    	break;
+    	case '7':
+	    	$('#menu-parts li:nth-child(2)').addClass('current');
+	    	break;
+    	case '8':
+	    	$('#menu-parts li:nth-child(3)').addClass('current');
+	    	break;
+    	case '9':
+	    	$('#menu-parts li:nth-child(4)').addClass('current');
+	    	break;
+    	case '10':
+	    	$('#menu-parts li:nth-child(5)').addClass('current');
+	    	break;
+    	case '11':
+	    	$('#menu-parts li:nth-child(6)').addClass('current');
+	    	break;
+    	case '12':
+	    	$('#menu-parts li:nth-child(7)').addClass('current');
+	    	break;
+    	case '13':
+	    	$('#menu-parts li:nth-child(8)').addClass('current');
+	    	break;
+    }
+})
+
+
+$(function(){
+	$.ajax({
+		type:"post",
+		url:"b_parts_listByCategory",
+		dataType:'json',
+		cache: false
+	})
+    .done(function(data){
+    	console.log(data);
+    	tplRender(data);
+		$('.table-sort').dataTable({
+			"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+			"bStateSave": true,//状态保存
+			"pageLength": 20,
+			"info": false,
+			"aoColumnDefs": [
+			  {"orderable":false,"aTargets":[0,7]}// 制定列不参与排序
+			],
+			"pagingType": "simple",
+			"lengthChange": false,
+			"searching": false
+		});
+		$('#DataTables_Table_0_next').bind('click',function(){
+			$.ajax({
+				type:"post",
+				url:"b_parts_nextPage",
+				dataType:'json',
+				cache: false
+			})
+		    .done(function(data){
+		    	tplRender(data);
+		    })
+		    .fail(function(data){
+		    	console.log(error);
+		    });
+		});
+  		$('#DataTables_Table_0_previous').bind('click',function(){
+			$.ajax({
+				type:"post",
+				url:"b_parts_prevPage",
+				dataType:'json',
+				cache: false
+			})
+		    .done(function(data){
+		    	tplRender(data);
+		    })
+		    .fail(function(data){
+		    	console.log(error);
+		    });
+		});
+    });
+    function tplRender(data){
+        var partsData = data.response.data;
+        var partsListTpl = '{{#Partss}}<tr class="text-c va-m"><td><input name="" type="checkbox" value=""></td><td>{{id}}</td><td><a href="">{{name}}</a></td><td>{{hit}}</td><td class="td-status"><a data-id="{{id}}" data-value="verify" href="#" class="btn {{^valid}}btn-danger{{/valid}} {{#valid}}btn-primary{{/valid}}">{{^valid}}否{{/valid}}{{#valid}}是{{/valid}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="launch" href="#" class="btn {{^launch}}btn-danger{{/launch}} {{#launch}}btn-primary{{/launch}}">{{^launch}}否{{/launch}}{{#launch}}是{{/launch}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="prompt" href="#" class="btn {{^prompt}}btn-danger{{/prompt}} {{#prompt}}btn-primary{{/prompt}}">{{^prompt}}否{{/prompt}}{{#prompt}}是{{/prompt}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="well_sell" href="#" class="btn {{^well_sell}}btn-danger{{/well_sell}} {{#well_sell}}btn-primary{{/well_sell}}">{{^well_sell}}否{{/well_sell}}{{#well_sell}}是{{/well_sell}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="new_good" href="#" class="btn {{^new_good}}btn-danger{{/new_good}} {{#new_good}}btn-primary{{/new_good}}">{{^new_good}}否{{/new_good}}{{#new_good}}是{{/new_good}}</a></td><td class="td-manage"><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-add-detail?parts_id={{id}}" title="添加详情">添加详情</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modify?parts.id={{id}}" title="编辑">编辑</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modifypic?id={{id}}" title="修改产品图">修改产品图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modifythumb?id={{id}}" title="修改缩略图">修改缩略图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modify-config?id={{id}}" title="修改参数">修改参数</a><a class="btn btn-danger radius ml-5 mt-5" onClick="parts_del(this,{{id}})" href="#" title="删除">删除</a></td></tr>{{/Partss}}';
+		var partsListHtml = Mustache.render(partsListTpl, partsData);
+		var partsList = $('#parts-list');
+		partsList.html(partsListHtml);
+		$('#parts-list .btn').click(function() {
+			console.log(1);
+			var $this = $(this);
+			var id = $(this).attr('data-id');
+			var value = $(this).attr('data-value');
+			var url = 'b_parts_put_' + value + '?parts.id=' + id;
+			$.ajax({
+				url: url,
+				type: 'GET',
+			})
+			.done(function(data) {
+				console.log(data);
+				if (data.response.msg.success) {
+					toggleState($this);
+				} else {
+					alert('请重试！')
+				}
+
+			})
+			.fail(function(data) {
+				console.log(data);
+			})
+			.always(function() {
+				// console.log("complete");
+			});
+		});
+    }
+	$('#search-btn').click(function(){
+	    $('#searchForm').submit(function(){
+	        $(this).ajaxSubmit({
+	            success: function(data){
+	            	console.log(data);
+	            	tplRender(data);
+	            }
+	        })
+	        return false;
+	    })
+	})
+})
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

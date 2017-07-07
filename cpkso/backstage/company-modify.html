@@ -1,0 +1,448 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="style/lib/html5.js"></script>
+<script type="text/javascript" src="style/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="style/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="te2xt/css" href="style/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>编辑企业</title>
+
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+
+<!--/_header 作为公共模版分离出去-->
+
+<!--_menu 作为公共模版分离出去-->
+<div class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 主页 <span class="c-gray en">&gt;</span> 纯电动汽车 <span class="c-gray en">&gt;</span> 添加产品 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div>
+		<div id="tab_company" class="HuiTab">
+			<div class="tabBar clearfix">
+				<span>基本信息</span>
+				<!-- <span>企业介绍</span> -->
+				<span>新闻资讯</span>
+			</div>
+				<!-- <ul class="nav nav-tabs">
+					<li class="active"><a href="#base-msg" data-toggle="tab">基本信息</a></li>
+					<li><a href="#product-detail" data-toggle="tab">产品详情</a></li>
+					<li><a href="#news" data-toggle="tab">新闻资讯</a></li>
+				</ul> -->
+			<div class="tabCon">
+				<form action="b_company_modify"  enctype="multipart/form-data" method="post" class="form form-horizontal" id="companyModifyForm">
+					<div class="row cl">
+						<input type="hidden" class="input-text" value="" name="company.id" >
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>企业全称</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" value="" placeholder="" id="full_name" name="company.name" >
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">热度</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" name="company.hot">
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>选择公司分类</label>
+						<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+							<select id="company_type" name="company.category.id" class="select" required>
+								<option value="1">整车</option>
+								<option value="2">配件</option>
+							</select>
+							</span>
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>企业类型</label>
+						<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+							<select id="company_type" name="company.company_ct" class="select" >
+								<option value="生产型">生产型</option>
+								<option value="销售型">销售型</option>
+							</select>
+							</span>
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">联系人</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="contact" name="company.charge" >
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">联系方式</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="contact_method" name="company.contact" >
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">联系QQ</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="contact_qq" name="company.qq" >
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">电子邮箱</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="email" name="company.email" >
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">企业驻地</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<select id="province" name="company.province"  onChange="getCity(this.options[this.selectedIndex].value)">
+				                <option value="">-请选择-</option>
+				                <option value="北京">北京</option>
+				                <option value="上海">上海</option>
+				                <option value="天津">天津</option>
+				                <option value="重庆">重庆</option>
+				                <option value="河北">河北</option>
+				                <option value="山西">山西</option>
+				                <option value="内蒙古">内蒙古自治区</option>
+				                <option value="辽宁">辽宁</option>
+				                <option value="吉林">吉林</option>
+				                <option value="黑龙江">黑龙江</option>
+				                <option value="江苏">江苏</option>
+				                <option value="浙江">浙江</option>
+				                <option value="安徽">安徽</option>
+				                <option value="福建">福建</option>
+				                <option value="江西">江西</option>
+				                <option value="山东">山东</option>
+				                <option value="河南">河南</option>
+				                <option value="湖北">湖北</option>
+				                <option value="湖南">湖南</option>
+				                <option value="广东">广东</option>
+				                <option value="广西">广西壮族自治区</option>
+				                <option value="海南">海南</option>
+				                <option value="四川">四川</option>
+				                <option value="贵州">贵州</option>
+				                <option value="云南">云南</option>
+				                <option value="西藏">西藏自治区</option>
+				                <option value="陕西">陕西</option>
+				                <option value="甘肃">甘肃</option>
+				                <option value="宁夏">宁夏回族自治区</option>
+				                <option value="青海">青海</option>
+				                <option value="新疆">新疆维吾尔族自治区</option>
+				                <option value="香港">香港特别行政区</option>
+				                <option value="澳门">澳门特别行政区</option>
+				                <option value="台湾">台湾</option>
+				                <option value="其它">其它</option>
+            				</select>
+            				<select id="city" name="company.city">
+                                    <option value="">-请选择-</option>
+						    </select>
+						</div>
+						
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">企业官网</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="website" name="company.url" >
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-2">详细地址</label>
+						<div class="formControls col-xs-8 col-sm-9">
+							<input type="text" class="input-text" placeholder="" id="address" name="company.address" >
+						</div>
+					</div>
+					<div  class="row cl">
+							<label class="form-label col-xs-4 col-sm-2">企业简介</label>
+							<div class="formControls col-xs-8 col-sm-9">
+								<textarea class="textarea" id="intro" name="company.brief"></textarea>
+							</div>
+				    </div>
+					<div class="row cl">
+						<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+							<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存信息</button>
+							<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 重置</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- <div class="tabCon">
+				<form action="" method="post" class="form form-horizontal" id="form-company-info-add">
+					<div>
+						<h4 class="text-c">通用属性</h4>
+						<div class="row cl">
+							<label class="form-label col-xs-4 col-sm-2">企业图册</label>
+							<div class="formControls col-xs-8 col-sm-9">
+								<div class="uploader-list-container">
+									<div class="queueList">
+										<div id="dndArea" class="placeholder">
+											<div id="filePicker-2"></div>
+											<p>或将照片拖到这里，单次最多可选300张</p>
+										</div>
+									</div>
+									<div class="statusBar" style="display:none;">
+										<div class="progress"> <span class="text">0%</span> <span class="percentage"></span> </div>
+										<div class="info"></div>
+										<div class="btns">
+											<div id="filePicker2"></div>
+											<div class="uploadBtn">开始上传</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<div>
+						<h4 class="text-c">选填属性</h4>
+						<div class="row cl">
+							<label class="form-label col-xs-4 col-sm-2">员工规模</label>
+							<div class="formControls col-xs-8 col-sm-9">
+								<input type="text" class="input-text" placeholder="" id="employee_count" name="employee_count">
+							</div>
+						</div>
+						<div class="row cl">
+							<label class="form-label col-xs-4 col-sm-2">注册资本</label>
+							<div class="formControls col-xs-8 col-sm-9">
+								<input type="text" class="input-text" placeholder="" id="capital" name="capital">
+							</div>
+						</div>
+						<div class="row cl">
+							<label class="form-label col-xs-4 col-sm-2">注册时间</label>
+							<div class="formControls col-xs-8 col-sm-9">
+								<input type="text" class="input-text" placeholder="" id="register_time" name="register_time">
+							</div>
+						</div>
+						<div class="row cl">
+							<label class="form-label col-xs-4 col-sm-2">企业法人</label>
+							<div class="formControls col-xs-8 col-sm-9">
+								<input type="text" class="input-text" placeholder="" id="legal_person" name="legal_person">
+							</div>
+						</div>
+						<div class="row cl">
+							<label class="form-label col-xs-4 col-sm-2">开户银行</label>
+							<div class="formControls col-xs-8 col-sm-9">
+								<input type="text" class="input-text" placeholder="" id="bank_count" name="bank_count">
+							</div>
+						</div>
+						<div class="row cl">
+							<label class="form-label col-xs-4 col-sm-2">银行卡号</label>
+							<div class="formControls col-xs-8 col-sm-9">
+								<input type="text" class="input-text" placeholder="" id="card_number" name="card_number">
+							</div>
+						</div>
+						<div>
+							<div id="config-name" class="col-xs-4 col-sm-2"> 
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name=""><br>
+								<input type="text" class="input-text" value="" placeholder="请输入属性名" id="" name="">
+							</div>
+							<div id="config-value" class="col-xs-8 col-sm-9">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="">
+								<input type="text" class="input-text" value="" placeholder="请输入属性值" id="" name="">
+							</div>
+							<div class="col-sm-2">
+								<a href="javascript:" onClick="addConfig();" class="btn btn-primary">添加新参数</a>
+							</div>
+						</div>
+					</div>
+					<div class="row cl">
+						<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+							<input class="btn btn-primary radius" type="submit" value="保存信息">
+							<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存信息</button>
+							<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 重置</button>
+						</div>
+					</div>
+				</form>
+			</div> -->
+			<div class="tabCon">
+		            <div>
+						<div class="pd-20">
+							<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a class="btn btn-primary radius" onclick="product_add('发布新闻','news-release.html')" href="#"> 发布新闻</a><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> </span> <span class="r">共有数据：<strong></strong> 条</span> </div>
+							<div class="mt-20">
+								<table class="table table-border table-bordered table-bg table-hover table-sort">
+									<thead>
+										<tr class="text-c">
+											<th width="40"><input name="" type="checkbox" value="">选择</th>
+											<th width="100">新闻标题</th>
+											<th width="30">点击量</th>
+											<th width="30">显示</th>
+											<th width="100">上传时间</th>
+											<th width="140">操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="text-c va-m">
+											<td><input name="" type="checkbox" value=""></td>
+											<td><a style="text-decoration:none" href="javascript:;">志道集团创世360新品发布，敬请期待！</a></td>
+											<td>25</td>
+											<td class="td-status"><a onclick="toggleState(this)" href="#" class="toggle btn btn-danger">否</a></td>
+											<td class="td-time"><span>2016-10-15</span></td>
+											<td class="td-manage"><a style="text-decoration:none" class="ml-5" onClick="product_del(this,'10001')" href="javascript:;" title="删除">【删除】</a> </td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="style/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="style/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="style/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="style/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<script type="text/javascript" src="style/lib/area.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript" src="style/lib/jquery-ui.js"></script>
+<script type="text/javascript" src="style/lib/jquery.formFill.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#companyModifyForm").validate({
+       rules: {
+         "company.name":{
+         	required:true,
+         	maxlength:100
+         },
+         "compnay.url":{
+         	maxlength:200
+         },
+         "company.contact": {
+         	maxlength:60
+         },
+        "company.qq":{
+        	maxlength:20
+        },
+         "company.email": {
+         	maxlength:80
+         },
+         "company.address": {
+         	maxlength:100
+         },
+         "company.city": {
+           maxlength: 20
+         },
+         "company.province":{
+         	maxlength: 10
+         }
+       },
+       messages: {
+         "company.name": {maxlength:"长度不能超过100个字符"},
+         "company.url" : {maxlength:"长度不能超过200个字符"},
+        "company.contact": {
+          maxlength:"长度不能超过60个字符"
+         },
+         "company.qq": {
+           maxlength: "长度不能超过20个字符"
+         },
+         "company.email": {
+           maxlength: "长度不能超过80个字符"
+         },
+         "company.address": {
+           maxlength: "长度不能超过100个字符"
+         },
+          "company.city": {
+           maxlength: "长度不能超过20个字符"
+         },
+          "company.province": {
+           maxlength: "长度不能超过10个字符"
+         },
+       }
+    });
+});
+$(function(){
+	$.Huitab("#tab_company .tabBar span","#tab_company .tabCon","current","click","0");
+	$.fill.setDefaults({
+	    debug: true
+	});
+	var str = location.search;
+	var url = 'b_company_singleById' + str;
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json'
+    })
+    .done(function(data) {
+    	var company = data.response.data.Company;
+		$("#companyModifyForm").fill(company);
+    });
+
+});
+
+
+function addColor(){
+	var colorName = $('#color-name').val();
+	var colorValue = $('#color-value').val();
+	var carColor = $('#car-color');
+	var colorMsg = $('<span class="color-show" style="background-color:#'+colorValue+';"></span><span class="color-name">'+colorName+'</span>');
+	colorMsg.appendTo(carColor);
+}
+
+
+function getCity(currProvince)
+                    {
+                        var currProvincecurrProvince = currProvince;
+                        var i,j,k;
+                        for (var i = document.getElementById("city").childNodes.length-1; i > 0; i--) {
+                            document.getElementById("city").remove(i);
+                        }
+                        for (i = 0 ;i <cityArray.length;i++)
+                        {   
+                            if(cityArray[i][0]==currProvince)
+                            {   //console.log(cityArray[i][1]);
+                                tmpcityArray = cityArray[i][1].split("|")
+                                for(j=0;j<tmpcityArray.length;j++)
+                                {
+                                    var newoption = document.createElement("option");
+                                    newoption.innerText=tmpcityArray[j];
+                                    newoption.value = tmpcityArray[j];
+                                    document.getElementById("city").appendChild(newoption);
+                                }
+                                document.getElementById("city").selectedIndex=0;
+                                $('#city').selectmenu('refresh',true);
+                            }
+                        }
+                    }
+                    
+//
+  function brand_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+  function product_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+</script>
+</body>
+</html>
+
+

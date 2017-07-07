@@ -1,0 +1,366 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta HTTP-EQUIV="pragma"CONTENT="no-cache">
+
+<meta HTTP-EQUIV="Cache-Control"CONTENT="no-cache, must-revalidate">
+
+<meta HTTP-EQUIV="expires"CONTENT="0">
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="style/lib/html5.js"></script>
+<script type="text/javascript" src="style/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style/static/h-ui/css/H-ui.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="style/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>汽车产品列表</title>
+
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+
+<!--/_header 作为公共模版分离出去-->
+
+<div class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 主页 <span class="c-gray en">&gt;</span> 整车列表 <span class="c-gray en">&gt;</span> 整车列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div class="Hui-article">
+		<div>
+			<div class="pd-20">
+				<form action="b_car_search" method="post" id="searchForm">
+					<div style="height: 50px;">
+						<div class="col-sm-2 form-group clearfix">
+							<label class="col-sm-7 control-label">产品标题</label>
+							<input class="col-sm-5" type="text" placeholder="" name="carCondition.car_name">
+						</div>
+						<div class="col-sm-2 form-group clearfix">
+							<label class="col-sm-6 control-label">上传人</label>
+							<input class="col-sm-6" type="text" placeholder="">
+						</div>
+						<div class="col-sm-2 form-group clearfix">
+							<label class="col-sm-6 control-label">品牌</label>
+							<input class="col-sm-6" type="text" placeholder="">
+						</div>
+						<div class="col-sm-6 form-group text-c"> 
+							<label class="col-sm-3 control-label">日期范围：</label>
+							<input class="col-sm-3 control-label" type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">
+							<input class="col-sm-3 control-label" type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
+							<div class="col-sm-3">
+								<button id="search-btn" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜整车</button>
+							</div>
+						</div>
+					</div>
+					<div style="height: 30px;">
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否上架</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>不限</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否推荐</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>不限</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否热销</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>不限</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否新品</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>不限</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<label class="col-sm-7 control-label">是否审核</label>
+							<div class="col-sm-5">
+								<select class="form-control">
+									<option>不限</option>
+									<option>是</option>
+									<option>否</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<a href="#" id="reset" class="btn btn-danger">重置</a>
+						</div>
+					</div>
+				</form>
+				<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" href="b-car-add"> 添加整车</a> </span> <span class="r">共有数据：<strong></strong> 条</span> </div>
+				<div id="product-list" class="mt-20">
+					<table class="table table-border table-bordered table-bg table-hover table-sort">
+						<thead>
+							<tr class="text-c">
+								<th width="40"><input name="" type="checkbox" value="">选择</th>
+								<th width="40">编号</th>
+								<th width="100">产品</th>
+								<th width="40">品牌</th>
+								<th width="40">点击量</th>
+								<th width="40">审核</th>
+								<th width="40">上架</th>
+								<th width="40">推荐</th>
+								<th width="40">热销</th>
+								<th width="40">新品</th>
+								<!-- <th width="100">上传时间</th> -->
+								<th width="150">操作</th>
+							</tr>
+						</thead>
+						<tbody id="car-list">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="style/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="style/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="style/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="style/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript" src="style/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="style/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="style/js/lib/jquery.form.js"></script>
+<script type="text/javascript" src="style/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="style/lib/mustache.js"></script> 
+<script type="text/javascript">
+$().ready(function() {
+	var validator = $("#searchForm").validate();
+});
+function toggleState(el){
+	var str = $(el).html();
+	if (str === '是') {
+		$(el).html('否').addClass('btn-danger').removeClass('btn-primary');
+	} else {
+		$(el).html('是').removeClass('btn-danger').addClass('btn-primary');
+	}
+}
+
+ function brand_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+
+/*图片-添加*/
+function product_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+function car_del(obj,id){
+	var url = 'b_car_del?car.id=' + id;
+	layer.confirm('确认要删除吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: url,
+			dataType: 'json',
+		})
+		.done(function(data) {
+			$(obj).parents("tr").remove();
+			layer.msg('已删除!',{icon:1,time:1000});
+		})
+		.fail(function() {
+			// console.log(data.response.msg);
+		})
+		.always(function(data){
+			console.log(data);
+		})
+	});
+}
+
+
+$(function(){
+    var url = window.location.search;
+    var id = url.substring(url.lastIndexOf('=')+1, url.length);
+    switch(id){
+    	case '3':
+	    	$('#menu-car li:nth-child(1)').addClass('current');
+	    	break;
+    	case '4':
+	    	$('#menu-car li:nth-child(2)').addClass('current');
+	    	break;
+    	case '5':
+	    	$('#menu-car li:nth-child(3)').addClass('current');
+	    	break;
+    }
+})
+
+
+//异步请求
+$(document).ready(function(){
+	$.ajax({
+		type:"post",
+		url:"b_car_listByCategory",
+		dataType:'json',
+		cache: false
+	})
+    .done(function(data){
+    	tplRender(data);
+		$('.table-sort').dataTable({
+			"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+			"bStateSave": true,//状态保存
+			"pageLength": 20,
+			"info": false,
+			"ordering": false,
+			"aoColumnDefs": [
+			  {"orderable":false,"aTargets":[0,7]}// 制定列不参与排序
+			],
+			"pagingType": "simple",
+			"lengthChange": false,
+			"searching": false
+		});
+		$('#DataTables_Table_0_next').bind('click',function(){
+			$.ajax({
+				type:"post",
+				url:"b_car_nextPage",
+				dataType:'json',
+				cache: false
+			})
+		    .done(function(data){
+		    	tplRender(data);
+		    })
+		    .fail(function(data){
+		    	console.log(error);
+		    });
+		});
+  		$('#DataTables_Table_0_previous').bind('click',function(){
+			$.ajax({
+				type:"post",
+				url:"b_car_prevPage",
+				dataType:'json',
+				cache: false
+			})
+		    .done(function(data){
+		    	tplRender(data);
+		    })
+		    .fail(function(data){
+		    	console.log(error);
+		    });
+		});
+	});
+
+
+
+	$('#search-btn').click(function(){
+	    $('#searchForm').submit(function(){
+	        $(this).ajaxSubmit({
+	            success: function(data){
+	            	console.log(data);
+	            	tplRender(data);
+	            }
+	        })
+	        return false;
+	    })
+	})
+})
+
+function tplRender(data){
+    var carData = data.response.data;
+    var carListTpl = '{{#Cars}}<tr class="text-c va-m"><td><input name="" type="checkbox" value=""></td><td>{{car.id}}</td><td><a href="">{{car.name}}</a></td><td>{{car.brand.brand}}</td><td>{{car.hit}}</td><td class="td-status"><a data-id="{{car.id}}" data-value="verify" href="#" class="btn {{^car.valid}}btn-danger{{/car.valid}} {{#car.valid}}btn-primary{{/car.valid}}">{{^car.valid}}否{{/car.valid}}{{#car.valid}}是{{/car.valid}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="launch" href="#" class="btn {{^car.launch}}btn-danger{{/car.launch}} {{#car.launch}}btn-primary{{/car.launch}}">{{^car.launch}}否{{/car.launch}}{{#car.launch}}是{{/car.launch}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="prompt" href="#" class="btn {{^car.prompt}}btn-danger{{/car.prompt}} {{#car.prompt}}btn-primary{{/car.prompt}}">{{^car.prompt}}否{{/car.prompt}}{{#car.prompt}}是{{/car.prompt}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="well_sell" href="#" class="btn {{^car.well_sell}}btn-danger{{/car.well_sell}} {{#car.well_sell}}btn-primary{{/car.well_sell}}">{{^car.well_sell}}否{{/car.well_sell}}{{#car.well_sell}}是{{/car.well_sell}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="new_good" href="#" class="btn {{^car.new_good}}btn-danger{{/car.new_good}} {{#car.new_good}}btn-primary{{/car.new_good}}">{{^car.new_good}}否{{/car.new_good}}{{#car.new_good}}是{{/car.new_good}}</a></td><td class="td-manage"><a class="btn btn-primary radius ml-5 mt-5" href="b-car-add-detail?car_id={{car.id}}" title="添加详情">添加详情</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-modify?car.id={{car.id}}" title="编辑">编辑</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-modifypic?id={{car.id}}" title="修改产品图">修改产品图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-modifythumb?id={{car.id}}" title="修改缩略图">修改缩略图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-type-list?car_id={{car.id}}" title="车型列表">车型列表</a><a class="btn btn-danger radius ml-5 mt-5"  onClick="car_del(this,{{car.id}})" href="#" title="删除">删除</a></td></tr>{{/Cars}}';
+	var carListHtml = Mustache.render(carListTpl, carData);
+	var carList = $('#car-list');
+	carList.html(carListHtml);
+	$('#car-list .btn').click(function() {
+		var $this = $(this);
+		var id = $(this).attr('data-id');
+		var value = $(this).attr('data-value');
+		var url = 'b_car_put_' + value + '?car.id=' + id;
+		$.ajax({
+			url: url,
+			type: 'GET',
+		})
+		.done(function(data) {
+			console.log(data.response.msg.success);
+			if (data.response.msg.success) {
+				toggleState($this);
+			} else {
+				alert('请重试！')
+			}
+
+		})
+		.fail(function() {
+			// console.log("error");
+		})
+		.always(function() {
+			// console.log("complete");
+		});
+	});
+}
+
+
+
+
+
+
+
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
