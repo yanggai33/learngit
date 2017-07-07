@@ -1,0 +1,422 @@
+@charset "utf-8";
+ /*你自己的样式 */
+/*订单受理界面样式*/
+.text-c .text-name{
+	background:url(../images/delay.png) no-repeat top left;
+	overflow:hidden;
+}
+.text-c .text-name span{
+	float:left;
+	margin-top:-10px;
+	margin-left:-8px;
+	color:#fff;
+}
+.text-c .td-manage a button{
+ padding:2px 5px;
+ border:none;
+ color:#fff;
+ background:none;
+}
+.text-c .td-manage a button.detail{
+	background:#0f6fdb;
+}
+.text-c .td-manage a button.pass{
+	background:#449e0e;
+}
+.text-c .td-manage a button.back{
+	background:#d63030;
+}
+.text-c .text-y{
+	color:#449e0e;
+}
+.text-c .price{
+	color:#d63030;
+}
+.text-c .buylocation{
+	color:#0f6fdb;
+	text-decoration:none;
+}
+/*订单记录页面样式*/
+.text-c .starttime{
+	color:#69b13e;
+}
+.text-c .endtime{
+	color:#cf1111;
+}
+/*异常订单界面css样式*/
+.isContact button{
+	display:inline-block;
+	text-decoration:none;
+	background:none;
+	border:none;
+	width:30px;
+	height:20px;
+	color:#fff;
+}
+.isContact.yes button{
+	background:#449e0e;
+}
+.isContact.no button{
+	background:#d63030;
+}
+/*订单展示界面css样式*/
+.text-c .td-manage .upload{
+	background:#449e0e;
+}
+.text-c .td-manage .longdate{
+    background:#c2c2c2;
+}
+.text-c .td-manage .modify{
+	background:#f0b629;
+}
+.text-c .td-manage .longdate.enable{
+	background:#d63030;
+}
+.pd-20,.pd-20 .form-group select,label{
+	font-size:16px;
+}
+.pd-20 input[type="text"]{
+	border:none;
+	border:1px solid #c0c0c0;
+	height:30px;
+}
+.pd-20 input[type="button"]{
+	border:none;
+	background:none;
+	padding:5px 20px;
+	font-size:16px;
+	margin:0 10px;
+	color:#fff;
+}
+.pd-20 input[type="button"].search{
+	background:#da3a4d;
+}
+.pd-20 input[type="button"].reset{
+	background:#449e0e;
+}
+/*产品推广页面样式*/
+table tr{
+	height:40px;
+}
+table{
+	border:1px solid #dedede;
+}
+/*详情弹窗功能实现*/
+.box,.box1,.box_duration {
+	display: none;
+	position:absolute;
+	top: 20%;
+	left: 25%;
+	width: 600px;
+	background:#fff;
+	height:400px;
+	z-index:100;
+}
+.cover{
+	position:fixed;
+	top:0;
+	left:0;
+	display:none;
+	width:100%;
+	height:100%;
+	opacity:0.7;
+	z-index:99;
+	background:#000;
+}
+.box #poper,.box1 #poper,.box_duration #poper{
+	width:90%;
+	height:70%;
+	margin:0 auto;
+	overflow:hidden;
+	text-align:center;
+	font-size:12px;
+}
+.box #poper{
+	border: 1px dashed #c0c0c0;
+	padding:2px 10px;
+}
+.box #poper span{
+	height:30px;
+	line-height:30px;
+}
+.box #poper .leftcontent,.box1 #poper .leftcontent{
+	float:left;
+	width:50%;
+	text-align:left;
+}
+.box #poper .leftcontent span,.box1 #poper .leftcontent span{
+	display:inline-block;
+	text-align:left;
+}
+.leftcontent span b{
+	display:inline-block;
+	width:50px;
+	text-align:center;
+	font-weight:normal;
+	height:30px;
+	background:#dcdcdc;
+}
+.leftcontent span b.status{
+	display:inline-block;
+	width:50px;
+	text-align:center;
+	font-weight:normal;
+	height:30px;
+	background:#449e0e;
+	color:#fff;
+}
+.leftcontent span  .money{
+	color:#cc0000;
+}
+.leftcontent span  a{
+	color:#0c61d5;
+	text-decoration:none;
+}
+.leftcontent span  a.year{
+	color:#449e0e;
+}
+.box #poper .rightcontent,.box1 #poper .rightcontent{
+	float:right;
+	width:50%;
+	text-align:left;
+}
+.box .box-title{
+	text-align:center;
+	height:30px;
+	line-height:30px;
+	font-weight:bold;
+	font-size:18px;
+}
+.box .time,.box1 .time{
+	margin:10px 20px;
+	color:#999999;
+	overflow:hidden;
+}
+.box .time button{
+	border:none;
+	background:none;
+	padding:5px 10px;
+	background:#449e0e;
+	margin-left:315px;
+	color:#fff;
+}
+#poper .leftcontent .endtime{
+	color:#cc0000;
+}
+/*异常订单退款界面弹窗*/
+.box1 #poper,.box_duration #poper{
+	margin-top:30px;
+	padding:20px 10px;
+	border: 1px solid #c0c0c0;
+}
+#poper .orderTitle,.box_duration .orderTitle,#poper .consult {
+	font-size:16px;
+	width:105px;
+	height:30px;
+	background:#0fcdf6;
+    text-align:center;
+    color:#fff;
+     position:absolute;
+     top:12px;
+     z-index:9999;
+}
+#poper .fees{
+	float:left;
+	margin-left:10px;
+	width:500px;
+	font-size:16px;
+	width:105px;
+	height:30px;
+	background:#0fcdf6;
+    text-align:center;
+    color:#fff;
+    position:absolute;
+    top:185px;
+    z-index:9999;
+}
+#poper .price{
+	float:left;
+	width:500px;
+	margin-top:20px;
+	text-align:left;
+	border:1px solid #c0c0c0;
+	padding:10px 0 20px 5px;
+}
+#poper .fee span a{
+	text-decoration:none;
+	color:#cc0000;
+}
+.box1 .time .button{
+	float:right;
+	color:#fff;
+}
+.box1 .time .button button{
+	padding:5px 20px;
+	margin:0 5px;
+	border:none;
+	background:none;
+	color:#fff;
+}
+.box1 .time .button button.backfee{
+	background:#e60012;
+}
+.box1 .time .button button.cancel{
+	background:#0fcdf6;
+}
+/*广告展示界面上传界面弹窗*/
+#poper .consult {
+	width:265px;
+}
+#poper form,.box_duration #poper{
+	text-align:left;
+}
+#poper form label{
+	display:inline-block;
+	font-size:14px;
+	width:80px;
+	text-align:left;
+	margin:8px 20px;
+}
+#poper form input[type="text"]{
+	width:300px;
+	height:25px;
+	border:none;
+	border:1px solid #0fcdf6;
+}
+#poper form input[type="radio"]{
+	margin-left:10px;
+}
+#poper .btnGroup{
+	margin-left:110px;
+}
+#poper .red{
+	color:#ff0000;
+}
+#poper form input[type="button"],input[type="submit"]{
+	border:none;
+	background:none;
+	padding:4px 12px;
+	margin:0 10px;
+}
+#poper form .btnGroup .save,.box_duration  #poper .button .saved{
+	background:#0fcdf6;
+	border:1px solid #0FCDF6;
+	color:#fff;
+}
+#poper form .btnGroup .back,.box_duration  #poper .button button.back1{
+	border:1px solid #0FCDF6;
+}
+/*续期弹窗实现*/
+.box_duration #poper input[type="radio"]{
+	margin-left:20px;
+}
+.box_duration  #poper .fees{
+	top:80px;
+}
+.box_duration  #poper .price{
+	margin-top:30px;
+}
+.box_duration  #poper .button{
+	margin-left:350px;
+	margin-top:150px;
+
+}
+.box_duration  #poper .button button{
+	padding:5px 15px;
+	border:none;
+	background:none;
+	margin-left:15px;
+}
+/*产品置顶调取*/
+.box1  #poper.noborder{
+	border:none;
+}
+.box1 #poper .content{
+	font-size:12px;
+	border:1px solid #0fcdf6;
+	margin:2px 0;
+}
+.box1 #poper .content.cons{
+	border:1px solid #dcdcdc;
+}
+.box1 #poper .content .leftcontent{
+	width:250px;
+	margin-left:15px;
+}
+.box1 #poper .content .leftcontent span{
+	height:15px;
+	line-height:15px;
+}
+.box1   .content .rightcontent .pic{
+	margin-left:50px;
+	margin-top:-15px;
+	display:block;
+	width:125px;
+	height:80px;
+	background:#0fcdf6;
+}
+
+/*求购信息添加*/
+#addbuyInfo{
+	width:80%;
+	height:80%;
+	margin-left:50px;
+	text-align:left;
+}
+.pd-20  form label{
+	display:inline-block;
+	font-size:16px;
+	width:80px;
+	text-align:left;
+	margin:8px 20px;
+}
+.pd-20 form input,textarea{
+	width:300px;
+}
+.pd-20 form textarea{
+	height:100px;
+}
+.pd-20 form select{
+	height:30px;
+	width:95px;
+	font-size:14px;
+}
+.pd-20 form .upload{
+	height:30px;
+	font-size:14px;
+	margin-left:10px;
+	width:50px;
+	border:none;
+	background: none;
+	background:#DA3A4D;
+	color:#fff;
+}
+.pd-20 form .button{
+	border:none;
+	margin:15px 0 0 50px;
+}
+.pd-20  .button button{
+	padding:5px 20px;
+	margin-left:30px;
+	font-size:16px;
+	border:none;
+	background:none;
+	color:#fff;
+	letter-spacing:2;
+}
+.pd-20 form input#mount{
+	width:200px;
+}
+.pd-20 form button.publish{
+	background:#df4760;
+}
+.pd-20 form button.reset{
+	background:#2caa09;
+}
+.pd-20 select{
+	height:30px;
+	font-size:14px;
+}
+.pd-20 .category{
+	margin-top:20px;
+}

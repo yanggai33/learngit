@@ -1,0 +1,15 @@
+/* 添加颜色 */
+#car-color p{
+	line-height: 30px;
+	height: 30px;
+}
+#car-color span{
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 10px;
+}
+.color-show{
+	width: 30px;
+}
+
