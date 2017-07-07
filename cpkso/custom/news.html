@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="style/css/reset.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/css/base.css">
+    <link rel="stylesheet" href="style/css/news.css">
+    <link rel="stylesheet" href="style/css/company.css">
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	!window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
+	</script>
+    <script type="text/javascript" src="style/js/lib/jquery.page.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="style/js/lib/mustache.min.js"></script> 
+	<title>资讯</title>
+</head>
+<body>
+	<header class="header">
+		<div class="header-left">
+			<img src="style/img/search-logo.png" alt="logo">
+		</div>
+		<div class="header-right">
+			<!--<div class="search">
+				<input type="text" placeholder="江淮IEV4">
+				<a class="search-btn" href=""></a>
+			</div>-->
+			<img  src="style/img/2017.png">
+		</div>
+	</header>
+	<nav class="nav-wrapper">
+		<ul class="nav-list">
+            <li><a href="index.html">首页</a></li>
+            <li class="active"><a href="javascript:;">资讯</a></li>
+            <li><a href="car.html">车型库</a></li>
+            <li><a href="parts.html">配件库</a></li>
+            <li><a href="needmsg.html">供求信息</a></li>
+            <li><a href="enterprise.html">企业库</a></li>
+			<li><a href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
+			<li><a href="http://www.cpkso.cn" target="_blank">在线支付</a></li>
+		</ul>
+	</nav>
+	<div class="main-body">
+		<div class="header-wrapper" style="height:300px;">
+			<div class="header-banner"  id="banner">
+			</div>
+		</div>
+		<div class="content-container">
+			<div class="content-left">
+				<div class="hot-sell product-container">
+					<h2 class="product-list-title">全部</h2>
+					<ul class="nav nav-tabs"   id="atabs">
+						<li>
+							<a>分类：</a>
+						</li>
+						<li>
+							<a href="#new-car" data-toggle="tab" data-id="1" class="tab">新车</a>
+						</li>
+						<li>
+							<a href="#tech" data-toggle="tab" class="tab" data-id="2">技术</a>
+						</li>
+						<li>
+							<a href="#industry" data-toggle="tab" class="tab" data-id="3">行业</a>
+						</li>
+						<li>
+							<a href="#policy" data-toggle="tab" class="tab" data-id="4">政策</a>
+						</li>
+						<li>
+							<a href="#guide" data-toggle="tab" class="tab" data-id="5">导购</a>
+						</li>
+						<li>
+							<a href="#use-car" data-toggle="tab" class="tab" data-id="6">用车</a>
+						</li>
+						<li>
+							<a href="#brand" data-toggle="tab" class="tab" data-id="7">品牌</a>
+						</li>
+					</ul>
+					<div class="tab-content"  id="artlist">
+						<div class="tab-pane active" id="new-car"></div>
+						<!-- <div class="tab-pane" id="tech">
+						</div>
+						<div class="tab-pane" id="industry"></div>
+						<div class="tab-pane" id="policy"></div>
+						<div class="tab-pane" id="guide"></div>
+						<div class="tab-pane" id="use-car"></div>
+						<div class="tab-pane" id="brand"></div> -->
+					</div>
+				</div>
+				<div class="page-wrapper clearfix">
+					<div class="pagination clearfix"></div>
+				</div>
+			</div>
+			<div class="content-right">
+				<!-- <div class="site-ranking-wrapper">
+					<div class="site-ranking">
+						<div class="rank-header">
+							<h3 class="rank-title">车型排行</h3>
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a href="#sales" data-toggle="tab">销量</a>
+								</li>
+								<li>
+									<a href="#endurance" data-toggle="tab">纯电续航</a>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane active" id="sales">
+							</div>
+							<div class="tab-pane" id="endurance"></div>
+						</div>
+					</div>
+				</div>-->
+				
+				<div class="right4"  id="newsad">
+			        <div class="ad-item"  id="newsA" style="margin-top:20px;"></div>
+			        <div class="recommendRead"><b></b>&nbsp;&nbsp;<a href="">推荐阅读</a></div>
+				    <ul class="list-unstyled zixun-item"  id="newslist">
+					</ul>
+			    </div>
+				<div class="right3"  id="aditem">
+				    <div class="ad-item"  id="newsB"></div>
+			        <div class="recommendRead"><b></b>&nbsp;&nbsp;<a href="">最新车型</a></div>
+				    <ul class="list-unstyled  zixun-item" id="newslistB">
+					</ul>
+				</div>
+		    	<div class="ad-item"  id="btad"></div>
+			</div>
+		</div>
+		<div class="cut-line"></div>
+	</div>
+	<footer class="footer">
+		<div class="footer-link">
+			<a href="aboutus.html?id=aboutus">关于我们</a>
+            <a href="aboutus.html?id=contactus">联系我们</a>
+            <a href="aboutus.html?id=joinus">商务合作</a>
+            <a href="aboutus.html?id=terms">服务条款</a>
+            <a href="aboutus.html?id=sitemap">网站地图</a>
+            <a href="http://www.cpkso.cn" target="_blank">在线付款</a>
+		</div>
+		<div class="site-info">
+			<p class="footer-copyright">洛阳焦点信息科技有限公司版权所有</p>
+			<p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
+			<p class="tel">电话：0379-65171155</p>
+		</div>
+	</footer>
+<script type="text/javascript">
+
+
+
+//资讯导航栏下方banner
+$(document).ready(function(){
+	 $.ajax({
+        url: 'ev/placeArt_findByAdsUniqueId?ads_unique_id=Z01',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        var resData = data.response.data;
+        var resTpl = '{{#PlaceArts}}<a href="uploadPath/{{article.content}}"><img src="adsPath/{{pic}}"></a>{{/PlaceArts}}';
+        var resHtml = Mustache.render(resTpl, resData);
+        var guide= $('#banner');
+        guide.html( resHtml );
+    })
+})
+
+
+/*资讯分类*/
+
+$(document).ready(function(){
+	var args = getArgs();
+	console.log(args.id);
+	$('a.tab').each(function(){
+		if ($(this).attr('data-id')===args.id) {
+			console.log($(this).attr('data-id'));
+			$(this).parent('li').addClass("active");
+			$(this).parent('li').siblings().removeClass("active");
+		}
+	})
+	var arg = location.search;
+	var loadUrl = 'ev/article_search' + arg.replace('id','articleCondition.artCt.id');
+	$.ajax({
+        url: loadUrl,
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		newsRender(data, $('#new-car'));
+
+    });
+    $('#atabs .tab').click(function(){
+    	var id=$(this).attr('data-id');
+    	var url='ev/article_search?articleCondition.artCt.id='+id;
+    	$.ajax({
+    		url:url,
+    		type:"post",
+    		dataType:'json',
+    	})
+    	.done(function(data){
+    		newsRender(data);
+    	})
+    })
+})
+
+
+function tplRender(tpl, data, el){
+	var data = data.response.data;
+	for(var i=0;i<data.Articles.length;i++){
+//		var str=data.Articles[i].publish_time;
+		data.Articles[i].publish_time = stringToDate(data.Articles[i].publish_time);
+	}
+	function stringToDate(str){
+		var date = new Date(Date.parse(str)); 
+		var publish_time = date.toLocaleString(); 
+		return publish_time;
+	}
+	
+	var content = Mustache.render(tpl, data);
+	el.html(content);
+}
+
+
+function getArgs(){
+    var args = {};
+    var match = null;
+    var search = decodeURIComponent(location.search.substring(1));
+    var reg = /(?:([^&]+)=([^&]+))/g;
+    while((match = reg.exec(search))!==null){
+        args[match[1]] = match[2];
+    }
+    return args;
+}
+
+
+
+
+function newsRender(data){
+	var newsTpl='<div class="news-container">{{#Articles}}<div class="news-item clearfix"><div class="news-item-image"><a href="javascript:;"><img src="uploadPath/{{thumb}}"></a><span class="tag">{{artCt.name}}</span></div><div class="news-item-info"><h4 class="news-item-title"><a href="uploadPath/{{content}}">{{title}}</a></h4><p class="news-item-summary"></p><div class="news-item-footer"><div class="news-time">{{publish_time}}</div><div class="news-tags"><a href="javascript:;">{{brand.brand}}</a></div></div></div></div>{{/Articles}}</div>';
+    tplRender(newsTpl, data, $('#new-car'));
+	var pageCount = data.response.data.Article_condition.maxPageNo;
+	var pageNo = data.response.data.Article_condition.pageNo;
+    var currentPage = pageNo > pageCount ? pageCount : pageNo;
+	$('.pagination').Mpage({
+	    pageCount: pageCount /*resultData.condition.pageCount*/,
+	    current: currentPage /*resultData.condition.currentPage*/,
+	    mclick: function(p){
+	        console.log(p);
+	    }
+	});        
+    $('.prevPage').click(function(){
+		$.ajax({
+	        url: 'ev/article_prevPage',
+	        type: 'POST',
+	        dataType: 'json',
+	    })
+	    .done(function(data){
+	    	newsRender(data);
+	    })
+    })
+
+    $('.nextPage').click(function(){
+		$.ajax({
+	        url: 'ev/article_nextPage',
+	        type: 'POST',
+	        dataType: 'json',
+	    })
+	    .done(function(data){
+	    	newsRender(data);
+	    })
+    })
+    $('.pageNumber').click(function(){
+    	var num = $(this).text();
+    	var url = 'article_skipPage?articleCondition.pageNo=' + num;
+		$.ajax({
+	        url: url,
+	        type: 'POST',
+	        dataType: 'json',
+	    })
+	    .done(function(data){
+	    	newsRender(data);
+	    })
+    })
+    $('.page-submit').click(function(){
+    	var inputVal = $(this).siblings('.input-mini').val();
+    	var num = +inputVal > pageCount ? pageCount : +inputVal;
+    	if (typeof num !== 'number') {
+    		return false
+    	}
+    	var url = 'article_skipPage?articleCondition.pageNo=' + num;
+		$.ajax({
+	        url: url,
+	        type: 'POST',
+	        dataType: 'json',
+	    })
+	    .done(function(data){
+	    	newsRender(data);
+	    })
+	})
+};
+$(document).ready(function(){
+	 $.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=Z02',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        var adData = data.response.data;
+        var adtpl = '{{#PlaceCars}}<a href="cardetail.html?id={{car.id}}"  target="_blank"><img src="adsPath/{{pic}}"></a>{{/PlaceCars}}';
+       	var adcontent=Mustache.render(adtpl,adData);
+	    var newsad=$('#newsA');
+	    newsad.html(adcontent);
+    })
+    //资讯详情右侧B
+    $.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=Z03',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        var adaData = data.response.data;
+       	var adatpl= '{{#PlaceCars}}<a href="cardetail.html?id={{car.id}}"  target="_blank"><img src="adsPath/{{pic}}" target="_blank"></a>{{/PlaceCars}}';
+       	var adacontent=Mustache.render(adatpl,adaData);
+	    var newsB=$('#newsB');
+	    newsB.html(adacontent);
+    })
+    //资讯详情右侧c
+     $.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=Z04',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        var bottomData = data.response.data;
+       	var bttpl = '{{#PlaceCars}}<a href="cardetail.html?id={{car.id}}" target="_blank"><img src="adsPath/{{pic}}"></a>{{/PlaceCars}}';
+       	var btcontent=Mustache.render(bttpl,bottomData);
+	    var btad=$('#btad');
+	    btad.html(btcontent);
+    })
+     //资讯详情右侧多个B
+         $.ajax({
+        url: 'ev/placeArt_findByAdsUniqueId?ads_unique_id=Z06',
+        type: 'POST',
+        dataType: 'json',
+        })
+        .done(function(data){
+        var alistData = data.response.data;
+       	var alistTpl= '{{#PlaceArts}}<li><a href="uploadPath/{{article.content}}" target="_blank"><img src="adsPath/{{pic}}"><span>{{article.title}}</a></li>{{/PlaceArts}}';
+       	var alistcontent=Mustache.render(alistTpl,alistData);
+	    var lista=$('#newslist');
+	    lista.html(alistcontent);
+        })
+     //资讯详情右侧多个
+     $.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=Z05',
+        type: 'POST',
+        dataType: 'json',
+        })
+        .done(function(data){
+            var blistData = data.response.data;
+            for (var i = 0; i < blistData.PlaceCars.length; i++) {
+                blistData.PlaceCars[i].car.price = blistData.PlaceCars[i].car.params[0]?'￥' + blistData.PlaceCars[i].car.params[0].price + '万':'暂无价格';
+            }
+            console.log(blistData.PlaceCars[1].car.params[0].price);
+            // blistData.PlaceCars.car.price = blistData.PlaceCars.car.params[0]?'￥' + blistData.PlaceCars.car.params[0].price + '万':'暂无价格';
+           	var blisttpl = '{{#PlaceCars}}<li><a href="cardetail.html?id={{car.id}}"  target="_blank"><img src="adsPath/{{pic}}"><span>{{car.name}}</span><b>{{car.price}}</b></a></li>{{/PlaceCars}}';
+           	var blistcontent=Mustache.render(blisttpl,blistData);
+    	    var listb=$('#newslistB');
+    	    listb.html(blistcontent);
+        })
+})
+
+
+
+
+     
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

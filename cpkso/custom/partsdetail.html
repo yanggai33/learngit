@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/css/reset.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/css/base.css">
+    <link rel="stylesheet" href="style/css/cardetail.css">
+    <link rel="stylesheet" href="style/css/news.css">
+    <link rel="stylesheet" href="style/css/partsdetail.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/owl-carousel/1.32/owl.carousel.min.css">
+   <!-- <link rel="stylesheet" href="retailer/css/index.css">-->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	!window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
+	</script>
+    <script type="text/javascript" src="style/js/lib/jquery.page.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/owl-carousel/1.32/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="style/js/lib/jquery.page.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="style/js/lib/mustache.min.js"></script> 
+    <style>
+    	/*单选按钮切换样式*/
+        .choose-type input{display: none;}
+        .choose-type li{position:relative; 
+          height:45px;
+          width:65px;
+ 	  	  display:inline; 
+ 	  	   *zoom:1; 
+ 	  	   padding:5px 10px;
+        }
+        .choose-type li{
+  	       border:2px solid #bdbcc2;
+        }
+        .choose-type li.checked{
+        	border:2px solid red;
+ 	  	}
+        .choose-type li.checked i{
+  	     	width:12px; height:12px; 
+  	     	position:absolute; right:0; 
+  	     	bottom:0;_right:-1px; 
+  	     	_bottom:-1px;
+  	     	background:url(img/iconlist_1.png) no-repeat -202px -224px;
+     	}
+ 		.choose-type #choose{
+ 			width:455px;
+ 		}	  
+    </style>
+    <script type="text/javascript">
+    </script>
+    <title>配件详情</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="style/img/search-logo.png" alt="logo">
+        </div>
+        <div class="header-right">
+            <div class="search">
+                <input onkeydown="entersearch();" class="search-input" type="text" placeholder="">
+                <a class="search-btn" href="javascript:;"></a>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-wrapper">
+        <ul class="nav-list">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="news.html">资讯</a></li>
+          <li><a href="car.html">车型库</a></li>
+          <li class="active"><a href="parts.html">配件库</a></li>
+          <li><a href="needmsg.html">供求信息</a></li>
+          <li><a href="enterprise.html">企业库</a></li>
+			<li><a href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
+			<li><a href="http://www.cpkso.cn" target="_blank">在线支付</a></li>
+        </ul>
+    </nav>
+    <div class="product-head-nav">
+        <ol class="breadcrumb" id="local">
+            <span class="location">当前位置：</span>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="parts.html">配件库</a></li>
+            <li class="active">配件详情</li>
+        </ol>
+    </div>
+    <div class="main-body">
+        <div class="product-intro clearfix"  id="pdetail">
+        </div>
+        <div class="content-container">
+            <div class="content-left">
+                <div class="product-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#product-detail" data-toggle="tab">产品详情</a>
+                        </li>
+                        <li >
+                            <a href="#product-config" data-toggle="tab">参数配置</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="product-detail">
+                        </div>
+                        <div class="tab-pane" id="product-config">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-right">
+            <div class="site-recommend">
+				<h3 class="title">相似产品推荐</h3>
+				<ul class="site-rank-list"  id="simprecommend">
+				</ul>
+            </div>
+            </div>
+        </div>
+        <div class="cut-line"></div>
+    </div>
+    <footer class="footer">
+        <div class="footer-link">
+            <a href="aboutus.html?id=aboutus">关于我们</a>
+            <a href="aboutus.html?id=contactus">联系我们</a>
+            <a href="aboutus.html?id=joinus">商务合作</a>
+            <a href="aboutus.html?id=terms">服务条款</a>
+            <a href="aboutus.html?id=sitemap">网站地图</a>
+            <a href="http://www.cpkso.cn" target="_blank">在线付款</a>
+        </div>
+        <div class="site-info">
+            <p class="footer-copyright">洛阳焦点信息科技有限公司版权所有</p>
+            <p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
+            <p class="tel">电话：0379-65171155</p>
+        </div>
+    </footer>
+    <script>
+//  	(function() {
+// 	  	     	   var Ctype = document.getElementById("choose"),
+// 	  	     	       li = Ctype.getElementsByTagName("li");
+// 	  	     	       for(var i = 0; i < li.length; i++){
+// 	  	     	  	        li[i].onclick = function(){
+// 	  	     	  		        for(var i = 0; i < li.length; i++){
+// 	  	     	  			        li[i].className = "";
+// 	  	     	  	            }
+// 	  	     	  	            this.className = "checked";
+// 	  	     	  	        }
+// 	  	     	        } 
+//	})();
+//	
+    </script>
+    <script>
+    	//车辆详情模块
+    	
+    	
+    	$(document).ready(function(){
+    	  var url=window.location.search;
+    	  var id = url.substring(url.lastIndexOf('=')+1, url.length);
+          var postUrl = 'ev/parts_singleById?parts.id=' + id;
+          var pUrl='ev/partsField_findByParts?parts.id='+id;
+          $.ajax({
+    	   url:postUrl,
+    	   type:'POST',
+    	   dataType:'json',
+    	   
+       }).done(function(data){
+       	  var parts=data.response.data;
+          parts.Parts.pic = parts.Parts.pics[0];
+       	  var protpl='<div class="preview-wrapper"><div class="preview"><div class="main-img picZoomer">{{#Parts}}<img src="uploadPath/{{pic}}"></div><div class="spec-list"><div class="spec-items J-img-list"><ul id="owl-sm" class="owl-carousel"> {{#pics}}<li class="item"><img src="uploadPath/{{.}}"></li>{{/pics}}</ul></div></div></div></div><div class="item-info-wrapper"><div class="header-wrapper clearfix"><div class="product-name">{{name}}</div></div><div class="guide-price"><div class="dt">配件价格<span class="price">{{price}}</span></div><div class="dd">已有<span class="view-count">{{hot}}</span>人浏览</div></div><div class="company li"><div class="dt">公&nbsp;&nbsp;司</div><div class="dd">{{company.name}}</div></div><div class="company li"><div class="dt">类&nbsp;&nbsp;型</div><div class="dd">{{ct2}}</div></div><div class="company li"><div class="dt">产&nbsp;&nbsp;地</div><div class="dd">{{^company.city}}暂无{{/company.city}}{{company.city}}</div></div><div class="contact li"><div class="dt">联 系 人</div><div class="dd">{{^company.charge}}暂无{{/company.charge}}{{company.charge}}</div></div><div class="address li"><div class="dt">地&nbsp;&nbsp;址</div><div class="dd">{{^company.address}}暂无{{/company.address}}{{company.address}}</div></div><div class="service">{{#company.url}}<a href="{{company.url}}" class="span website" rel="nofollow" target="_blank">官 网</a>{{/company.url}}<a href="company.html?id={{company.id}}" class="span home">企业库</a><a href="javascript:;" class="span tel">联系方式<span>{{^tel}}暂无{{/tel}}{{tel}}</span></a></div>{{/Parts}}</div>';
+    	  var  product=Mustache.render(protpl,parts);
+          var  prodetail=$('#pdetail');
+          prodetail.html(product);
+          
+           // $('.picZoomer').picZoomer();
+
+           $('#owl-sm').owlCarousel({
+            items: 5,
+            navigation: true,
+            navigationText: ["", ""],
+            responsive: false
+           });
+
+           //切换图片
+           $('.J-img-list li').hover(function(event) {
+            var $pic = $(this).find('img');
+            $('.main-img img').attr('src', $pic.attr('src'));
+           });
+
+          var  detail=data.response.data;
+          var detailTpl='{{#Parts}}<div>{{{detail}}}</div>{{/Parts}}';
+          var dcontent=Mustache.render(detailTpl,detail);
+          var productdetail=$('#product-detail');
+          productdetail.html(dcontent);
+       })
+       
+       
+          $.ajax({
+    	   url:pUrl,
+    	   type:'POST',
+    	   dataType:'json',
+    	  }).done(function(data){
+    	  	var  paraconfig=data.response.data;
+    	  	 var paraTpl='<table class="table table-bordered">{{#PartsFields}}{{#name}}<tr><th>{{name}}</th><td>{{value}}</td></tr>{{/name}}{{/PartsFields}}</table>';
+             var paracontent=Mustache.render(paraTpl,paraconfig);
+             var pconfig=$('#product-config');
+             pconfig.html(paracontent);
+    	  })
+     })
+   //产品详情模块
+    //参数配置模块
+         
+      //相似产品推荐模块
+      
+      $(document).ready(function(){
+	 $.ajax({
+        url: 'ev/placeParts_findByAdsUniqueId?ads_unique_id=PDET',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        var sprData = data.response.data;
+       	var sptpl='{{#PlacePartss}}<li class="site-rank-list-item"><a href="partsdetail.html?id={{parts.id}}"><img src="adsPath/{{pic}}"></a><div class="product-info"><a href="partsdetail.html?id={{parts.id}}" class="desc">{{parts.name}}</a><div class="msg"><p class="price">{{{parts.price}}}</p></div></div></li>{{/PlacePartss}}';
+        var  spcontent=Mustache.render(sptpl,sprData);
+        var  sp=$('#simprecommend');
+        sp.html(spcontent);
+
+    })
+})
+
+
+$(function(){
+    $('.search-btn').click(function(){
+      var inputText = $('.search-input').val();
+      var url = 'partsresult.html?partsCondition.name=' + inputText;
+      window.location.assign(url);
+    });
+})
+
+
+function entersearch(){
+    var event = window.event || arguments.callee.caller.arguments[0];
+    if (event.keyCode == 13) {
+        $('.search-btn').trigger('click');
+    }
+}
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

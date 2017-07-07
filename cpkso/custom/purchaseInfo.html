@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>求购详情</title>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/css/reset.css" rel="stylesheet">
+    <link href="style/css/master.css" rel="stylesheet">
+	<link href="style/css/company.css" rel="stylesheet">
+    <link href="style/css/base1.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="style/js/html5shiv.js"></script>
+    <script src="style/js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    	.button button{
+    		margin-top:-30px;
+    	}
+    	.left-product img{
+    		width:500px;
+    		height:390px;
+    		vertical-align:middle;
+    		text-align:center
+    	}
+    	.productInfo .left img,.right img{
+    		width:18px;
+    		height:18px;
+    	}
+    	.brief{
+    		margin:20px 0;
+    		border:1px solid #e5e5e5;
+    	}
+    	table .need{
+    		font-weight:bold;
+    		background: #da3a4d;
+    		padding:0 20px;
+    		color:#fff;
+    		width:123px;
+    		vertical-align: top;
+    	}
+    </style>
+</head>
+
+<body>
+<!-- ##########页首########## -->
+<!-- 公司logo -->
+<header class="header">
+        <div class="header-left">
+			<a href="index.html">
+				<img  src="style/image1/search-logo.png" alt="网站logo">
+			</a>
+       </div>
+        <!--<div class="header-right  input">
+        	<input type="text" placeholder="江淮 IEV4">
+        </div>-->
+        <div class="header-right">
+           <img src="style/img/2017.png" alt="logo">
+        </div>
+</header>
+
+<!-- 导航条 -->
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container">
+			<ul class="nav navbar-nav">
+				<li class="nav-top  info"  >
+					<a href="index.html" >首页</a>
+					
+				</li>
+				<li class="nav-top">
+					<a href="news.html">资讯</a>
+					
+				</li>
+				<li class="nav-top">
+					<a href="car.html">车型库</a>					
+				</li>
+				<li class="nav-top">
+					<a href="parts.html">配件库</a>					
+				</li>
+				<li class="nav-top"  >
+					<a href="needmsg.html" class="active">求购信息</a>					
+				</li>
+				<li class="nav-top">
+					<a href="enterprise.html">企业库</a>					
+				</li>
+			</ul>		
+	</div>
+</nav>
+
+
+<!-- ##########页首（end）########## -->
+<div class="product-head-nav">
+		<ol class="breadcrumb" id="local">
+			<span class="location"><img src="style/image1/location.png">当前位置:</span>
+			<li><a href="index.html">首页</a></li>
+			<li><a href="needmsg.html">求购信息</a></li>
+			<li class="active" >求购详情</li>
+		</ol>
+</div>
+<!-- ##########主体########## -->
+<div class="main-body"  >
+	<!-- 栏目 -->
+	<div class="products">
+		<div class="content"  id="purseInfo"></div>
+	</div>
+	
+	<div class="content-down">
+		    <div class="brief">
+		    	<table>
+		    		<tr>
+		    		<td  class="need">需求说明</td>
+		    		<td id="state" style="text-align:left;padding-left:20px;max-width:960px;"></td>
+		    		</tr>
+		    	</table>
+		    	
+		    	
+		    </div>
+			<a class="priceInfo">报价信息</a>
+		    <table>
+		    	<thead>
+		    		<tr><td>联系人</td>
+		    			<td>报价</td>
+		    			<td>联系电话</td>
+		    			<td>相关说明</td>
+		    			<td>发布时间</td>
+		    		</tr>
+		    		
+		    	</thead>
+		    	<tbody id="tabinfo"></tbody>
+		    </table>
+    </div>
+    <div class="bottom-img"  id="bimg"></div>
+</div>
+<!-- ##########主体（end）########## -->
+
+<!-- ##########页脚########## -->
+<div class="container web-footer">
+	<!-- 底部 -->
+	<footer class="footer">
+		<div class="footer-link">
+			<a href="aboutus.html?id=aboutus">关于我们</a>
+            <a href="aboutus.html?id=contactus">联系我们</a>
+            <a href="aboutus.html?id=joinus">商务合作</a>
+            <a href="aboutus.html?id=terms">服务条款</a>
+            <a href="aboutus.html?id=sitemap">网站地图</a>
+            <a href="http://www.cpkso.cn" target="_blank">在线付款</a>
+		</div>
+		<div class="site-info">
+			<p class="footer-copyright">洛阳焦点信息科技有限公司版权所有</p>
+			<p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
+			<p class="tel">电话：0379-65171155</p>
+		</div>
+	</footer>
+</div>	
+<div class="box">
+	<div class="box-title">立即报价<img src="style/image1/close.png" class="cButton"></div>	
+	<form id="popForm"  action="offer_add"  method="post"  enctype="multipart/form-data">
+		<div class="caption">立即报价</div>
+		<label>产品名称:</label><span id="name"></span><br>
+		
+		<label>产品分类:</label><span id="catelog"></span><br>
+		<input type="hidden"  name="offer.require.id"  id="requireId">
+	 	<label for="price">报价:</label> 
+        <input type="number" id="price"  placeholder="必填"  value="" required  name="offer.price"  step="0.01"/><br/> 
+        <label for="comment">相关说明:</label> 
+        <textarea id="comment" name="offer.brief"></textarea><br/> 
+        <label for="user">联系人:</label> 
+        <input type="text" id="user" name="offer.name" placeholder="必填" required/><br/> 
+		<label for="phone">手机号:</label> 
+		<input type="text" id="phone" name="offer.tel" placeholder="必填" required/><br/> 
+		<label for="weixin">微信号:</label> 
+		<input type="text" id="weixin" name="offer.wechat" value="" /><br/>
+		<label for="QQ">QQ号:</label> 
+		<input type="text" id="QQ" name="offer.qq" value="" /><br/> 
+		<label for="email">邮箱:</label> 
+		<input type="text" id=email name="offer.email" value="" /><br/>
+		<label></label>
+        <input type="submit" id="sbutton" value="提交报价" /><br/> 
+	</form>
+</div>
+<div class="cover"></div>
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+  !window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
+</script>
+<script src="style/js/lib/jquery.form.js"></script>
+<script src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="style/js/lib/mustache.min.js" type="text/javascript"></script>
+<script>
+ $(document).ready(function(){
+ 	$('#popForm').validate({
+ 		rules:{
+ 			"offer.name":{
+ 				maxlength:20
+ 			},
+ 			"offer.tel":{
+ 				maxlength:30
+ 			},
+ 			"offer.qq":{
+ 				maxlength:30
+ 			},
+ 			"offer.wechat":{
+ 				maxlength:30
+ 			},
+ 			"offer.email":{
+ 				maxlength:40
+ 			},
+ 			"offer.brief":{
+ 				maxlength:255
+ 			}
+ 		},
+ 		messages:{
+ 			"offer.name":{
+ 				maxlength:'长度不能超过20个字符'
+ 			},
+ 			"offer.tel":{
+ 				maxlength:'长度不能超过30个字符'
+ 			},
+ 			"offer.qq":{
+ 				maxlength:'长度不能超过30个字符'
+ 			},
+ 			"offer.wechat":{
+ 				maxlength:'长度不能超过30个字符'
+ 			},
+ 			"offer.email":{
+ 				maxlength:'长度不能超过40个字符'
+ 			},
+ 			"offer.brief":{
+ 				maxlength:'长度不能超过255个字符'
+ 			}
+ 			
+ 		}
+ 	})
+ })
+ 
+
+//function saveReport(){
+//	$('#popForm').ajaxSubmit({
+//		beforeSubmit: function(){
+//			// $('#popForm').validate();
+//		},
+//		success: function(){
+//			console.log(1);
+//		}
+//	})
+//	return false;
+//}
+
+
+
+    $(function () {
+	       $("#sbutton").validate();
+	});
+	
+</script>
+<script>
+   
+   $(document).ready(function(){
+   	 var url = window.location.search;
+    var id = url.substring(url.lastIndexOf('=')+1, url.length);
+    var Url = 'ev/require_singleById?require.id=' + id;
+    var oUrl='ev/offer_findByRequire?require_id='+id;
+   	//求购信息
+   	 $.ajax({
+        url: Url,
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        var buyData = data.response.data;
+        	if(buyData.Require.buyerType=='ENTERPRISE'){
+        		buyData.Require.buyerType='企业采购';
+        	}else if(buyData.Require.buyerType=='PERSONAL'){
+        		buyData.Require.buyerType='个人采购';
+        	}
+        var url = window.location.search;
+        var id = url.substring(url.lastIndexOf('=')+1, url.length);
+        var title=buyData.Require.title;
+        var catelog=buyData.Require.energy_type;
+        buyData.Require.expire_date=stringToDate(buyData.Require.expire_date);
+        function stringToDate(str){
+				var date = new Date(Date.parse(str)); 
+				var expire_date = date.toLocaleString(); 
+				return expire_date;
+		}
+        var dtStr = buyData.Require.expire_date;
+          var dts=dtStr.split(' ');
+          var date1 = new Date(dts[0]);
+           var month=date1.getMonth()+1;
+           var year=date1.getFullYear();
+           var day=date1.getDate();
+           var dateE=year+'-'+month+'-'+day;
+           var date2=new Date();
+           var month=date2.getMonth()+1;
+           var year=date2.getFullYear();
+           var day=date2.getDate();
+           var dateS=year+'-'+month+'-'+day;
+            oDate1= dateS.split('-');
+            oDate2= dateE.split('-');
+         var strDateS = new Date(oDate1[0], oDate1[1]-1, oDate1[2]);
+         var strDateE = new Date(oDate2[0], oDate2[1]-1, oDate2[2]);
+            iDays = parseInt((strDateE - strDateS ) / 1000 / 60 / 60 /24);
+            if(iDays<=0){
+            	data.response.data.Require.Day='报名已截止';
+            }else{
+            	 data.response.data.Require.Day='倒计时:'+iDays+'天';
+            }
+        var buyTpl='{{#Require}}<div class="left-product"><img src="requirePath/{{pic}}"></div><div class="rightText" ><div class="time"><a>{{Day}}</a><img src="style/image1/clock.png"></div><div class="Buytitle">{{title}}<a href="#">已收到报价（{{#reply}}{{reply}}{{/reply}}{{^reply}}0{{/reply}}）条</a></div><div class="productInfo"><div class="left"><div><img src="style/image1/logo/cate.png">&nbsp;&nbsp;分类&nbsp;<span>{{energy_type}}</span></div><div><img src="style/image1/logo/area.png">&nbsp;所在地<span>{{city}}</span></div><div><img src="style/image1/logo/buyMount.png">&nbsp;采购量<span><a href="#">{{number}}</a>个</span></div><div><img src="style/image1/logo/contacts.png">&nbsp;&nbsp;手机&nbsp;<span>{{tel}}</span></div><div><img src="style/image1/logo/contacts.png">&nbsp;&nbsp;QQ&nbsp;<span>{{qq}}</span></div></div><div class="right"><div ><img src="style/image1/logo/endtime.png">&nbsp;报名截止<span>{{expire_date}}</span></div><div ><img src="style/image1/logo/VisitMount.png">&nbsp;微信号<span>{{wechat}}</span></div><div ><img src="style/image1/logo/contacts.png">&nbsp;联系人<span>{{name}}</span></div><div><img src="style/image1/logo/cate.png">&nbsp;采购类型<span>企业采购</span></div></div></div>{{/Require}}<div class="button"><button>立即报价</button></div></div>';
+        var html=Mustache.render(buyTpl,buyData);
+        var info=$('#purseInfo');
+        info.html(html);
+        var bTpl='{{#Require}}{{{brief}}}{{/Require}}';
+        var bhtml=Mustache.render(bTpl,buyData);
+        var brief=$('#state');
+        brief.html(bhtml);
+        $('.button button').on('click',function(){
+        	    $('.box').show();
+        	    $('#requireId').val(id);
+        	    $('#name').text(title);
+        	    $('#catelog').text(catelog);
+				$('.cover').show();
+		});
+        
+		
+			$('.box .cButton').on('click',function(){
+		        $('.box').hide();
+		        $('.cover').hide();
+			})
+
+
+    })
+                $.ajax({
+                      url: oUrl,
+                      type: 'POST',
+                      dataType: 'json',
+                   })
+                   .done(function(data){
+                  var tabData = data.response.data;
+                  	for(var i=0;i<tabData.Offers.length;i++){
+                  	              tabData.Offers[i].require.publish_time=stringToDate(tabData.Offers[i].require.publish_time);
+			        	function stringToDate(str){
+							var date = new Date(Date.parse(str)); 
+							var publish_time = date.toLocaleString(); 
+							return publish_time;
+						}
+                  	}
+                  var tabTpl='{{#Offers}}<tr><td width="100" nowrap>{{name}}</td><td>{{price}}</td><td width="100" nowrap>{{tel}}</td><td nowrap>{{brief}}</td><td width="150px" nowrap>{{require.publish_time}}</td></tr>{{/Offers}}';
+   		          var tabcontent=Mustache.render(tabTpl,tabData);
+   		          var  tabinfo=$('#tabinfo');
+   		          tabinfo.html(tabcontent);
+                })
+    $('#popForm').submit(function(event){
+    	event.preventDefault();
+    	var form=$(this);
+    	$.ajax({
+		type : 'post',
+		async: false,
+		url: form.attr("action"),
+		data: form.serialize(),
+		success : function(data){
+			console.log(data);
+			var res = data.response;
+			if(res.msg.success == true){
+				   window.location.href="purchaseInfo.html?id="+id;
+			}else{
+				alert('信息错误，请重试');
+			}
+		}
+	    });
+    })
+   	
+   	 //报价信息
+   
+    
+     //下部图片
+    $.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=RQU',
+        type: 'POST',
+        dataType: 'json',
+    })
+     .done(function(data){
+      var  imgData=data.response.data;
+   var imgtpl='{{#PlaceCars}}<a href="cardetail.html?id={{car.id}}"><img src="adsPath/{{pic}}"></a>{{/PlaceCars}}';
+   var Img=Mustache.render(imgtpl,imgData);
+   var bimg=$('#bimg');
+   bimg.html(Img);
+   })
+})
+   
+   /*弹出窗口*/
+	
+//	$('form  #sbutton').on('click',function(){
+//		var price=$('#price').val();
+//	   	var user=$('#user').val();
+//	   	var phone=$('#phone').val();
+//	   	var explain=$('#comment').val();
+//	   	var now= new Date();
+//	    var year=now.getFullYear();
+//	   	var month=now.getMonth()+1;
+//	   	var day=now.getDate();
+// 	 	var data = year + "-";
+//	   	if(month<10)
+//	   		data+="0";  
+//	   		data += month + "-";
+//   
+//   if(day < 10)
+//        data += "0";
+//       
+//  	data+= day + " ";
+//   	var trs='<tr><td>'+user+'</td><td>'+price+'</td><td>'+phone+'</td><td>'+explain+'</td><td>'+data+'</td></tr>';
+//  	if(price=="" || user=="" ||  phone=="" || explain==""){
+//  	 alert("请填写报价");
+//   	  $('.box').show();
+//   	  $('.cover').show();
+//   	}else{
+//	       $("#tabinfo").append(trs);
+//	       $('.box').hide();
+//	       $('.cover').hide();
+//   	}
+//   	
+// 	})
+
+</script>
+</body>
+</html>

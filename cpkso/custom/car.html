@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="style/css/reset.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/css/base.css">
+    <link rel="stylesheet" href="style/css/types.css">
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	!window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="style/js/lib/enter.js"></script>
+	<script type="text/javascript" src="style/js/lib/mustache.min.js"></script> 
+	<title>车型库</title>
+</head>
+<body>
+	<header class="header">
+		<div class="header-left">
+			<img src="style/img/search-logo.png" alt="logo">
+		</div>
+		<div class="header-right">
+			<div class="search">
+				<input onkeydown="entersearch();" class="search-input" type="text" placeholder="">
+				<a class="search-btn" href="javascript:;"></a>
+			</div>
+		</div>
+	</header>
+	<nav class="nav-wrapper">
+		<ul class="nav-list">
+			<li><a href="index.html">首页</a></li>
+			<li><a href="news.html">资讯</a></li>
+			<li class="active"><a>车型库</a></li>
+			<li><a href="parts.html">配件库</a></li>
+			<li><a href="needmsg.html">供求信息</a></li>
+			<li><a href="enterprise.html">企业库</a></li>
+			<li><a href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
+			<li><a href="http://www.cpkso.cn" target="_blank">在线支付</a></li>
+		</ul>
+	</nav>
+	<div class="main-body">
+		<div class="category">
+			<div class="category-list clearfix">
+				<dt class="title">品牌：</dt>
+				<a class="choose-all choose-on" href="">不限</a>
+				<div class="brand-ident">
+					<ul>
+						<!-- <li><a href="#hot" data-toggle="enter">热门<span></span></a></li> -->
+						<li class="active"><a onclick="return false;" href="#brandA" data-toggle="enter">A<span></span></a></li>
+						<li><a onclick="return false;" href="#brandB" data-toggle="enter">B<span></span></a></li>
+						<li><a onclick="return false;" href="#brandC" data-toggle="enter">C<span></span></a></li>
+						<li><a onclick="return false;" href="#brandD" data-toggle="enter">D<span></span></a></li>
+						<li><a onclick="return false;" href="#brandE" data-toggle="enter">E<span></span></a></li>
+						<li><a onclick="return false;" href="#brandF" data-toggle="enter">F<span></span></a></li>
+						<li><a onclick="return false;" href="#brandG" data-toggle="enter">G<span></span></a></li>
+						<li><a onclick="return false;" href="#brandH" data-toggle="enter">H<span></span></a></li>
+						<li><a onclick="return false;" href="#brandI" data-toggle="enter">I<span></span></a></li>
+						<li><a onclick="return false;" href="#brandJ" data-toggle="enter">J<span></span></a></li>
+						<li><a onclick="return false;" href="#brandK" data-toggle="enter">K<span></span></a></li>
+						<li><a onclick="return false;" href="#brandL" data-toggle="enter">L<span></span></a></li>
+						<li><a onclick="return false;" href="#brandM" data-toggle="enter">M<span></span></a></li>
+						<li><a onclick="return false;" href="#brandN" data-toggle="enter">N<span></span></a></li>
+						<li><a onclick="return false;" href="#brandO" data-toggle="enter">O<span></span></a></li>
+						<li><a onclick="return false;" href="#brandP" data-toggle="enter">P<span></span></a></li>
+						<li><a onclick="return false;" href="#brandQ" data-toggle="enter">Q<span></span></a></li>
+						<li><a onclick="return false;" href="#brandR" data-toggle="enter">R<span></span></a></li>
+						<li><a onclick="return false;" href="#brandS" data-toggle="enter">S<span></span></a></li>
+						<li><a onclick="return false;" href="#brandT" data-toggle="enter">T<span></span></a></li>
+						<li><a onclick="return false;" href="#brandU" data-toggle="enter">U<span></span></a></li>
+						<li><a onclick="return false;" href="#brandV" data-toggle="enter">V<span></span></a></li>
+						<li><a onclick="return false;" href="#brandW" data-toggle="enter">W<span></span></a></li>
+						<li><a onclick="return false;" href="#brandX" data-toggle="enter">X<span></span></a></li>
+						<li><a onclick="return false;" href="#brandY" data-toggle="enter">Y<span></span></a></li>
+						<li><a onclick="return false;" href="#brandZ" data-toggle="enter">Z<span></span></a></li>
+					</ul>
+				</div>
+				<div class="tab-content"  id="tabcontent">
+					<!-- <div class="tab-pane  brand-list" id="hot">
+						<a href="">奥迪</a>
+						<a href="">ARASH</a>
+					</div> -->
+					<div class="tab-pane brand-list active" id="brandA">
+					</div>
+					
+					<div class="tab-pane brand-list" id="brandB">
+					</div>
+					<div class="tab-pane brand-list" id="brandC">
+					</div>
+					<div class="tab-pane brand-list" id="brandD">
+					</div>
+					<div class="tab-pane brand-list" id="brandE">
+					</div>
+					<div class="tab-pane brand-list" id="brandF">
+					</div>
+					<div class="tab-pane brand-list" id="brandG">
+					</div>
+					<div class="tab-pane brand-list" id="brandH">
+					</div>
+					<div class="tab-pane brand-list" id="brandI">
+					</div>
+					<div class="tab-pane brand-list" id="brandJ">
+					</div>
+					<div class="tab-pane brand-list" id="brandK">
+					</div>
+					<div class="tab-pane brand-list" id="brandL">
+					</div>
+					<div class="tab-pane brand-list" id="brandM">
+					</div>
+					<div class="tab-pane brand-list" id="brandN">
+					</div>
+					<div class="tab-pane brand-list" id="brandO">
+					</div>
+					<div class="tab-pane brand-list" id="brandP">
+					</div>
+					<div class="tab-pane brand-list" id="brandQ">
+					</div>
+					<div class="tab-pane brand-list" id="brandR">
+					</div>
+					<div class="tab-pane brand-list" id="brandS">
+					</div>
+					<div class="tab-pane brand-list" id="brandT">
+					</div>
+					<div class="tab-pane brand-list" id="brandU">
+					</div>
+					<div class="tab-pane brand-list" id="brandV">
+					</div>
+					<div class="tab-pane brand-list" id="brandW">
+					</div>
+					<div class="tab-pane brand-list" id="brandX">
+					</div>
+					<div class="tab-pane brand-list" id="brandY">
+					</div>
+					<div class="tab-pane brand-list" id="brandZ">
+					</div>
+				</div>
+			</div>
+			<dl class="category-list clearfix">
+				<dt class="title">价格：</dt>
+				<dd class="category-item">
+					<a class="choose-on choose-all" href="#">不限</a>
+					<a href="carresult.html?carCondition.price=1">10万以下</a>
+					<a href="carresult.html?carCondition.price=2">10-20万</a>
+					<a href="carresult.html?carCondition.price=3">20-30万</a>
+					<a href="carresult.html?carCondition.price=4">30-50</a>
+					<a href="carresult.html?carCondition.price=5">50万以上</a>
+				</dd>
+			</dl>
+			<dl class="category-list clearfix">
+				<dt class="title">类型：</dt>
+				<dd class="category-item">
+					<a class="choose-all choose-on" href="#">不限</a>
+					<a href="carresult.html?carCondition.energy_type=低速电动车">低速电动车</a>
+					<a href="carresult.html?carCondition.energy_type=纯电动">纯电动</a>
+					<a href="carresult.html?carCondition.energy_type=插电式">插电式</a>
+					<a href="carresult.html?carCondition.energy_type=增程式">增程式</a>
+					<a href="carresult.html?carCondition.energy_type=混合动力">混合动力</a>
+					<a href="carresult.html?carCondition.energy_type=燃料电池">燃料电池</a>
+				</dd>
+			</dl>
+			<dl class="category-list  clearfix">
+				<dt class="title">续航：</dt>
+				<dd class="category-item ">
+					<a class="choose-all choose-on" href="#">不限</a>
+					<a href="carresult.html?carCondition.mile=1">100公里以下</a>
+					<a href="carresult.html?carCondition.mile=2">100-200公里</a>
+					<a href="carresult.html?carCondition.mile=3">200-300公里</a>
+					<a href="carresult.html?carCondition.mile=4">300-400公里</a>
+					<a href="carresult.html?carCondition.mile=5">400公里以上</a>
+				</dd>
+			</dl>
+			<dl class="category-list rank clearfix ">
+				<dt class="title">级别：</dt>
+				<dd class="category-item">
+					<a class="choose-all choose-on" href="#">不限</a>
+					<a href="carresult.html?carCondition.level=微型">微型</a>
+					<a href="carresult.html?carCondition.level=小型">小型</a>
+					<a href="carresult.html?carCondition.level=紧凑型">紧凑型</a>
+					<a href="carresult.html?carCondition.level=中型">中型</a>
+					<a href="carresult.html?carCondition.level=中大型">中大型</a>
+					<a href="carresult.html?carCondition.level=豪华型">豪华型</a>
+					<a href="carresult.html?carCondition.level=SUV">SUV</a>
+					<a href="carresult.html?carCondition.level=MPV">MPV</a>
+					<a href="carresult.html?carCondition.level=跑车">跑车</a>
+					<a href="carresult.html?carCondition.level=商用">商用</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="content-container">
+			<div class="content-left">
+				<div class="show-bar"  id="showBar1">
+				</div>
+				<div class="hot-sell product-container" style="height: 608px;">
+					<h2 class="product-list-title">热销车型</h2>
+					<ul id="hTabs" class="nav nav-tabs">
+						<li>
+							<a href="javascript:void(0)">分类：</a>
+						</li>
+						<li class="active">
+							<a data-value="低速电动车" href="#electricL" data-toggle="tab">低速电动车</a>
+						</li>
+						<li>
+							<a class="tab" data-value="纯电动" href="#electricH" data-toggle="tab">纯电动</a>
+						</li>
+						<li>
+							<a class="tab" data-value="插电式" href="#electric-hybirdH" data-toggle="tab">插电式</a>
+						</li>
+						<li>
+							<a class="tab" data-value="增程式" href="#in-electricH" data-toggle="tab">增程式</a>
+						</li>
+						<li>
+							<a class="tab" data-value="混合动力" href="#hybirdH" data-toggle="tab">混合动力</a>
+						</li>
+						<li>
+							<a class="tab" data-value="燃料电池" href="#fuelH" data-toggle="tab">燃料电池</a>
+						</li>
+						<li>
+							<a href="carresult.html">更多</a>
+						</li>
+					</ul>
+					<div class="tab-content product-list">
+						<div class="tab-pane active" id="electricL"></div>
+						<div class="tab-pane" id="electricH"></div>
+						<div class="tab-pane" id="electric-hybirdH"></div>
+						<div class="tab-pane" id="in-electricH"></div>
+						<div class="tab-pane" id="hybirdH"></div>
+						<div class="tab-pane" id="fuelH"></div>
+					</div>
+				</div>
+				<div class="show-bar"  id="showBar2">
+				</div>
+				<div class="hot-sell product-container" style="height: 608px;">
+					<h2 class="product-list-title">最新车型</h2>
+					<ul id="nTabs" class="nav nav-tabs">
+						<li>
+							<a href="javascript:void(0)">分类：</a>
+						</li>
+						<li class="active">
+							<a data-value="低速电动车" href="#electricNL" data-toggle="tab">低速电动车</a>
+						</li>
+						<li>
+							<a class="tab" data-value="纯电动" href="#electricN" data-toggle="tab">纯电动</a>
+						</li>
+						<li>
+							<a class="tab" data-value="插电式" href="#electric-hybirdN" data-toggle="tab">插电式</a>
+						</li>
+						<li>
+							<a class="tab" data-value="增程式" href="#in-electricN" data-toggle="tab">增程式</a>
+						</li>
+						<li>
+							<a class="tab" data-value="混合动力" href="#hybirdN" data-toggle="tab">混合动力</a>
+						</li>
+						<li>
+							<a class="tab" data-value="燃料电池" href="#fuelN" data-toggle="tab">燃料电池</a>
+						</li>
+						<li>
+							<a href="carresult.html">更多</a>
+						</li>
+					</ul>
+					<div class="tab-content product-list">
+						<div class="tab-pane active" id="electricNL"></div>
+						<div class="tab-pane" id="electricN"></div>
+						<div class="tab-pane" id="electric-hybirdN"></div>
+						<div class="tab-pane" id="in-electricN"></div>
+						<div class="tab-pane" id="hybirdN"></div>
+						<div class="tab-pane" id="fuelN"></div>
+					</div>
+				</div>
+				<div class="show-bar"  id="showBar3"> 
+				</div>
+				<div class="ranking-wrapper">
+					<div class="ranking">
+						<div class="rank-header">
+							<h3 class="rank-title">纯电动汽车排行</h3>
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a href="#hot-rank-1" data-toggle="tab">热度</a>
+								</li>
+								<li>
+									<a class="endurance-tab" data-type="纯电动" href="#endurance-rank-1" data-toggle="tab">续航</a>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane hot-rank active" id="hot-rank-1">
+							</div>
+							<div class="tab-pane endurance-rank" id="endurance-rank-1"></div>
+						</div>
+					</div>
+					<div class="ranking">
+						<div class="rank-header">
+							<h3 class="rank-title">混合动力汽车排行</h3>
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a href="#hot-rank-2" data-toggle="tab">热度</a>
+								</li>
+								<li>
+									<a class="endurance-tab" data-type="混合动力" href="#endurance-rank-2" data-toggle="tab">续航</a>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane hot-rank active" id="hot-rank-2">
+							</div>
+							<div class="tab-pane endurance-rank" id="endurance-rank-2"></div>
+						</div>
+					</div>
+					<div class="ranking">
+						<div class="rank-header">
+							<h3 class="rank-title">低速电动车排行</h3>
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a href="#hot-rank-3" data-toggle="tab">热度</a>
+								</li>
+								<li>
+									<a class="endurance-tab" data-type="低速电动车" href="#endurance-rank-3" data-toggle="tab">续航</a>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane hot-rank active" id="hot-rank-3">
+							</div>
+							<div class="tab-pane endurance-rank" id="endurance-rank-3"></div>
+						</div>
+					</div>
+				</div>
+				<div id="showBar4" class="show-bar">
+				</div>
+			</div>
+			<div class="content-right">
+				<div id="showBar5" class="show-bar-sm">
+				</div>
+				<div class="info-container">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#car-news" data-toggle="tab">行业新闻</a>
+						</li>
+						<li>
+							<a href="#policy" data-toggle="tab">政策法规</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="car-news">
+						</div>
+						<div class="tab-pane" id="policy"></div>
+					</div>
+				</div>
+				<div id="showBar6" class="show-bar-sm">
+				</div>
+				<div class="info-container">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#guide" data-toggle="tab">车辆导购</a>
+						</li>
+						<li>
+							<a href="#tips" data-toggle="tab">用车贴士</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="guide">
+						</div>
+						<div class="tab-pane" id="tips"></div>
+					</div>
+				</div>
+				<div id="showBar7" class="show-bar-sm">
+				</div>
+				<!-- <div  class="approve-company">
+					<h3 class="title">认证企业</h3>
+					<div id="approve"></div>
+				</div> -->
+			</div>
+		</div>
+		<div class="cut-line"></div>
+	</div>
+	<footer class="footer">
+		<div class="footer-link">
+			<a href="aboutus.html?id=aboutus">关于我们</a>
+            <a href="aboutus.html?id=contactus">联系我们</a>
+            <a href="aboutus.html?id=joinus">商务合作</a>
+            <a href="aboutus.html?id=terms">服务条款</a>
+            <a href="aboutus.html?id=sitemap">网站地图</a>
+            <a href="http://www.cpkso.cn" target="_blank">在线付款</a>
+		</div>
+		<div class="site-info">
+			<p class="footer-copyright">洛阳焦点信息科技有限公司版权所有</p>
+			<p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
+			<p class="tel">电话：0379-65171155</p>
+		</div>
+	</footer>
+<script type="text/javascript">
+
+
+
+//车型库右侧a
+$(document).ready(function(){
+	$.ajax({
+        url: 'ev/placeArt_findByAdsUniqueId?ads_unique_id=CN01',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		newsTplRender(data, $('#car-news'));
+    });
+	$.ajax({
+        url: 'ev/placeArt_findByAdsUniqueId?ads_unique_id=CN02',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		newsTplRender(data, $('#policy'));
+    });
+	$.ajax({
+        url: 'ev/placeArt_findByAdsUniqueId?ads_unique_id=CN03',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		newsTplRender(data, $('#guide'));
+    });
+	$.ajax({
+        url: 'ev/placeArt_findByAdsUniqueId?ads_unique_id=CN04',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		newsTplRender(data, $('#tips'));
+    });
+    function newsTplRender(data, el){
+    	var articles = data.response.data.PlaceArts;
+    	for (var i = 0; i < articles.length; i++) {
+	    	var str = articles[i].article.publish_time;
+	    	var date = new Date(Date.parse(str));
+	    	var publishTime = date.toLocaleDateString();
+	    	articles[i].article.publish_time = publishTime;
+    	}
+       	var newsTpl = '<ul class="msg-list">{{#PlaceArts}}<li class="side-list-item"><a href="uploadPath/{{article.content}}">{{article.title}}</a><span class="date">{{article.publish_time}}</span></li>{{/PlaceArts}}</ul>';
+       	tplRender(newsTpl, data, el);
+    }
+})
+
+
+// //车型库通栏广告位
+$(document).ready(function(){
+	$.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=CT01',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        showbarRender(data, $('#showBar1'));
+    });
+	$.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=CT02',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        showbarRender(data, $('#showBar2'));
+    });
+	$.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=CT03',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        showbarRender(data, $('#showBar3'));
+    });
+	$.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=CT04',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        showbarRender(data, $('#showBar4'));
+    });
+    function showbarRender(data, el){
+    	var tpl = '{{#PlaceCars}}<a href="cardetail.html?id={{car.id}}"><img src="adsPath/{{pic}}"></a>{{/PlaceCars}}';
+    	tplRender(tpl, data, el);
+    }
+})
+
+
+$(document).ready(function(){
+	$.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=CR01',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        showbarsmRender(data, $('#showBar5'));
+    });
+	$.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=CR02',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        showbarsmRender(data, $('#showBar6'));
+    });
+	$.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=CR03',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+        showbarsmRender(data, $('#showBar7'));
+    });
+    function showbarsmRender(data, el){
+    	var tpl = '{{#PlaceCars}}<a href="cardetail.html?id={{car.id}}"><img src="adsPath/{{pic}}"></a>{{/PlaceCars}}';
+    	tplRender(tpl, data, el);
+    }
+})
+
+
+
+//热销车型分类
+$(document).ready(function(){
+	$.ajax({
+        url: 'ev/car_hots?car.energy_type=低速电动车',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		carRender(data, $('#electricNL'));
+    });
+
+    $('#hTabs .tab').click(function(){
+    	var value = $(this).attr('data-value');
+    	var url = 'ev/car_hots?car.energy_type=' + value;
+		$.ajax({
+	        url: url,
+	        type: 'POST',
+	        dataType: 'json',
+	    })
+	    .done(function(data){
+		    switch(value){
+		    	case '纯电动':
+		    		carRender(data, $('#electricH'));
+		    		break;
+		    	case '插电式':
+			    	carRender(data, $('#electric-hybirdH'));
+			    	break;
+		    	case '增程式':
+			    	carRender(data, $('#in-electricH'));
+			    	break;
+		    	case '混合动力':
+			    	carRender(data, $('#hybirdH'));
+			    	break;
+		    	case '燃料电池':
+			    	carRender(data, $('#fuelH'));
+			    	break;
+		    }
+	    });
+
+    });
+
+	$.ajax({
+        url: 'ev/car_new_goods?car.energy_type=低速电动车',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		carRender(data, $('#electricL'));
+    });
+
+    $('#nTabs .tab').click(function(){
+    	var value = $(this).attr('data-value');
+    	var url = 'ev/car_new_goods?car.energy_type=' + value;
+		$.ajax({
+	        url: url,
+	        type: 'POST',
+	        dataType: 'json',
+	    })
+	    .done(function(data){
+		    switch(value){
+		    	case  '纯电动':
+		    		carRender(data, $('#electricN'));
+			    	break;
+		    	case '插电式':
+			    	carRender(data, $('#electric-hybirdN'));
+			    	break;
+		    	case '增程式':
+			    	carRender(data, $('#in-electricN'));
+			    	break;
+		    	case '混合动力':
+			    	carRender(data, $('#hybirdN'));
+			    	break;
+		    	case '燃料电池':
+			    	carRender(data, $('#fuelN'));
+			    	break;
+		    }
+	    });
+
+    });
+
+    function carRender(data, el){
+    	// for (var i = 0; i < data.response.data.Cars.length; i++) {
+	    // 	data.response.data.Cars[i].pic = data.response.data.Cars[i].pics[0];
+	    // 	// data.response.data.Cars[i].pic = data.response.data.Cars[i].pic_thumbs[0];
+	    // 	data.response.data.Cars[i].logo = data.response.data.Cars[i].brand?data.response.data.Cars[i].brand.pic:'';
+    	// }
+    	var cars = data.response.data.Cars;
+    	for (var i = 0; i < cars.length; i++) {
+	    	cars[i].pic = cars[i].pic_thumbs[0];
+	    	// cars[i].pic = cars[i].pics[0];
+	    	cars[i].endurance = cars[i].params[0]?cars[i].params[0].mile:'';
+	    	cars[i].speed = cars[i].params[0]?cars[i].params[0].max_speed:'';
+	    	cars[i].logo = cars[i].brand?cars[i].brand.pic:'';
+	    	cars[i].chargetime = cars[i].params[0]?cars[i].params[0].charging_time:'';
+	    	cars[i].price = cars[i].params[0] && cars[i].params[0].price?'￥' + cars[i].params[0].price + '万':'暂无价格';
+	    	cars[i].accelerate = cars[i].params[0]?cars[i].params[0].accelerate:'';
+    	}
+        var carTpl = '<ul class="list-content">{{#Cars}}<li class="list-item"><div class="figure"><a href="cardetail.html?id={{id}}"><img src="uploadPath/{{pic}}"></a>{{#logo}}<a href="javascript:;" class="car-logo"><img src="brandPath/{{brand.pic}}"></a>{{/logo}}<div class="car-info"><div class="info-wrapper"><a href="cardetail.html?id={{id}}">详情</a><a href="javascript:;">客服</a><a href="{{#company.url}}{{company.url}}{{/company.url}}{{^company.url}}company.html?id={{company.id}}{{/company.url}}" target="_blank" rel="nofollow">官网</a></div><div class="car-detail"><ul class="detail-list"><li><p>续航里程：<span>{{endurance}}</span>km</p></li><li><p>最高时速：<span>{{speed}}</span>km/h</p></li><li><p>充电时间：<span>{{chargetime}}</span>h</p></li></ul></div></div></div><div class="detail"><a class="desc" href="cardetail.html?id={{id}}">{{name}}</a><a href="company.html?id={{company.id}}" class="company-name">{{company.name}}</a></div></li>{{/Cars}}</ul>';
+		tplRender(carTpl, data, el);
+    }
+})
+
+
+//纯电动热度
+$(document).ready(function(){
+	$.ajax({
+        url: 'ev/car_listByHot?energy_type=纯电动',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		hotrankRender(data, $('#hot-rank-1'));
+    });
+	$.ajax({
+        url: 'ev/car_listByHot?energy_type=混合动力',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		hotrankRender(data, $('#hot-rank-2'));
+    });
+	$.ajax({
+        url: 'ev/car_listByHot?energy_type=低速电动车',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		hotrankRender(data, $('#hot-rank-3'));
+    });
+    $('.endurance-tab').click(function(){
+    	var type = $(this).attr('data-type');
+    	var url = 'ev/car_listByMile?energy_type=' + type;
+		$.ajax({
+	        url: url,
+	        type: 'POST',
+	        dataType: 'json',
+	    })
+	    .done(function(data){
+		    switch(type){
+		    	case '纯电动':
+			    	endurancerankRender(data, $('#endurance-rank-1'));
+			    	break;
+		    	case '混合动力':
+			    	endurancerankRender(data, $('#endurance-rank-2'));
+			    	break;
+		    	case '低速电动车':
+			    	endurancerankRender(data, $('#endurance-rank-3'));
+			    	break;
+		    }
+	    });
+    });
+  //   $('#lowSpeed').click(function(){
+		// $.ajax({
+	 //        url: 'car_listByLowSpeedMile',
+	 //        type: 'POST',
+	 //        dataType: 'json',
+	 //    })
+	 //    .done(function(data){
+	 //    	endurancerankRender(data, $('#endurance-rank-3'));
+	 //    });
+  //   })
+})
+
+
+$(function(){
+    $('.search-btn').click(function(){
+    	var inputText = $('.search-input').val();
+    	var url = 'carresult.html?carCondition.car_name=' + inputText;
+    	window.location.assign(url);
+    });
+})
+
+
+
+
+function hotrankRender(data, el){
+	for (var i = 0; i < data.response.data.Cars.length; i++) {
+    	data.response.data.Cars[i].index = i;
+    	// data.response.data.Cars[i].pic = data.response.data.Cars[i].pics[0];
+    	data.response.data.Cars[i].pic = data.response.data.Cars[i].pic_thumbs[0];
+    	data.response.data.Cars[i].width = 100-i*6+"%";
+	}
+	var tpl = '<ul class="rank-list">{{#Cars}}<li class="{{^index}}rank-list-first{{/index}}{{#index}}rank-list-item{{/index}}"><a href="cardetail.html?id={{id}}"><img src="uploadPath/{{pic}}"><div class="product-info"><p class="name">{{name}}</p><div class="progress"><div class="progress-bar" style="width: {{width}}">{{hot}}</div></div></div></a></li>{{/Cars}}</ul>';
+	tplRender(tpl, data, el);
+}
+
+
+
+
+function endurancerankRender(data, el){
+	for (var i = 0; i < data.response.data.Cars.length; i++) {
+    	data.response.data.Cars[i].index = i;
+    	// data.response.data.Cars[i].pic = data.response.data.Cars[i].pics[0];
+    	data.response.data.Cars[i].pic = data.response.data.Cars[i].pic_thumbs[0];
+    	data.response.data.Cars[i].width = 100-i*6+"%";
+    	data.response.data.Cars[i].endurance = data.response.data.Cars[i].params[0].mile;
+	}
+	var tpl = '<ul class="rank-list">{{#Cars}}<li class="{{^index}}rank-list-first{{/index}}{{#index}}rank-list-item{{/index}}"><a href="cardetail.html?id={{id}}"><img src="uploadPath/{{pic}}"><div class="product-info"><p class="name">{{name}}</p><div class="progress"><div class="progress-bar" style="width: {{width}}">{{endurance}}</div></div></div></a></li>{{/Cars}}</ul>';
+	tplRender(tpl, data, el);
+}
+
+
+
+//纯电动续航
+$(document).ready(function(){
+	 $.ajax({
+        url: 'ev/car_listByMile?category_id=纯电动',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+		var enduranceRankTpl1 = '<ul class="rank-list">{{#rankData}}<li class="{{^index}}rank-list-first{{/index}}{{#index}}rank-list-item{{/index}}"><a href="cardetail.html?id={{id}}"><img src="{{imgUrl}}"><div class="product-info"><p class="name">{{name}}</p><div class="progress"><div class="progress-bar" style="width: {{width}}">{{progress}}</div></div></div></a></li>{{/rankData}}</ul>'
+		var enduranceRank1 = $('#endurance-rank-1');
+    })
+})
+
+
+
+// //按字母搜品牌
+$(document).ready(function(){
+	 $.ajax({
+        url: 'ev/brand_listByInital',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+    	var data = data.response.data;
+    	var tplA = '{{#a}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/a}}';
+    	var tplB = '{{#b}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/b}}';
+    	var tplC = '{{#c}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/c}}';
+    	var tplD = '{{#d}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/d}}';
+    	var tplE = '{{#e}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/e}}';
+    	var tplF = '{{#f}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/f}}';
+    	var tplG = '{{#g}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/g}}';
+    	var tplH = '{{#h}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/h}}';
+    	var tplI = '{{#i}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/i}}';
+    	var tplJ = '{{#j}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/j}}';
+    	var tplK = '{{#k}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/k}}';
+    	var tplL = '{{#l}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/l}}';
+    	var tplM = '{{#m}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/m}}';
+    	var tplN = '{{#n}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/n}}';
+    	var tplO = '{{#o}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/o}}';
+    	var tplP = '{{#p}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/p}}';
+    	var tplQ = '{{#q}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/q}}';
+    	var tplR = '{{#r}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/r}}';
+    	var tplS = '{{#s}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/s}}';
+    	var tplT = '{{#t}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/t}}';
+    	var tplU = '{{#u}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/u}}';
+    	var tplV = '{{#v}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/v}}';
+    	var tplW = '{{#w}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/w}}';
+    	var tplX = '{{#x}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/x}}';
+    	var tplY = '{{#y}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/y}}';
+    	var tplZ = '{{#z}}<a href="carresult.html?carCondition.brand.id={{id}}">{{brand}}</a>{{/z}}';
+		brandtplRender(tplA, $('#brandA'));
+		brandtplRender(tplB, $('#brandB'));
+		brandtplRender(tplC, $('#brandC'));
+		brandtplRender(tplD, $('#brandD'));
+		brandtplRender(tplE, $('#brandE'));
+		brandtplRender(tplF, $('#brandF'));
+		brandtplRender(tplG, $('#brandG'));
+		brandtplRender(tplH, $('#brandH'));
+		brandtplRender(tplI, $('#brandI'));
+		brandtplRender(tplJ, $('#brandJ'));
+		brandtplRender(tplK, $('#brandK'));
+		brandtplRender(tplL, $('#brandL'));
+		brandtplRender(tplM, $('#brandM'));
+		brandtplRender(tplN, $('#brandN'));
+		brandtplRender(tplO, $('#brandO'));
+		brandtplRender(tplP, $('#brandP'));
+		brandtplRender(tplQ, $('#brandQ'));
+		brandtplRender(tplR, $('#brandR'));
+		brandtplRender(tplS, $('#brandS'));
+		brandtplRender(tplT, $('#brandT'));
+		brandtplRender(tplU, $('#brandU'));
+		brandtplRender(tplV, $('#brandV'));
+		brandtplRender(tplW, $('#brandW'));
+		brandtplRender(tplX, $('#brandX'));
+		brandtplRender(tplY, $('#brandY'));
+		brandtplRender(tplZ, $('#brandZ'));
+
+	    function brandtplRender(tpl, el){
+			var content = Mustache.render(tpl, data);
+			el.html(content);
+	    }
+    });
+
+})
+
+function entersearch(){
+    var event = window.event || arguments.callee.caller.arguments[0];
+    if (event.keyCode == 13) {
+        $('.search-btn').trigger('click');
+    }
+}
+
+
+function tplRender(tpl, data, el){
+	var data = data.response.data;
+	var content = Mustache.render(tpl, data);
+	el.html(content);
+}
+
+
+
+
+</script>
+</body>
+</html>
+

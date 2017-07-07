@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>产品快搜-新能源电动车</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache, must-revalidate">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="applicable-device" content="pc">
+	<meta name="renderer" content="webkit">
+	<meta name="baidu-site-verification" content="VUAL7R3a2v" />
+	<meta name="keywords" content="电动汽车,老年代步车,电动车价格,电动车电池,电动车排名,电动车配件,中国电动车品牌网,电动车什么牌子好,新型四轮电动车,电动车加盟招商,电动车品牌排行,电动车配件批发,电动车配件批发市场,电动老年代步车,全封闭老年代步车,四轮老年代步车价格">
+	<meta name="description" content="电动车快搜网是国内最专业的电动车咨询的专业网站,提供权威的电动车政策新闻,电动车报价, 电动车配件等服务信息。是企业产品推广、品牌宣传、拓展市场、网络推广的第一选择。 为你购买电动车（配件）提供专业的、有效的价值信息。">
+    <link rel="stylesheet" href="style/css/reset.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/css/base.css">
+    <link rel="stylesheet" href="style/css/index.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/owl-carousel/1.32/owl.carousel.min.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/owl-carousel/1.32/owl.theme.min.css">
+	<style>
+		#needCarMsg li a:hover,#needPartsMsg li a:hover{
+			color:#DA3A4D;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="header-left">
+			<img src="style/img/search-logo.png" alt="logo">
+		</div>
+		<div class="header-right">
+			<img src="style/img/2017.png">
+		</div>
+	</header>
+	<nav class="nav-wrapper">
+		<ul class="nav-list">
+			<li class="active"><a title="首页">首页</a></li>
+			<li><a title="资讯" href="news.html">资讯</a></li>
+			<li><a title="车型库" href="car.html">车型库</a></li>
+			<li><a title="配件库" href="parts.html">配件库</a></li>
+			<li><a title="供求信息" href="needmsg.html">供求信息</a></li>
+			<li><a title="企业库" href="enterprise.html">企业库</a></li>
+			<li><a title="返回产品快搜" href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
+			<li><a title="在线支付" href="http://www.cpkso.cn" target="_blank">在线支付</a></li>
+		</ul>
+	</nav>
+	<div class="main-body">
+		<div class="banner-wrapper">
+			<div class="nav-banner">
+				<div class="search-wrapper">
+					<div class="search">
+						<div class="title-wrapper">
+							<h2 class="search-title">直接搜索</h2>
+							<p class="desc">
+								<!-- 已有<span class="count">87993754</span>人提交检索 -->
+							</p>
+						</div>
+						<!-- <form action="" method="post"> -->
+							<input onkeydown="entersearch(1);" id="car-input" type="text" placeholder="请输入相关内容" autocomplete="off">
+							<a id="car-search-btn" target="_blank" title="我要搜车">我要搜车</a>
+						<!-- </form> -->
+						<!-- <form action="" method="post"> -->
+							<input onkeydown="entersearch(2);" id="parts-input" type="text" placeholder="请输入相关内容" autocomplete="off">
+							<a id="parts-search-btn" target="_blank" title="配件搜索">配件搜索</a>
+						<!-- </form> -->
+					</div>
+					<div class="filter">
+						<div class="title-wrapper">
+							<h2 class="search-title">条件搜索</h2>
+							<p class="desc">全方位多角度的保障</p>
+						</div>
+						<div class="tabbable">
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a href="#types" data-toggle="tab" title="车型库">车型库</a>
+								</li>
+								<li>
+									<a href="#parts" data-toggle="tab" title="配件库">配件库</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane active" id="types">
+									<ul class="details">
+										<li class="filter-type">
+											<h3 class="title">品牌</h3>
+											<ul id="brand" class="type-list brand">
+												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-1.png"></a></li>
+												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-2.png"></a></li>
+												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-3.png"></a></li>
+												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-4.png"></a></li>
+												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-5.png"></a></li>
+												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-6.png"></a></li>
+												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-7.png"></a></li>
+											</ul>
+										</li>
+										<li class="filter-type">
+											<h3 class="title">价格</h3>
+											<ul class="type-list price">
+												<li><a title="10万以下" href="carresult.html?carCondition.price=1">10万以下</a></li>
+												<li><a title="10-20万" href="carresult.html?carCondition.price=2">10-20万</a></li>
+												<li><a title="20-30万" href="carresult.html?carCondition.price=3">20-30万</a></li>
+												<li><a title="30-50万" href="carresult.html?carCondition.price=4">30-50万</a></li>
+												<li><a title="50万以上" href="carresult.html?carCondition.price=5">50万以上</a></li>
+											</ul>
+										</li>
+										<li class="filter-type">
+											<h3 class="title">类型</h3>
+											<ul id="type" class="type-list type">
+												<li><a title="低速电动车" href="carresult.html?carCondition.energy_type=低速电动车">低速电动车</a></li>
+												<li><a title="纯电动" href="carresult.html?carCondition.energy_type=纯电动">纯电动</a></li>
+												<li><a title="插电式" href="carresult.html?carCondition.energy_type=插电式">插电式</a></li>
+												<li><a title="增程式" href="carresult.html?carCondition.energy_type=增程式">增程式</a></li>
+												<li><a title="混合动力" href="carresult.html?carCondition.energy_type=混合动力">混合动力</a></li>
+											</ul>
+										</li>
+										<li class="filter-type">
+											<h3 class="title">级别</h3>
+											<ul class="type-list level">
+												<li><a title="微型" href="carresult.html?carCondition.level=微型">微型</a></li>
+												<li><a title="小型" href="carresult.html?carCondition.level=小型">小型</a></li>
+												<li><a title="紧凑型" href="carresult.html?carCondition.level=紧凑型">紧凑型</a></li>
+												<li><a title="中型" href="carresult.html?carCondition.level=中型">中型</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-pane" id="parts">
+									<div class="filter-type">
+										<h3 class="title">分类</h3>
+										<ul class="type-list parts">
+											<li><a title="标准件" href="partsresult.html?category_id=6">标准件</a></li>
+											<li><a title="辅助件" href="partsresult.html?category_id=7">辅助件</a></li>
+											<li><a title="车身系统" href="partsresult.html?category_id=8">车身系统</a></li>
+											<li><a title="电气系统" href="partsresult.html?category_id=9">电气系统</a></li>
+											<li><a title="转向系统" href="partsresult.html?category_id=10">转向系统</a></li>
+											<li><a title="底盘系统" href="partsresult.html?category_id=11">底盘系统</a></li>
+											<li><a title="密封系统" href="partsresult.html?category_id=12">密封系统</a></li>
+											<li><a title="内饰系统" href="partsresult.html?category_id=13">内饰系统</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="banners" style="height: 556px;">
+				<div id="sliders" class="owl-carousel" style="width: 924px;height: 410px;margin-bottom: 6px;">
+				</div>
+				<div id="bannerSm" class="banner-sm">
+				</div>
+			</div>
+		</div>
+		<div class="news">
+			<ul class="nav nav-tabs">
+				<li class="active"><a title="导购" href="news.html?id=5">导购</a></li>
+				<!-- <li><a href="#tech" data-toggle="tab">技术</a></li>
+				<li><a href="#industry" data-toggle="tab">行业</a></li>
+				<li><a href="#policy" data-toggle="tab">政策</a></li>
+				<li><a href="#useCar" data-toggle="tab">用车</a></li>
+				<li><a href="#">查看更多</a></li> -->
+				<li><a title="技术" href="news.html?id=2">技术</a></li>
+				<li><a title="行业" href="news.html?id=3">行业</a></li>
+				<li><a title="政策" href="news.html?id=4">政策</a></li>
+				<li><a title="用车" href="news.html?id=6">用车</a></li>
+				<li><a title="查看更多" href="news.html">查看更多</a></li>
+			</ul>
+			<div class="news-container">
+				<div class="tab-content">
+					<div class="tab-pane active" id="guide"></div>
+					<div class="tab-pane" id="tech"></div>
+					<div class="tab-pane" id="industry"></div>
+					<div class="tab-pane" id="policy"></div>
+					<div class="tab-pane" id="useCar"></div>
+				</div>
+			</div>
+		</div>
+		<div class="products">
+			<div class="content-left">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a title="最新车型" href="#new-car" data-toggle="tab">最新车型</a>
+					</li>
+					<li>
+						<a title="热门车型" id="hot-tab" href="#hot-car" data-toggle="tab">热门车型</a>
+					</li>
+					<li>
+						<a title="低速车型" id="low-tab" href="#low-car" data-toggle="tab">低速车型</a>
+					</li>
+					<li>
+						<a title="乘用车型" id="ev-tab" href="#ev-car" data-toggle="tab">乘用车型</a>
+					</li>
+					
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="new-car">
+					</div>
+					<div class="tab-pane" id="hot-car"></div>
+					<div class="tab-pane" id="low-car"></div>
+					<div class="tab-pane" id="ev-car"></div>
+				</div>
+			</div>
+			<div class="content-right">
+				<div id="needCar" class="recommend">
+					<div class="pics">
+						<h3 class="title">热门整车求购</h3>
+						<div class="carousel-wrapper">
+							<div id="slider-sm-1" class="owl-carousel">
+							</div>
+						</div>
+					</div>
+					<p class="slogan">整车求购</p>
+					<div id="needCarMsg" class="msg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="companyBar1" class="company-bar">
+		</div>
+		<div class="products">
+			<div class="content-left">
+				<div class="tab-container">
+					<ul id="partsTabs" class="nav nav-tabs">
+						<li class="active">
+							<a title="最新配件" href="#new-product" data-toggle="tab">最新配件</a>
+						</li>
+						<li>
+							<a title="热门配件" id="hotParts" href="#hot-product" data-toggle="tab">热门配件</a>
+						</li>
+						<li>
+							<a title="标准件" class="tab" data-id="6" href="#standard" data-toggle="tab">标准件</a>
+						</li>
+						<li>
+							<a title="辅助件" class="tab" data-id="7" href="#auxiliary" data-toggle="tab">辅助件</a>
+						</li>
+						<li>
+							<a title="车身系统" class="tab" data-id="8" href="#car-body" data-toggle="tab">车身系统</a>
+						</li>
+						<li>
+							<a title="电气系统" class="tab" data-id="9" href="#electric" data-toggle="tab">电气系统</a>
+						</li>
+						<li>
+							<a title="转向系统" class="tab" data-id="10" href="#steering" data-toggle="tab">转向系统</a>
+						</li>
+						<li>
+							<a title="底盘系统" class="tab" data-id="11" href="#underpan" data-toggle="tab">底盘系统</a>
+						</li>
+						<li>
+							<a title="密封系统" class="tab" data-id="12" href="#sealing" data-toggle="tab">密封系统</a>
+						</li>
+						<li>
+							<a title="内饰系统" class="tab" data-id="13" href="#interior" data-toggle="tab">内饰系统</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="new-product">
+						</div>
+						<div class="tab-pane" id="hot-product"></div>
+						<div class="tab-pane" id="standard"></div>
+						<div class="tab-pane" id="auxiliary"></div>
+						<div class="tab-pane" id="car-body"></div>
+						<div class="tab-pane" id="electric"></div>
+						<div class="tab-pane" id="steering"></div>
+						<div class="tab-pane" id="underpan"></div>
+						<div class="tab-pane" id="sealing"></div>
+						<div class="tab-pane" id="interior"></div>
+					</div>
+				</div>
+			</div>
+			<div class="content-right">
+				<div id="needParts" class="recommend">
+					<div class="pics">
+						<h3 class="title">热门配件求购</h3>
+						<div class="carousel-wrapper">
+							<div id="slider-sm-2" class="owl-carousel">
+							</div>
+						</div>
+					</div>
+					<p class="slogan">配件求购</p>
+					<div id="needPartsMsg" class="msg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="companyBar2" class="company-bar">
+		</div>
+		<div class="company-show">
+			<div class="title">
+				<div class="line"></div>
+				<div class="text">企业秀</div>
+				<div class="line"></div>
+			</div>
+			<div id="companyShow" class="show-content">
+			</div>
+		</div>
+		<div id="companyBar3" class="company-bar">
+		</div>
+		<div class="cut-line"></div>
+	</div>
+	<footer class="footer">
+		<div class="footer-link">
+            <a title="关于我们" href="aboutus.html?id=aboutus">关于我们</a>
+            <a title="联系我们" href="aboutus.html?id=contactus">联系我们</a>
+            <a title="商务合作" href="aboutus.html?id=joinus">商务合作</a>
+            <a title="服务条款" href="aboutus.html?id=terms">服务条款</a>
+            <a title="网站地图" href="aboutus.html?id=sitemap">网站地图</a>
+            <a title="在线付款" href="http://www.cpkso.cn">在线付款</a>
+		</div>
+		<div class="site-info">
+			<p class="footer-copyright">洛阳焦点信息科技有限公司版权所有</p>
+			<p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
+			<p class="tel">电话：0379-65171155</p>
+		</div>
+	</footer>
+	<!-- <script type="text/javascript" src="style/js/lib/jquery-2.0.0.min.js"></script> -->
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	!window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/owl-carousel/1.32/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="style/js/lib/mustache.min.js"></script> 
+<!--[if lt IE 10]>
+	<script type="text/javascript" src="style/js/lib/iealert.js"></script>
+    <script type="text/javascript">
+        DomReady.ready(iealert);   
+    </script>
+<![endif]-->
+<script type="text/javascript">
+
+
+
+//首页主轮播
+$(document).ready(function(){
+	 $.ajax({
+        type: 'POST',
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=A01',
+        dataType: 'json',
+        async: false
+    })
+    .done(function(data){
+    	var data = data.response.data;
+        var slidersTpl = '{{#PlaceCars}}<a class="item" href="cardetail.html?id={{car.id}}"><img style="width:924px;height:410px;" src="adsPath/{{pic}}"></a>{{/PlaceCars}}'
+		var slidersHtml = Mustache.render(slidersTpl, data);
+		var sliders = $('#sliders');
+		sliders.html( slidersHtml );
+    });
+	 $.ajax({
+        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=A02',
+        type: 'POST',
+        dataType: 'json',
+        async: false
+    })
+    .done(function(data){
+    	var data = data.response.data;
+        var bannerSmTpl = '{{#PlaceCars}}<div class="banner"><a href="cardetail.html?id={{car.id}}"><img src="adsPath/{{pic}}"></a></div>{{/PlaceCars}}'
+        var bannerSmHtml = Mustache.render(bannerSmTpl, data);
+        var bannerSm = $('#bannerSm');
+        bannerSm.html( bannerSmHtml );
+		$.ajax({
+	        url: 'ev/placeArt_findByAdsUniqueId?ads_unique_id=D',
+	        type: 'POST',
+	        dataType: 'json',
+	        async: false
+	    })
+	    .done(function(data){
+	        var data = data.response.data;
+	        var resTpl = '<div class="owl-lg owl-carousel">{{#PlaceArts}}<a class="item" href="uploadPath/{{article.content}}"><img style="width:280px;height:180px" src="adsPath/{{pic}}"><p title="{{article.title}}" class="title">{{article.title}}</p></a>{{/PlaceArts}}</div>';
+	        var resHtml = Mustache.render(resTpl, data);
+	        var guide= $('#guide');
+	        guide.html( resHtml );
+			$.ajax({
+		        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=NEW',
+		        type: 'POST',
+		        dataType: 'json',
+		        async: false
+		    })
+		    .done(function(data){
+			    // var newCarTpl = '<ul class="list-content">{{#PlaceCars}}<li class="list-item"><div class="detail">	<h3 class="title">{{car.name}}</h3><p class="desc">{{car.brief}}</p></div><a href="cardetail.html?id={{id}}"><img src="adsPath/{{pic}}"></a><div class="car-logo"><img src="{{carLogo}}"></div></li>{{/PlaceCars}}</ul>';
+			    // for (var i = 0; i < data.response.data.PlaceCars.length; i++) {
+			    // 	data.response.data.PlaceCars[i].pic = data.response.data.PlaceCars[i].car.brand?data.response.data.PlaceCars[i].car.brand.pic:'';
+			    // }
+		    	carTplRender(data, $('#new-car'));
+				//配件
+				$.ajax({
+			        url: 'ev/placeParts_findByAdsUniqueId?ads_unique_id=INDNEWP',
+			        type: 'POST',
+			        dataType: 'json',
+			        async: false
+			    })
+			    .done(function(data){
+			    	partsRender(data, $('#new-product'));
+					$.ajax({
+				        url: 'ev/require_listByTenderI?require.category.type=1',
+				        type: 'POST',
+				        dataType: 'json',
+				        async:false
+				    })
+				    .done(function(data){
+				    	var sliderTpl = '{{#Requires}}<a class="item" href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic_thumb}}"></a>{{/Requires}}';
+						tplRender(sliderTpl, data, $('#slider-sm-1'));
+				    })
+			    });
+
+			    $('#hotParts').click(function(){
+					$.ajax({
+				        url: 'placeParts_findByAdsUniqueId?ads_unique_id=INDHOTP',
+				        type: 'POST',
+				        dataType: 'json',
+				    })
+				    .done(function(data){
+				    	partsRender(data, $('#hot-product'));
+				    });
+
+			    });
+
+			    $('#partsTabs .tab').click(function(){
+			    	var id = $(this).attr('data-id');
+			    	var url = 'placeParts_findByAdsUniqueId?ads_unique_id=IND' + id;
+					$.ajax({
+				        url: url,
+				        type: 'POST',
+				        dataType: 'json',
+				        async: false
+				    })
+				    .done(function(data){
+					    switch(id){
+					    	case '6':
+						    	partsRender(data, $('#standard'));
+						    	break;
+					    	case '7':
+						    	partsRender(data, $('#auxiliary'));
+						    	break;
+					    	case '8':
+						    	partsRender(data, $('#car-body'));
+						    	break;
+					    	case '9':
+						    	partsRender(data, $('#electric'));
+						    	break;
+					    	case '10':
+						    	partsRender(data, $('#steering'));
+						    	break;
+					    	case '11':
+						    	partsRender(data, $('#underpan'));
+						    	break;
+					    	case '12':
+						    	partsRender(data, $('#sealing'));
+						    	break;
+					    	case '13':
+						    	partsRender(data, $('#interior'));
+						    	break;
+					    }
+				    });
+
+			    });
+			    $('#hot-tab').click(function(){
+					$.ajax({
+					    url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=HOT',
+					    type: 'POST',
+					    dataType: 'json',
+					})
+					.done(function(data){
+						carTplRender(data, $('#hot-car'));
+					})
+					.fail(function(data){
+					})
+		    	})
+		    	$('#low-tab').click(function(){
+					$.ajax({
+					    url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=DSCX',
+					    type: 'POST',
+					    dataType: 'json',
+					})
+					.done(function(data){
+						carTplRender(data, $('#low-car'));
+					})
+		    	});
+		    	$('#ev-tab').click(function(){
+					$.ajax({
+					    url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=CYCX',
+					    type: 'POST',
+					    dataType: 'json',
+					})
+					.done(function(data){
+						carTplRender(data, $('#ev-car'));
+					})
+		    	});
+		    	function carTplRender(data, el){
+			    	for (var i = 0; i < data.response.data.PlaceCars.length; i++) {
+				    	// data.response.data.PlaceCars[i].pic = data.response.data.PlaceCars[i].pics[0];
+				    	// data.response.data.PlaceCars[i].pic = data.response.data.PlaceCars[i].pic_thumbs[0];
+				    	data.response.data.PlaceCars[i].logo = data.response.data.PlaceCars[i].car.brand?data.response.data.PlaceCars[i].car.brand.pic:'';
+			    	}
+				    var carrTpl = '<ul class="list-content">{{#PlaceCars}}<li class="list-item"><div class="detail"><h3 class="title">{{car.name}}</h3><p class="desc">{{car.brief}}</p></div><a href="cardetail.html?id={{car.id}}"><img src="adsPath/{{pic}}"></a>{{#logo}}<div class="car-logo"><img src="brandPath/{{logo}}"></div>{{/logo}}</li>{{/PlaceCars}}</ul>';
+					tplRender(carrTpl, data, el);
+		    	}
+		    	
+		    });
+	    });
+
+	    $('#car-search-btn').click(function(){
+	    	var carText = $('#car-input').val();
+	    	var url = 'carresult.html?carCondition.car_name=' + carText;
+	    	window.open(url);
+	    });
+	    $('#parts-search-btn').click(function(){
+	    	var partsText = $('#parts-input').val();
+	    	var url = 'partsresult.html?partsCondition.name=' + partsText;
+	    	window.open(url);
+	    });
+
+    });
+})
+
+$(document).ready(function(){
+	$.ajax({
+        url: 'ev/require_listByTypeI?require.category.type=1',
+        type: 'POST',
+        dataType: 'json',
+        async: false
+    })
+    .done(function(data){
+    	var needTpl = '<ul>{{#Requires}}<li><a href="purchaseInfo.html?id={{id}}">{{title}}</a></li>{{/Requires}}</ul>';
+		tplRender(needTpl, data, $('#needCarMsg'));
+		$.ajax({
+	        url: 'ev/require_listByTenderI?require.category.type=2',
+	        type: 'POST',
+	        dataType: 'json',
+	        async: false
+	    })
+	    .done(function(data){
+	    	var sliderTpl = '{{#Requires}}<a class="item" href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic_thumb}}"></a>{{/Requires}}';
+			tplRender(sliderTpl, data, $('#slider-sm-2'));
+			$.ajax({
+		        url: 'ev/require_listByTypeI?require.category.type=2',
+		        type: 'POST',
+		        dataType: 'json',
+		        async: false
+		    })
+		    .done(function(data){
+		    	var needTpl = '<ul>{{#Requires}}<li><a href="purchaseInfo.html?id={{id}}">{{title}}</a></li>{{/Requires}}</ul>';
+				tplRender(needTpl, data, $('#needPartsMsg'));
+				$.ajax({
+			        url: 'ev/placeCompanyMutPic_findByAdsUniqueId?ads_unique_id=Q',
+			        type: 'POST',
+			        dataType: 'json',
+			        async: false
+			    })
+			    .done(function(data){
+			       	var companyShowTpl = '<ul class="show-list">{{#PlaceCompanyMutPics}}<li class="show-pics"><h3 class="title">{{company.name}}</h3><div class="pics">{{#pics}}<div class="pic"><a href="company.html?id={{company.id}}"><img src="adsPath/{{.}}"></a></div>{{/pics}}</div></li>{{/PlaceCompanyMutPics}}</ul>';
+						tplRender(companyShowTpl, data, $('#companyShow'));
+						$.ajax({
+					        url: 'ev/placeCompany_findByAdsUniqueId?ads_unique_id=AT01',
+					        type: 'POST',
+					        dataType: 'json',
+					    })
+					    .done(function(data){
+					       	var tpl = '{{#PlaceCompanys}}<a href="company.html?id={{company.id}}"><img src="adsPath/{{pic}}"></a>{{/PlaceCompanys}}';
+							tplRender(tpl, data, $('#companyBar1'));
+							$.ajax({
+						        url: 'ev/placeCompany_findByAdsUniqueId?ads_unique_id=AT02',
+						        type: 'POST',
+						        dataType: 'json',
+						    })
+						    .done(function(data){
+								tplRender(tpl, data, $('#companyBar2'));
+								$.ajax({
+							        url: 'ev/placeCompany_findByAdsUniqueId?ads_unique_id=AT03',
+							        type: 'POST',
+							        dataType: 'json',
+							    })
+							    .done(function(data){
+									tplRender(tpl, data, $('#companyBar3'));
+							    })
+						    })
+					    })
+			    })
+		    })
+	    })
+    });
+
+})
+
+
+function tplRender(tpl, data, el){
+	var data = data.response.data;
+	var content = Mustache.render(tpl, data);
+	el.html(content);
+}
+
+
+
+function partsRender(data, el){
+	for (var i = 0; i < data.response.data.PlacePartss.length; i++) {
+    	// data.response.data.PlacePartss[i].pic = data.response.data.PlacePartss[i].pic_thumbs[0];
+	}
+    var partsTpl = '<ul class="list-content">{{#PlacePartss}}<li class="list-item"><div class="detail">	<h3 class="title">{{parts.name}}</h3><p class="desc">{{{parts.brief}}}</p></div><a href="partsdetail.html?id={{parts.id}}"><img src="adsPath/{{pic}}"></a></li>{{/PlacePartss}}</ul>';
+	tplRender(partsTpl, data, el);
+}
+
+
+function entersearch(id){
+    var event = window.event || arguments.callee.caller.arguments[0];
+    if (event.keyCode == 13 && id === 1) {
+        $('#car-search-btn').trigger('click');
+    } else if (event.keyCode == 13 && id === 2) {
+        $('#parts-search-btn').trigger('click');
+    }
+}
+
+
+
+
+$(function(){
+	$('.owl-lg').owlCarousel({
+		items: 4,
+		autoPlay: true,
+		responsive: false
+	});
+	$('#sliders,#slider-sm-1,#slider-sm-2').owlCarousel({
+		items: 1,
+		autoPlay: true,
+		responsive: false
+	});
+});
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+

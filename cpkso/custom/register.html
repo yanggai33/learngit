@@ -1,0 +1,160 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="favicon.ico" >
+<link rel="Shortcut Icon" href="favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="style/lib/html5.js"></script>
+<script type="text/javascript" src="style/lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="style/lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="te2xt/css" href="style/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<link href="style/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<title>用户注册</title>
+
+</head>
+<body>
+
+<!--_menu 作为公共模版分离出去-->
+<div class="Hui-article-box">
+	<div>
+			
+				<form action="b_emp_signup" method="post" class="form form-horizontal" id="useregister" style="margin-top:150px;">
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名</label>
+						<div class="formControls col-xs-8 col-sm-4">
+							<input type="text" class="input-text" value="" placeholder="" id="full_name" name="emp.name" required>
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>密码</label>
+						<div class="formControls col-xs-8 col-sm-4">
+							<input type="password" class="input-text" placeholder="" id="password" name="emp.password" required>
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码</label>
+						<div class="formControls col-xs-8 col-sm-4">
+							<input type="password" class="input-text" placeholder="" required>
+						</div>
+					</div>
+					<div class="row cl">
+						<div class="col-xs-8 col-sm-9 col-xs-offset-4">
+							<button  id="signup" onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe60e;</i>注册</button>
+						</div>
+					</div>
+				</form>
+		</div>
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="style/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="style/static/h-ui.admin/js/H-ui.admin.page.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript">
+
+$().ready(function() {
+    $("#useregister").validate({
+       rules: {
+         full_name: "required",
+         short_name: "required",
+         industry: "required",
+         company_type: "required",
+         contact: "required",
+         contact_method: "required",
+         contact_qq: "required",
+         short_name: "required",
+         username: {
+           required: true,
+           minlength: 2
+         },
+         password: {
+           required: true,
+           minlength: 5
+         },
+         confirm_password: {
+           required: true,
+           minlength: 5,
+           equalTo: "#password"
+         },
+         email: {
+           required: true,
+           email: true
+         },
+         topic: {
+           required: "#newsletter:checked",
+           minlength: 2
+         },
+         agree: "required"
+       },
+       messages: {
+         firstname: "请输入您的名字",
+         lastname: "请输入您的姓氏",
+         username: {
+           required: "请输入用户名",
+           minlength: "用户名必需由两个字母组成"
+         },
+         password: {
+           required: "请输入密码",
+           minlength: "密码长度不能小于 5 个字母"
+         },
+         confirm_password: {
+           required: "请输入密码",
+           minlength: "密码长度不能小于 5 个字母",
+           equalTo: "两次密码输入不一致"
+         },
+         email: "请输入一个正确的邮箱",
+         agree: "请接受我们的声明",
+         topic: "请选择两个主题"
+       }
+    });
+});
+$('#useregister').submit(function(event){
+	event.preventDefault();
+	var form = $(this);
+	$.ajax({
+		type : 'post',
+		url : form.attr("action"),
+		data: form.serialize(),
+		success : function(data){
+			console.log(data);
+			var res = data.response;
+			if(res.msg.success == true){
+				if (res.data == null) {
+					window.location.href="b-company-list";
+				} else
+					window.location.href=res.data;
+			}else{
+				// alert('操作失败！');
+				if (res.msg.msg != null)
+					alert(res.msg.msg);
+				else
+					alert("操作失败！");
+			}
+		}
+	})
+})
+
+</script>
+</body>
+</html>

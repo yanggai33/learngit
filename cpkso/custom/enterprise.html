@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="style/css/reset.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/css/base.css">
+    <link rel="stylesheet" href="style/css/index.css">
+    <link rel="stylesheet" href="style/css/enterprise.css">
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	!window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="style/js/lib/jquery.page.js"></script>
+	<script type="text/javascript" src="style/js/lib/enter.js"></script>
+	<style>
+		.brief{
+		   display: inline-block;
+           width:600px;/*对宽度的定义,根据情况修改*/
+           height:30px;
+		   overflow: hidden;
+		   white-space: nowrap;
+		   text-overflow: ellipsis;
+		}
+		.paging{
+			text-align: center;
+		}
+		
+		
+	</style>
+	<script>
+	</script>
+	<title>企业库</title>
+</head>
+<body>
+	<header class="header">
+		<div class="header-left">
+			<img src="style/img/search-logo.png" alt="logo">
+		</div>
+		<div class="header-right">
+			<div class="search">
+				<input type="text"   onkeydown="entersearch();" id="enterSearch"  name="companyCondition.name" >
+				<a class="search-btn" href="javascript:;"></a>
+			</div>
+			
+		</div>
+	</header>
+	<nav class="nav-wrapper">
+		<ul class="nav-list">
+			<li ><a href="index.html">首页</a></li>
+			<li><a href="news.html">资讯</a></li>
+			<li><a href="car.html">车型库</a></li>
+			<li><a href="parts.html">配件库</a></li>
+			<li><a href="needmsg.html">供求信息</a></li>
+			<li class="active"><a href="javascript:;">企业库</a></li>
+			<li><a href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
+			<li><a href="http://www.cpkso.cn" target="_blank">在线支付</a></li>
+		</ul>
+	</nav>
+	<div class="main-body">
+		<div class="category"  id="filter">
+			<div class="category-list clearfix"  id="category">
+				<dt class="title">省市：</dt>
+				<a class="choose-all choose-on" href="javascript:;">不限</a>
+				<div class="brand-ident">
+					<ul>
+						<li class="active"><a href="#brandA" data-toggle="enter">A</a></li>
+						<li><a href="#brandB" data-toggle="enter">B</a></li>
+						<li><a href="#brandC" data-toggle="enter">C</a></li>
+						<li><a href="#brandD" data-toggle="enter">D</a></li>
+						<li><a href="#brandE" data-toggle="enter">E</a></li>
+						<li><a href="#brandF" data-toggle="enter">F</a></li>
+						<li><a href="#brandG" data-toggle="enter">G</a></li>
+						<li><a href="#brandH" data-toggle="enter">H</a></li>
+						<li><a href="#brandI" data-toggle="enter">I</a></li>
+						<li><a href="#brandJ" data-toggle="enter">J</a></li>
+						<li><a href="#brandK" data-toggle="enter">K</a></li>
+						<li><a href="#brandL" data-toggle="enter">L</a></li>
+						<li><a href="#brandM" data-toggle="enter">M</a></li>
+						<li><a href="#brandN" data-toggle="enter">N</a></li>
+						<li><a href="#brandO" data-toggle="enter">O</a></li>
+						<li><a href="#brandP" data-toggle="enter">P</a></li>
+						<li><a href="#brandQ" data-toggle="enter">Q</a></li>
+						<li><a href="#brandR" data-toggle="enter">R</a></li>
+						<li><a href="#brandS" data-toggle="enter">S</a></li>
+						<li><a href="#brandT" data-toggle="enter">T</a></li>
+						<li><a href="#brandU" data-toggle="enter">U</a></li>
+						<li><a href="#brandV" data-toggle="enter">V</a></li>
+						<li><a href="#brandW" data-toggle="enter">W</a></li>
+						<li><a href="#brandX" data-toggle="enter">X</a></li>
+						<li><a href="#brandY" data-toggle="enter">Y</a></li>
+						<li><a href="#brandZ" data-toggle="enter">Z</a></li>
+					</ul>
+				</div>
+				<div class="tab-content"  id="tabcontent">
+					<div class="tab-pane  brand-list" id="brandA">
+						<a href="javascript:;" data-id="province" data-value="安徽">安徽</a>
+						<a href="javascript:;" data-id="province" data-value="澳门">澳门</a>
+					</div>
+					
+					<div class="tab-pane brand-list" id="brandB">
+						<a href="javascript:;" data-id="province" data-value="北京">北京</a>
+						
+					</div>
+					<div class="tab-pane brand-list" id="brandC">
+						<a href="javascript:;" data-id="province" data-value="重庆">重庆</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandD">
+						
+					</div>
+					<div class="tab-pane brand-list" id="brandE">
+						
+					</div>
+					<div class="tab-pane brand-list" id="brandF">
+						<a href="javascript:;" data-id="province" data-value="福建">福建</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandG">
+						<a href="javascript:;" data-id="province" data-value="广东">广东</a>
+						<a href="javascript:;" data-id="province" data-value="广西">广西</a>
+						<a href="javascript:;" data-id="province" data-value="贵州">贵州</a>
+						<a href="javascript:;" data-id="province" data-value="甘肃">甘肃</a>
+					</div>
+					<div class="tab-pane brand-list active" id="brandH">
+						<a href="javascript:;" data-id="province" data-value="河南">河南</a>
+						<a href="javascript:;" data-id="province" data-value="河北">河北</a>
+						<a href="javascript:;" data-id="province" data-value="黑龙江">黑龙江</a>
+						<a href="javascript:;" data-id="province" data-value="海南">海南</a>
+						<a href="javascript:;" data-id="province" data-value="湖南">湖南</a>
+						<a href="javascript:;" data-id="province" data-value="湖北">湖北</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandI">
+						
+					</div>
+					<div class="tab-pane brand-list" id="brandJ">
+						<a href="javascript:;" data-id="province" data-value="江西">江西</a>
+						<a href="javascript:;" data-id="province" data-value="江苏">江苏</a>
+						<a href="javascript:;" data-id="province" data-value="吉林">吉林</a>
+						
+					</div>
+					<div class="tab-pane brand-list" id="brandK">
+						
+					</div>
+					<div class="tab-pane brand-list" id="brandL">
+						<a href="javascript:;" data-id="province" data-value="辽宁">辽宁</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandM">
+					</div>
+					<div class="tab-pane brand-list" id="brandN">
+						<a href="javascript:;" data-id="province" data-value="内蒙古">内蒙古</a>
+						<a href="javascript:;" data-id="province" data-value="宁夏">宁夏</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandO">
+					</div>
+					<div class="tab-pane brand-list" id="brandP">
+					</div>
+					<div class="tab-pane brand-list" id="brandQ">
+						<a href="javascript:;" data-id="province" data-value="青海">青海</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandR">
+					</div>
+					<div class="tab-pane brand-list" id="brandS">
+						<a href="javascript:;" data-id="province" data-value="山东">山东</a>
+						<a href="javascript:;" data-id="province" data-value="山西">山西</a>
+						<a href="javascript:;" data-id="province" data-value="陕西">陕西</a>
+						<a href="javascript:;" data-id="province" data-value="四川">四川</a>
+						<a href="javascript:;" data-id="province" data-value="上海">上海</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandT">
+						<a href="javascript:;" data-id="province" data-value="台湾">台湾</a>
+						<a href="javascript:;" data-id="province" data-value="天津">天津</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandU">
+					</div>
+					<div class="tab-pane brand-list" id="brandV">
+					</div>
+					<div class="tab-pane brand-list" id="brandW">
+					</div>
+					<div class="tab-pane brand-list" id="brandX">
+						<a href="javascript:;" data-id="province" data-value="新疆">新疆</a>
+						<a href="javascript:;" data-id="province" data-value="西藏">西藏</a>
+						<a href="javascript:;" data-id="province" data-value="香港">香港</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandY">
+						<a href="javascript:;" data-id="province" data-value="云南">云南</a>
+					</div>
+					<div class="tab-pane brand-list" id="brandZ">
+						<a href="javascript:;" data-id="province" data-value="浙江">浙江</a>
+					</div>
+				</div>
+			</div>
+			<dl class="category-list clearfix">
+				<dt class="title">分类：</dt>
+				<dd class="category-item">
+					<a class="choose-all  choose-on" href="javascript:;">不限</a>
+					<a href="javascript:;" data-id="category_id" data-value="1">整车</a>
+					<a href="javascript:;" data-id="category_id"  data-value="2">配件</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="content-container car-search-result">
+			<div class="content-left">
+	            <table  id="Companytable">
+	            </table>
+				<div class="paging">
+					<div class="pagination"></div>
+				</div>
+			</div>
+			<div class="content-right">
+			</div>
+		</div>
+		<div class="cut-line"></div>
+	</div>
+	<footer class="footer">
+		<div class="footer-link">
+			<a href="aboutus.html?id=aboutus">关于我们</a>
+            <a href="aboutus.html?id=contactus">联系我们</a>
+            <a href="aboutus.html?id=joinus">商务合作</a>
+            <a href="aboutus.html?id=terms">服务条款</a>
+            <a href="aboutus.html?id=sitemap">网站地图</a>
+            <a href="http://www.cpkso.cn" target="_blank">在线付款</a>
+		</div>
+		<div class="site-info">
+			<p class="footer-copyright">洛阳焦点信息科技有限公司版权所有</p>
+			<p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
+			<p class="tel">电话：0379-65171155</p>
+		</div>
+	</footer>
+	<!--<div class="box">
+	<div class="box-title">企业库-认证详情<img src="style/img/close.png" class="cButton"></div>
+	
+	
+		
+		<table>
+			<caption class="baseInfo">基础信息</caption>
+			<tr>
+				<td>公司名称</td>
+				<td>金山网络科技有限公司</td>
+			</tr>
+			<tr>
+				<td>所属行业</td>
+				<td>软件开发</td>
+			</tr>
+			<tr>
+				<td>产品品牌</td>
+				<td>金山</td>
+			</tr>
+			<tr>
+				<td>联系人</td>
+				<td>李云迪</td>
+			</tr>
+			<tr>
+				<td>公司地址</td>
+				<td>北京市东城区</td>
+			</tr>
+			<tr>
+				<td>公司简介</td>
+				<td>金山网络科技有限公司成立于2010年11月，总部位于北京，其前身是金山安全软件有限公司和
+				可牛科技有限公司。两家公司于2010年10月完成合并整合，成立了全新的金山网络科技有限公司成立于2010年11月，总部位于北京，其前身是金山安全软件
+				有限公司和可牛科技有限公司，两家公司于2010年10月完成合并整合。</td>
+			</tr>
+			
+				<tr><td class="certifyInfo" colspan="2">认证信息</td></tr>
+				
+			
+			<tr>
+				<td>企业名称</td>
+				<td>金山网络科技有限公司</td>
+			</tr>
+			<tr>
+				<td>单位类型</td>
+				<td>民营企业</td>
+			</tr>
+			<tr>
+				<td>企业法人</td>
+				<td>李云迪</td>
+			</tr>
+			<tr>
+				<td>注册号</td>
+				<td>8561234698****0123</td>
+			</tr>
+			<tr>
+				<td>注册资金</td>
+				<td>5000万人民币</td>
+			</tr>
+			<tr>
+				<td>所在地</td>
+				<td>北京市</td>
+			</tr>
+			<tr>
+				<td>营业期限</td>
+				<td>2016年6月31日至2020年6月31日</td>
+			</tr>
+			<tr>
+				<td>经营范围</td>
+				<td>软件开发、互联网安全、软件销售</td>
+			</tr>
+			<tr>
+				<td class="beian">工商局备案信息</td>
+				<td><a>点击查看备案信息</a></td>
+			</tr>
+		</table>
+		
+	
+</div>
+<div class="cover"></div>-->
+<script type="text/javascript" src="style/js/lib/mustache.min.js"></script>
+<script>
+	
+   $(document).ready(function(){
+   	
+// 	  $('.search .search-btn').click(function(){
+//			var search=$('#enterSearch').val();
+//		})
+
+  
+  
+
+    $.ajax({
+        url: 'ev/company_list',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+       tplRender(data);
+       $("#filter .category-item a").click(function () {
+            $(this).parents("dl").children("dd").each(function () {
+				$('a',this).removeClass("choose-on");
+            });
+
+             $(this).addClass('choose-on');
+			var results = RetSelecteds();
+			renderPage(results);
+        });
+        $('#category .choose-all').click(function() {
+        	$("#tabcontent a").each(function(){
+        		$(this).removeClass('choose-on');
+        	})
+			var results = RetSelecteds();
+			renderPage(results);
+        	$(this).addClass('choose-on');
+        });
+
+        $("#filter .brand-list a").click(function () {
+            $('#category').children("a").each(function () {
+				$('#category a').removeClass("choose-on");
+            });
+
+            $(this).addClass('choose-on');
+			var results = RetSelecteds();
+			renderPage(results);
+        });
+        function renderPage(results){
+        	var url = 'ev/company_search?' + results;
+			$.ajax({
+		        url: url,
+		        type: 'POST',
+		        dataType: 'json',
+		    })
+		    .done(function(data){
+		    	tplRender(data);  
+//		    	function SetTableColor() {
+//			        var tbl = document.getElementById("Companytable");
+//			        var trs = tbl.getElementsByTagName("tr");
+//			        for (var i = 0; i < trs.length; i++) {
+//			            var j = i + 1;
+//						if (j % 2 == 0) { //偶数行
+//						trs[i].style.background = "yellow";
+//						}
+//						else {
+//						trs[i].style.background = "blue";
+//						}
+//					}
+//				}
+		    });
+        }
+        function RetSelecteds() {
+	        var result = "";
+	        $("#filter a[class='choose-on']").each(function () {
+	            result += 'companyCondition.' + $(this).attr('data-id') + '=' + $(this).attr('data-value') + '&';
+	        });
+	        return result;
+	    };
+            
+		
+        /*弹出窗口*/
+			$('.certify  .popCertify').on('click',function(){
+				$('.box').show();
+				$('.cover').show();
+			});
+			$('.box .cButton').on('click',function(){
+				$('.box').hide();
+				$('.cover').hide();
+			})
+    })
+     
+})
+   function tplRender(data){
+                var companyData = data.response.data;
+                for(var i=0;i<companyData.Companys.length;i++){
+                	var logo=companyData.Companys[i].logo;
+                	var types=companyData.Companys[i].company_ct;
+              	    var brief=companyData.Companys[i].brief; 
+//            	       console.log(brief===null);
+//            	    	if(brief==null){
+//            	    		companyData.Companys[i].brief=0;
+//            	    	}else{
+//            	    		companyData.Companys[i].brief=brief;
+//            	    	}
+//          	        console.log(brief.match(/<p>[^<]*?<\/p>/).length);
+                	if(types=="0"){
+                		companyData.Companys[i].company_ct='生产型';
+                	}else if(types=="1"){
+                		companyData.Companys[i].company_ct='销售型';
+                	}
+                	if(logo==null){
+                		companyData.Companys[i].logo=null;
+                	}else if(logo.indexOf('null')==-1){
+                		companyData.Companys[i].logo=logo;
+                	}else{
+                		companyData.Companys[i].logo=null;
+                	}
+                	
+                }
+                var resTpl = '{{#Companys}}<tr class="inforow"><td width="100px"><div class="jinshanlogo"><a href="company.html?id={{id}}"><img src="{{#logo}}uploadPath/{{logo}}{{/logo}}{{^logo}}style/image1/logo.png{{/logo}}"  style="width:90px;height:90px;"></a></div></td><td width="900px" style="margin:0 20px;" class="content"><p><a href="company.html?id={{id}}"><b>{{name}}</b></a></p><p><span><b>企业类型：</b>{{company_ct}}</span><span><b>注册地址：</b>{{province}}</span><span><b>联系人：</b>{{charge}}</span></p><p class="brief"><span><b>企业简介：</b></span>{{{brief}}}</p></td><td class="certify"><div><a href="company.html?id={{id}}" target="_blank">企业官网</a></div></td></tr>{{/Companys}}';
+                var companyHtml = Mustache.render(resTpl, companyData);
+                var company= $('#Companytable');
+                company.html( companyHtml );
+				var pageCount = data.response.data.Company_condition.maxPageNo;
+				var pageNo = data.response.data.Company_condition.pageNo;
+			    var currentPage = pageNo > pageCount ? pageCount : pageNo;
+                $('.pagination').Mpage({
+	            pageCount: pageCount, /*resultData.condition.pageCount*/
+	            current: currentPage,  /*resultData.condition.currentPage*/
+		        mclick: function(p){
+		           }
+		        });
+		        $('.pagination .prevPage').bind('click',function(){
+					$.ajax({
+						type:"post",
+						url:"ev/company_prevPage",
+						dataType:'json',
+						cache:false
+					})
+				    .done(function(data){
+				    	tplRender(data);
+				    })
+				    .fail(function(data){
+				    });
+				});
+				$('.pagination .nextPage').bind('click',function(){
+					$.ajax({
+						type:"post",
+						url:"ev/company_nextPage",
+						dataType:'json',
+						cache:false
+					})
+				    .done(function(data){
+				    	tplRender(data);
+				    })
+				    .fail(function(data){
+				    });
+				});
+				$('.pagination .pageNumber').bind('click',function(){
+					var num=$(this).text();
+					$.ajax({
+						type:"post",
+						url:"ev/company_skipPage?companyCondition.pageNo="+num,
+						dataType:'json',
+						cache:false
+					})
+				    .done(function(data){
+				    	tplRender(data);
+				    })
+				    .fail(function(data){
+				    });
+				});
+			    $('.page-submit').click(function(){
+			    	var inputVal = $(this).siblings('.input-mini').val();
+			    	var num = +inputVal > pageCount ? pageCount : +inputVal;
+			    	if (typeof num !== 'number') {
+			    		return false
+			    	}
+			    	var url = 'ev/company_skipPage?companyCondition.pageNo=' + num;
+					$.ajax({
+				        url: url,
+				        type: 'POST',
+				        dataType: 'json',
+				    })
+				    .done(function(data){
+				    	tplRender(data);
+				    })
+				})
+;            }
+   
+   $('.search-btn').click(function(){
+    	var inputText = $('#enterSearch').val();
+    	var Url = 'ev/company_search?companyCondition.name=' + inputText;
+    	$.ajax({
+    		url:Url,
+    		type:'POST',
+    		dataType:'json'
+    	}).done(function(data){
+    		tplRender(data);
+    		
+    	})
+    });
+	function entersearch(){
+        var event = window.event || arguments.callee.caller.arguments[0];
+         if (event.keyCode == 13) {
+             $('.search-btn').trigger('click');
+        }
+    }
+</script>
+<script>	
+$('.brand-ident>a').click(function(){
+	$('.brand-ident .brand-list-wrapper').addClass('hn-hide').siblings().removeClass('hn-hide');
+})
+</script>
+</body>
+</html>

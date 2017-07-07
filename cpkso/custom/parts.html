@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="style/css/reset.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/css/base.css">
+    <link rel="stylesheet" href="style/css/index.css">
+    <link rel="stylesheet" href="style/css/parts.css">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/owl-carousel/1.32/owl.carousel.min.css">
+	<title>配件库</title>
+</head>
+<body>
+	<header class="header">
+		<div class="header-left">
+			<img src="style/img/search-logo.png" alt="logo">
+		</div>
+		<div class="header-right">
+			<div class="search">
+				<input onkeydown="entersearch();" class="search-input" type="text" placeholder="">
+				<a class="search-btn" href="javascript:;"></a>
+			</div>
+		</div>
+	</header>
+	<nav class="nav-wrapper">
+		<ul class="nav-list">
+			<li><a href="index.html">首页</a></li>
+			<li><a href="news.html">资讯</a></li>
+			<li><a href="car.html">车型库</a></li>
+			<li class="active"><a href="javascript:;">配件库</a></li>
+			<li><a href="needmsg.html">供求信息</a></li>
+			<li><a href="enterprise.html">企业库</a></li>
+			<li><a href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
+			<li><a href="http://www.cpkso.cn" target="_blank">在线支付</a></li>
+		</ul>
+	</nav>
+	<div class="main-body">
+		<div class="header-wrapper" style="height:300px;">
+			<div class="header-banner"  id="partsbanner">
+			</div>
+			<div class="site-nav">
+				<ul id="site-category-list">
+					<li class="category-item">
+						<a href="partsresult.html?category_id=6" class="title">
+							标准件
+							<!-- <i class="iconfont">&#xe612;</i> -->
+						</a>
+						<div class="children clearfix">
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=6&ct2=拉铆螺母" class="link">
+										<span class="text">拉铆螺母</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=6&ct2=U型丝" class="link">
+										<span class="text">U型丝</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=6&ct2=车门合页" class="link">
+										<span class="text">车门合页</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=6&ct2=螺旋式插销扎带" class="link">
+										<span class="text">螺旋式插销扎带</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=6&ct2=车标车牌" class="link">
+										<span class="text">车标车牌</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=6&ct2=装饰条" class="link">
+										<span class="text">装饰条</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=6&ct2=其他6" class="link">
+										<span class="text">其他</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="category-item">
+						<a href="partsresult.html?category_id=7" class="title">
+							辅助件
+							<!-- <i class="iconfont">&#xe612;</i> -->
+						</a>
+						<div class="children clearfix">
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=刹车油" class="link">
+										<span class="text">刹车油</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=齿轮油" class="link">
+										<span class="text">齿轮油</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=充电桩" class="link">
+										<span class="text">充电桩</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=安装垫片" class="link">
+										<span class="text">安装垫片</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=比例阀" class="link">
+										<span class="text">比例阀</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=地毯毛垫" class="link">
+										<span class="text">地毯毛垫</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=胶套支架" class="link">
+										<span class="text">胶套支架</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=千斤顶" class="link">
+										<span class="text">千斤顶</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=安装卡扣" class="link">
+										<span class="text">安装卡扣</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=7&ct2=其他7" class="link">
+										<span class="text">其他</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="category-item">
+						<a href="partsresult.html?category_id=8" class="title">
+							车身系统
+							<!-- <i class="iconfont">&#xe612;</i> -->
+						</a>
+						<div class="children clearfix">
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=桥箱" class="link">
+										<span class="text">桥箱</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=车架" class="link">
+										<span class="text">车架</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=门框" class="link">
+										<span class="text">门框</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=车门锁" class="link">
+										<span class="text">车门锁</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=倒车镜后视镜" class="link">
+										<span class="text">倒车镜后视镜</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=全车玻璃" class="link">
+										<span class="text">全车玻璃</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=挂档器" class="link">
+										<span class="text">挂档器</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=护罩" class="link">
+										<span class="text">护罩</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=脚踏板" class="link">
+										<span class="text">脚踏板</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=安全带" class="link">
+										<span class="text">安全带</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=保险杠" class="link">
+										<span class="text">保险杠</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=车门配件" class="link">
+										<span class="text">车门配件</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=护板" class="link">
+										<span class="text">护板</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=玻璃组件" class="link">
+										<span class="text">玻璃组件</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=驻车把手" class="link">
+										<span class="text">驻车把手</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=遮阳板" class="link">
+										<span class="text">遮阳板</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=8&ct2=其他8" class="link">
+										<span class="text">其他</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="category-item">
+						<a href="partsresult.html?category_id=9" class="title">
+							电气系统
+							<!-- <i class="iconfont">&#xe612;</i> -->
+						</a>
+						<div class="children clearfix">
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=电池" class="link">
+										<span class="text">电池</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=电机" class="link">
+										<span class="text">电机</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=控制器" class="link">
+										<span class="text">控制器</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=灯光系统" class="link">
+										<span class="text">灯光系统</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=雨刮" class="link">
+										<span class="text">雨刮</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=电瓶连线" class="link">
+										<span class="text">电瓶连线</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=音响喇叭" class="link">
+										<span class="text">音响喇叭</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=暖风机" class="link">
+										<span class="text">暖风机</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=电容" class="link">
+										<span class="text">电容</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=增程器" class="link">
+										<span class="text">增程器</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=空调" class="link">
+										<span class="text">空调</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=天线" class="link">
+										<span class="text">天线</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=倒车影像" class="link">
+										<span class="text">倒车影像</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=车窗电动升降" class="link">
+										<span class="text">车窗电动升降</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=电源开关" class="link">
+										<span class="text">电源开关</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=遥控钥匙" class="link">
+										<span class="text">遥控钥匙</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=车载仪表" class="link">
+										<span class="text">车载仪表</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=DC转换器" class="link">
+										<span class="text">DC转换器</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=9&ct2=其他9" class="link">
+										<span class="text">其他</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="category-item">
+						<a href="partsresult.html?category_id=10" class="title">
+							转向系统
+							<!-- <i class="iconfont">&#xe612;</i> -->
+						</a>
+						<div class="children clearfix">
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=10&ct2=方向盘" class="link">
+										<span class="text">方向盘</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=10&ct2=方向机总成" class="link">
+										<span class="text">方向机总成</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=10&ct2=组合开关" class="link">
+										<span class="text">组合开关</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=10&ct2=变速箱" class="link">
+										<span class="text">变速箱</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=10&ct2=转向器" class="link">
+										<span class="text">转向器</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=10&ct2=其他10" class="link">
+										<span class="text">其他</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="category-item">
+						<a href="partsresult.html?category_id=11" class="title">
+							底盘系统
+							<!-- <i class="iconfont">&#xe612;</i> -->
+						</a>
+						<div class="children clearfix">
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=后桥" class="link">
+										<span class="text">驱动桥</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=轮胎" class="link">
+										<span class="text">轮胎</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=轮毂" class="link">
+										<span class="text">轮毂</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=制动系统" class="link">
+										<span class="text">制动系统</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=刹车系统" class="link">
+										<span class="text">刹车系统</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=倒车镜后视镜" class="link">
+										<span class="text">倒车镜后视镜</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=减震系统" class="link">
+										<span class="text">减震系统</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=点火开关" class="link">
+										<span class="text">点火开关</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=加速器" class="link">
+										<span class="text">加速器</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=车用轴承" class="link">
+										<span class="text">车用轴承</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=交流电机" class="link">
+										<span class="text">交流电机</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=电机控制器" class="link">
+										<span class="text">电机控制器</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=排气管" class="link">
+										<span class="text">排气管</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=平衡杆" class="link">
+										<span class="text">平衡杆</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=洗涤器" class="link">
+										<span class="text">洗涤器</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=11&ct2=其他11" class="link">
+										<span class="text">其他</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="category-item">
+						<a href="partsresult.html?category_id=12" class="title">
+							密封系统
+							<!-- <i class="iconfont">&#xe612;</i> -->
+						</a>
+						<div class="children clearfix">
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=12&ct2=线套" class="link">
+										<span class="text">线套</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=12&ct2=中央电器盒" class="link">
+										<span class="text">中央电器盒</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=12&ct2=玻璃扣" class="link">
+										<span class="text">玻璃扣</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=12&ct2=后门铰链密封件" class="link">
+										<span class="text">后门铰链密封件</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=12&ct2=胶套" class="link">
+										<span class="text">胶套</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=12&ct2=胶条" class="link">
+										<span class="text">胶条</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=12&ct2=其他12" class="link">
+										<span class="text">其他</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="category-item">
+						<a href="partsresult.html?category_id=13" class="title">
+							内饰系统
+							<!-- <i class="iconfont">&#xe612;</i> -->
+						</a>
+						<div class="children clearfix">
+							<ul class="children-list-col">
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=13&ct2=座椅" class="link">
+										<span class="text">座椅</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=13&ct2=内视镜" class="link">
+										<span class="text">内视镜</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=13&ct2=内拉手" class="link">
+										<span class="text">内拉手</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=13&ct2=反光贴" class="link">
+										<span class="text">反光贴</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=13&ct2=铝板" class="link">
+										<span class="text">铝板</span>
+									</a>
+								</li>
+								<li class="star-goods">
+									<a href="partsresult.html?category_id=13&ct2=其他13" class="link">
+										<span class="text">其他</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="parts-category">
+			<div class="product-container" style="height: 572px;">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#standard" data-toggle="tab">标准件</a>
+					</li>
+					<li>
+						<a class="part-tab" data-id="7" href="#auxiliary" data-toggle="tab">辅助件</a>
+					</li>
+					<li>
+						<a class="part-tab" data-id="8" href="#car-body" data-toggle="tab">车身系统</a>
+					</li>
+					<li>
+						<a class="part-tab" data-id="9" href="#electric" data-toggle="tab">电气系统</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="standard">
+						<div class="content-container">
+							<div id="standard-left" class="content-left">
+							</div>
+							<div id="standard-right" class="content-right">
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="auxiliary">
+						<div class="content-container">
+							<div id="auxiliary-left" class="content-left">
+							</div>
+							<div id="auxiliary-right" class="content-right">
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="car-body">
+						<div class="content-container">
+							<div id="car-body-left" class="content-left">
+							</div>
+							<div id="car-body-right" class="content-right">
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="electric">
+						<div class="content-container">
+							<div id="electric-left" class="content-left">
+							</div>
+							<div id="electric-right" class="content-right">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+		<div class="show-bar"  id="partsad1">
+		</div>
+		<div class="parts-category">
+			<div class="product-container" style="height: 572px;">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#steering" data-toggle="tab">转向系统</a>
+					</li>
+					<li>
+						<a class="part-tab" data-id="11" href="#underpan" data-toggle="tab">底盘系统</a>
+					</li>
+					<li>
+						<a class="part-tab" data-id="12" href="#sealing" data-toggle="tab">密封系统</a>
+					</li>
+					<li>
+						<a class="part-tab" data-id="13" href="#interior" data-toggle="tab">内饰系统</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="steering">
+						<div class="content-container">
+							<div id="steering-left" class="content-left">
+							</div>
+							<div id="steering-right" class="content-right">
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="underpan">
+						<div class="content-container">
+							<div id="underpan-left" class="content-left">
+							</div>
+							<div id="underpan-right" class="content-right">
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="sealing">
+						<div class="content-container">
+							<div id="sealing-left" class="content-left">
+							</div>
+							<div id="sealing-right" class="content-right">
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="interior">
+						<div class="content-container">
+							<div id="interior-left" class="content-left">
+							</div>
+							<div id="interior-right" class="content-right">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+		<div id="guess-you-like" class="guess-you-like product-container">
+		</div>
+		<div class="show-bar"  id="partsad2">
+		</div>
+		<div class="cut-line"></div>
+	</div>
+	<footer class="footer">
+		<div class="footer-link">
+			<a href="aboutus.html?id=aboutus">关于我们</a>
+            <a href="aboutus.html?id=contactus">联系我们</a>
+            <a href="aboutus.html?id=joinus">商务合作</a>
+            <a href="aboutus.html?id=terms">服务条款</a>
+            <a href="aboutus.html?id=sitemap">网站地图</a>
+            <a href="http://www.cpkso.cn" target="_blank">在线付款</a>
+		</div>
+		<div class="site-info">
+			<p class="footer-copyright">洛阳焦点信息科技有限公司版权所有</p>
+			<p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
+			<p class="tel">电话：0379-65171155</p>
+		</div>
+	</footer>
+	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		!window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/owl-carousel/1.32/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="style/js/lib/mustache.min.js"></script> 
+    <script type="text/javascript">
+    </script>
+<script type="text/javascript">
+
+
+
+
+
+
+//配件库导航栏下方banner
+$(document).ready(function(){
+	$.ajax({
+        url: 'ev/placeParts_findByAdsUniqueId?ads_unique_id=P01',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+       	var tpl = '{{#PlacePartss}}<a href="partsdetail.html?id={{parts.id}}"><img src="adsPath/{{pic}}"></a>{{/PlacePartss}}';
+        tplRender(tpl, data, $('#partsbanner'))
+    });
+})
+
+//配件通栏广告位
+$(document).ready(function(){
+	$.ajax({
+        url: 'ev/placeCompany_findByAdsUniqueId?ads_unique_id=PT01',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+       	var tpl = '{{#PlaceCompanys}}<a href="company.html?id={{company.id}}"><img src="adsPath/{{pic}}"></a>{{/PlaceCompanys}}';
+       	tplRender(tpl, data, $('#partsad1'));
+		$.ajax({
+	        url: 'ev/placeCompany_findByAdsUniqueId?ads_unique_id=PT02',
+	        type: 'POST',
+	        dataType: 'json',
+	    })
+	    .done(function(data){
+	       	tplRender(tpl, data, $('#partsad2'));
+	    });
+    });
+})
+
+
+$(function(){
+	$.ajax({
+        url: 'ev/parts_hotsP?category_id=6',
+        type: 'POST',
+        dataType: 'json',
+    })
+    .done(function(data){
+       	leftRender(data, $('#standard-left'));
+		$.ajax({
+	        url: 'ev/placeParts_findByAdsUniqueId?ads_unique_id=P02',
+	        type: 'POST',
+	        dataType: 'json',
+	    })
+	    .done(function(data){
+	    		data.response.data.PlacePartss = data.response.data.PlacePartss[0];
+	       	rightRender(data, $('#standard-right'));
+			$.ajax({
+		        url: 'ev/parts_hotsP?category_id=10',
+		        type: 'POST',
+		        dataType: 'json',
+		    })
+		    .done(function(data){
+		       	leftRender(data, $('#steering-left'));
+				$.ajax({
+			        url: 'ev/placeParts_findByAdsUniqueId?ads_unique_id=P02',
+			        type: 'POST',
+			        dataType: 'json',
+			    })
+			    .done(function(data){
+			    		data.response.data.PlacePartss = data.response.data.PlacePartss[4];
+			       	rightRender(data, $('#steering-right'));
+			       	$('.part-tab').click(function(){
+				    	var id = $(this).attr('data-id');
+				    	//var sideId = id-4;
+				    	var partUrl = 'ev/parts_hotsP?category_id=' + id;
+				    	var sideUrl = 'ev/placeParts_findByAdsUniqueId?ads_unique_id=P02';
+						$.ajax({
+					        url: partUrl,
+					        type: 'POST',
+					        dataType: 'json',
+					    })
+					    .done(function(data){
+						    switch(id){
+						    	case '8':
+							    	leftRender(data, $('#car-body-left'));
+									$.ajax({
+								        url: sideUrl,
+								        type: 'POST',
+								        dataType: 'json',
+								    })
+								    .done(function(data){
+								    		data.response.data.PlacePartss = data.response.data.PlacePartss[1];
+								       	rightRender(data, $('#car-body-right'));
+								    });
+							    	break;
+						    	case '11':
+							    	leftRender(data, $('#underpan-left'));
+									$.ajax({
+								        url: sideUrl,
+								        type: 'POST',
+								        dataType: 'json',
+								    })
+								    .done(function(data){
+								    		data.response.data.PlacePartss = data.response.data.PlacePartss[2];
+								       	rightRender(data, $('#underpan-right'));
+								    });
+							    	break;
+						    	case '9':
+							    	leftRender(data, $('#electric-left'));
+									$.ajax({
+								        url: sideUrl,
+								        type: 'POST',
+								        dataType: 'json',
+								    })
+								    .done(function(data){
+								    		data.response.data.PlacePartss = data.response.data.PlacePartss[3];
+								       	rightRender(data, $('#electric-right'));
+								    });
+							    	break;
+						    	case '7':
+							    	leftRender(data, $('#auxiliary-left'));
+									$.ajax({
+								        url: sideUrl,
+								        type: 'POST',
+								        dataType: 'json',
+								    })
+								    .done(function(data){
+								    		data.response.data.PlacePartss = data.response.data.PlacePartss[5];
+								       	rightRender(data, $('#auxiliary-right'));
+								    });
+							    	break;
+						    	case '12':
+							    	leftRender(data, $('#sealing-left'));
+									$.ajax({
+								        url: sideUrl,
+								        type: 'POST',
+								        dataType: 'json',
+								    })
+								    .done(function(data){
+								    		data.response.data.PlacePartss = data.response.data.PlacePartss[6];
+								       	rightRender(data, $('#sealing-right'));
+								    });
+							    	break;
+						    	case '13':
+							    	leftRender(data, $('#interior-left'));
+									$.ajax({
+								        url: sideUrl,
+								        type: 'POST',
+								        dataType: 'json',
+								    })
+								    .done(function(data){
+								    		data.response.data.PlacePartss = data.response.data.PlacePartss[7];
+								       	rightRender(data, $('#interior-right'));
+								    });
+							    	break;
+							};
+					    });
+			       	});
+			    });
+		    });
+	    });
+    });
+    function leftRender(data, el){
+		for (var i = 0; i < data.response.data.Partss.length; i++) {
+	    	data.response.data.Partss[i].pic = data.response.data.Partss[i].pic_thumbs[0];
+		}
+       	var leftTpl = '<ul class="list-content">{{#Partss}}<li class="list-item"><div class="figure"><a href="partsdetail.html?id={{id}}"><img src="uploadPath/{{pic}}"></a></div><div class="detail"><a class="desc" href="partsdetail.html?id={{id}}">{{name}}</a><a href="partsdetail.html?id={{id}}" class="company-name">{{company.name}}</a></div></li>{{/Partss}}</ul>';
+       	tplRender(leftTpl, data, el);
+    };
+    function rightRender(data, el){
+       	var rightTpl = '{{#PlacePartss}}<a class="sidebar-show" href="partsdetail.html?id={{parts.id}}"><img src="adsPath/{{pic}}"><p>查看更多</p></a>{{/PlacePartss}}';
+       	tplRender(rightTpl, data, el);
+    }
+})
+
+
+
+
+//猜你喜欢
+$(document).ready(function(){
+	 $.ajax({
+        url: 'ev/placeParts_findByAdsUniqueId?ads_unique_id=P',
+        type: 'POST',
+        dataType: 'json',
+        async: false
+    })
+    .done(function(data){
+    	//for (var i = 0; i < data.response.data.PlacePartss.length; i++) {
+	    //	data.response.data.PlacePartss[i].pic = data.response.data.PlacePartss[i].parts.pic_thumbs[0];
+    	//}
+       	var tpl = '<h3 class="product-list-title">猜你喜欢</h3><ul id="owl-md" class="owl-carousel list-content">{{#PlacePartss}}<li class="list-item"><div class="figure"><a href="partsdetail.html?id={{parts.id}}"><img src="adsPath/{{pic}}"></a></div><div class="detail"><a class="desc" href="partsdetail.html?id={{parts.id}}">{{parts.name}}</a><a href="company.html?id={{parts.company.id}}" class="company-name">{{parts.company.name}}</a></div></li>{{/PlacePartss}}</ul>';
+		tplRender(tpl, data, $('#guess-you-like'));
+    });
+	$('#owl-md').owlCarousel({
+		items: 5,
+		navigation: true,
+		navigationText: ["",""],
+		responsive: false
+	});
+})
+
+$(function(){
+    $('.search-btn').click(function(){
+    	var inputText = $('.search-input').val();
+    	var url = 'partsresult.html?partsCondition.name=' + inputText;
+    	window.location.assign(url);
+    });
+})
+
+
+
+function entersearch(){
+    var event = window.event || arguments.callee.caller.arguments[0];
+    if (event.keyCode == 13) {
+        $('.search-btn').trigger('click');
+    }
+}
+
+
+
+function tplRender(tpl, data, el){
+	var data = data.response.data;
+	var content = Mustache.render(tpl, data);
+	el.html(content);
+}
+
+</script>
+</body>
+</html>
