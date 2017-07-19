@@ -151,13 +151,14 @@
 					<table class="table table-border table-bordered table-bg table-hover table-sort">
 						<thead>
 							<tr class="text-c">
-								<th width="50"><input name="" type="checkbox" value="">选择</th>
-								<th width="50">编号</th>
+								<th width="30"><input name="" type="checkbox" value="">选择</th>
+								<th width="40">编号</th>
 								<th width="50">用户组</th>
-								<th width="200">企业全称</th>
-								<th width="50">点击量</th>
-								<th width="50">审核</th>
-								<th width="10">操作</th>
+								<th width="140">企业全称</th>
+								<th width="30">点击量</th>
+								<th width="30">付费</th>
+								<th width="30">审核</th>
+								<th width="150">操作</th>
 							</tr>
 						</thead>
 						<tbody  id="company-list">
@@ -276,14 +277,15 @@ $(document).ready(function(){
     });
     function tplRender(data){
         var companyData = data.response.data;
-        var companyListTpl = '{{#Companys}}<tr class="text-c va-m"><td><input name="" type="checkbox" value=""></td><td>{{id}}</td><td>免费用户</td><td><a href="">{{name}}</a></td><td>{{hit}}</td><td class="td-status"><a data-id="{{id}}" class="btn {{^valid}}btn-danger{{/valid}} {{#valid}}btn-primary{{/valid}}">{{^valid}}否{{/valid}}{{#valid}}是{{/valid}}</a></td><td class="td-manage"><a class="btn btn-primary radius ml-5 mt-5" href="b-company-news?id={{id}}" title="新闻">新闻</a><a class="btn btn-primary radius ml-5 mt-5" href="b-company-modify?company.id={{id}}" title="编辑">编辑</a><a class="btn btn-primary radius ml-5 mt-5" href="b-company-modifylogo?id={{id}}" title="修改logo">修改logo</a><a class="btn btn-primary radius ml-5 mt-5" href="b-company-modify-mainpic?id={{id}}" title="修改主图">修改主图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-company-modify-briefpic?id={{id}}" title="修改简介图">修改简介图</a><a class="btn btn-danger radius ml-5 mt-5 del" onclick="company_del(this,{{id}})" href="#" title="删除">删除</a> </td></tr>{{/Companys}}';
+        var companyListTpl = '{{#Companys}}<tr class="text-c va-m"><td><input name="" type="checkbox" value=""></td><td>{{id}}</td><td>免费用户</td><td><a href="">{{name}}</a></td><td>{{hit}}</td><td class="td-status"><a data-id="{{id}}" data-value="vip" class="btn {{^vip}}btn-danger{{/vip}} {{#vip}}btn-primary{{/vip}}">{{^vip}}否{{/vip}}{{#vip}}是{{/vip}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="verify" class="btn {{^valid}}btn-danger{{/valid}} {{#valid}}btn-primary{{/valid}}">{{^valid}}否{{/valid}}{{#valid}}是{{/valid}}</a></td><td class="td-manage"><a class="btn btn-primary radius ml-5 mt-5" href="b-company-news?id={{id}}" title="新闻">新闻</a><a class="btn btn-primary radius ml-5 mt-5" href="b-company-modify?company.id={{id}}" title="编辑">编辑</a><a class="btn btn-primary radius ml-5 mt-5" href="b-company-modifylogo?id={{id}}" title="修改logo">修改logo</a><a class="btn btn-primary radius ml-5 mt-5" href="b-company-modify-mainpic?id={{id}}" title="修改主图">修改主图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-company-modify-briefpic?id={{id}}" title="修改简介图">修改简介图</a><a class="btn btn-danger radius ml-5 mt-5 del" onclick="company_del(this,{{id}})" href="#" title="删除">删除</a> </td></tr>{{/Companys}}';
 		var companyListHtml = Mustache.render(companyListTpl, companyData);
 		var companyList = $('#company-list');
 		companyList.html(companyListHtml);
 		$('#company-list .btn').click(function() {
 			var $this = $(this);
 			var id = $(this).attr('data-id');
-			var url = 'b_company_put_verify?company.id=' + id;
+			var value=$(this).attr('data-value');
+			var url = 'b_company_put_'+value+'?company.id=' + id;
 			$.ajax({
 				url: url,
 				type: 'GET',

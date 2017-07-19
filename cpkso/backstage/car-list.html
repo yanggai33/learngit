@@ -1,3 +1,4 @@
+
 <!--_meta 作为公共模版分离出去-->
 <!DOCTYPE HTML>
 <html>
@@ -40,7 +41,7 @@
 	<div class="Hui-article">
 		<div>
 			<div class="pd-20">
-				<form action="b_car_search" method="post" id="searchForm">
+				<form action="b_car_searchByCategory" method="post" id="searchForm">
 					<div style="height: 50px;">
 						<div class="col-sm-2 form-group clearfix">
 							<label class="col-sm-7 control-label">产品标题</label>
@@ -132,8 +133,9 @@
 								<th width="40">审核</th>
 								<th width="40">上架</th>
 								<th width="40">推荐</th>
-								<th width="40">热销</th>
-								<th width="40">新品</th>
+								<th width="40">热品</th>
+								<!-- <th width="40">热销</th>
+								<th width="40">新品</th> -->
 								<!-- <th width="100">上传时间</th> -->
 								<th width="150">操作</th>
 							</tr>
@@ -304,7 +306,8 @@ $(document).ready(function(){
 
 function tplRender(data){
     var carData = data.response.data;
-    var carListTpl = '{{#Cars}}<tr class="text-c va-m"><td><input name="" type="checkbox" value=""></td><td>{{car.id}}</td><td><a href="">{{car.name}}</a></td><td>{{car.brand.brand}}</td><td>{{car.hit}}</td><td class="td-status"><a data-id="{{car.id}}" data-value="verify" href="#" class="btn {{^car.valid}}btn-danger{{/car.valid}} {{#car.valid}}btn-primary{{/car.valid}}">{{^car.valid}}否{{/car.valid}}{{#car.valid}}是{{/car.valid}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="launch" href="#" class="btn {{^car.launch}}btn-danger{{/car.launch}} {{#car.launch}}btn-primary{{/car.launch}}">{{^car.launch}}否{{/car.launch}}{{#car.launch}}是{{/car.launch}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="prompt" href="#" class="btn {{^car.prompt}}btn-danger{{/car.prompt}} {{#car.prompt}}btn-primary{{/car.prompt}}">{{^car.prompt}}否{{/car.prompt}}{{#car.prompt}}是{{/car.prompt}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="well_sell" href="#" class="btn {{^car.well_sell}}btn-danger{{/car.well_sell}} {{#car.well_sell}}btn-primary{{/car.well_sell}}">{{^car.well_sell}}否{{/car.well_sell}}{{#car.well_sell}}是{{/car.well_sell}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="new_good" href="#" class="btn {{^car.new_good}}btn-danger{{/car.new_good}} {{#car.new_good}}btn-primary{{/car.new_good}}">{{^car.new_good}}否{{/car.new_good}}{{#car.new_good}}是{{/car.new_good}}</a></td><td class="td-manage"><a class="btn btn-primary radius ml-5 mt-5" href="b-car-add-detail?car_id={{car.id}}" title="添加详情">添加详情</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-modify?car.id={{car.id}}" title="编辑">编辑</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-modifypic?id={{car.id}}" title="修改产品图">修改产品图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-modifythumb?id={{car.id}}" title="修改缩略图">修改缩略图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-type-list?car_id={{car.id}}" title="车型列表">车型列表</a><a class="btn btn-danger radius ml-5 mt-5"  onClick="car_del(this,{{car.id}})" href="#" title="删除">删除</a></td></tr>{{/Cars}}';
+    // <td class="td-status"><a data-id="{{car.id}}" data-value="well_sell" href="#" class="btn {{^car.well_sell}}btn-danger{{/car.well_sell}} {{#car.well_sell}}btn-primary{{/car.well_sell}}">{{^car.well_sell}}否{{/car.well_sell}}{{#car.well_sell}}是{{/car.well_sell}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="new_good" href="#" class="btn {{^car.new_good}}btn-danger{{/car.new_good}} {{#car.new_good}}btn-primary{{/car.new_good}}">{{^car.new_good}}否{{/car.new_good}}{{#car.new_good}}是{{/car.new_good}}</a></td>
+    var carListTpl = '{{#Cars}}<tr class="text-c va-m"><td><input name="" type="checkbox" value=""></td><td>{{car.id}}</td><td><a href="">{{car.name}}</a></td><td>{{car.brand.brand}}</td><td>{{car.hit}}</td><td class="td-status"><a data-id="{{car.id}}" data-value="verify" href="#" class="btn {{^car.valid}}btn-danger{{/car.valid}} {{#car.valid}}btn-primary{{/car.valid}}">{{^car.valid}}否{{/car.valid}}{{#car.valid}}是{{/car.valid}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="launch" href="#" class="btn {{^car.launch}}btn-danger{{/car.launch}} {{#car.launch}}btn-primary{{/car.launch}}">{{^car.launch}}否{{/car.launch}}{{#car.launch}}是{{/car.launch}}</a></td><td class="td-status"><a data-id="{{car.id}}"  data-value="prompt" href="#" class="btn {{^car.prompt}}btn-danger{{/car.prompt}} {{#car.prompt}}btn-primary{{/car.prompt}}">{{^car.prompt}}否{{/car.prompt}}{{#car.prompt}}是{{/car.prompt}}</a></td><td class="td-status"><a data-id="{{car.id}}" data-value="w1" href="#" class="btn {{^car.w1}}btn-danger{{/car.w1}} {{#car.w1}}btn-primary{{/car.w1}}">{{^car.w1}}否{{/car.w1}}{{#car.w1}}是{{/car.w1}}</a></td><td class="td-manage"><a class="btn btn-primary radius ml-5 mt-5" href="b-car-add-detail?car_id={{car.id}}" title="添加详情">添加详情</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-modify?car.id={{car.id}}" title="编辑">编辑</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-modifypic?id={{car.id}}" title="修改产品图">修改产品图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-modifythumb?id={{car.id}}" title="修改缩略图">修改缩略图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-car-type-list?car_id={{car.id}}" title="车型列表">车型列表</a><a class="btn btn-danger radius ml-5 mt-5"  onClick="car_del(this,{{car.id}})" href="#" title="删除">删除</a></td></tr>{{/Cars}}';
 	var carListHtml = Mustache.render(carListTpl, carData);
 	var carList = $('#car-list');
 	carList.html(carListHtml);
@@ -318,20 +321,11 @@ function tplRender(data){
 			type: 'GET',
 		})
 		.done(function(data) {
-			console.log(data.response.msg.success);
-			if (data.response.msg.success) {
-				toggleState($this);
-			} else {
-				alert('请重试！')
-			}
-
+			var val = data.response.data.sign === 1 ? '是' : '否';
+			var cls = data.response.data.sign === 1 ? 'btn-primary' : 'btn-danger';
+			$this.text(val);
+			$this.removeClass('btn-primary btn-danger').addClass(cls);
 		})
-		.fail(function() {
-			// console.log("error");
-		})
-		.always(function() {
-			// console.log("complete");
-		});
 	});
 }
 
