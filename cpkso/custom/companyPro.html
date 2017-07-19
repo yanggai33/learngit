@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>公司介绍</title>
-    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/css/bootstrap.css" rel="stylesheet">
     <link href="style/css/reset.css" rel="stylesheet">
     <link href="style/css/master.css" rel="stylesheet">
 	<link href="style/css/company.css" rel="stylesheet">
@@ -16,15 +16,14 @@
     <![endif]-->
     
     <style>
-    	#cominfo li.area{
-    		width: 200px; 
+    	#cominfo li.area,li.url{
+    		width: 300px; 
     		overflow: hidden; 
     		white-space: nowrap; 
     		text-overflow: ellipsis;
     	}
     	.header-left img{
-    		width:274px;
-    		height:80px;
+    		height:100px;
     	}
     </style>
 </head>
@@ -129,7 +128,6 @@
 </div>
 <!-- ##########主体（end）########## -->
 <!-- ##########页脚########## -->
-<div class="container web-footer">
 <!-- 底部 -->
 	<footer class="footer">
 		<div class="footer-link">
@@ -145,8 +143,7 @@
 			<p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
 			<p class="tel">电话：0379-65171155</p>
 		</div>
-	</footer>
-</div>	
+	</footer>	
 <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript">
 	!window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
@@ -209,7 +206,7 @@
 			dataType:'json'
 		}).done(function(data){
 		var  bannerData=data.response.data;
-	    var bantpl='{{#Company}}<img src="style/image1/companypro.png" class="img-responsive">{{/Company}}';
+	    var bantpl='{{#Company}}<img src="style/image1/companypro.png">{{/Company}}';
 	    var bannerHtml=Mustache.render(bantpl,bannerData);
 	   var banner=$('#banner');
 	   banner.html(bannerHtml);
@@ -281,7 +278,7 @@
          }else if(type=="1"){
          	cominfoData.Company.company_ct='销售型';
          }
-        var cominfoTpl='<div class="title">{{#Company}}<a href="javascript:;" >{{name}}</a></div><div><ul class="list-unstyled procurement-li"><li><a href="javascript:;"><span>企业类型：</span>{{company_ct}}</a></li><li class="area"><a href="javascript:;"  title="{{address}}"> <span >所在地区：</span>{{address}}</a></li><li><a href="javascript:;"><span>联 系 人：</span>{{charge}}</a></li><li><a href="javascript:;"> <span>联系电话：</span>{{#contact}}{{contact}}{{/contact}}{{^contact}}{{contact2}}{{/contact}}</a></li><li><a><span>企业官网：</span></a>{{url}}</li></ul></div>{{/Company}}</div>';
+        var cominfoTpl='<div class="title">{{#Company}}<a href="javascript:;" >{{name}}</a></div><div><ul class="list-unstyled procurement-li"><li><a href="javascript:;"><span>企业类型：</span>{{company_ct}}</a></li><li class="area"><a href="javascript:;"  title="{{address}}"> <span >所在地区：</span>{{address}}</a></li><li><a href="javascript:;"><span>联 系 人：</span>{{charge}}</a></li><li><a href="javascript:;"> <span>联系电话：</span>{{#contact}}{{contact}}{{/contact}}{{^contact}}{{contact2}}{{/contact}}</a></li><li class="url"><a title="{{url}}"><span>企业官网：</span></a>{{url}}</li></ul></div>{{/Company}}</div>';
         var infoList=Mustache.render(cominfoTpl,cominfoData);
        var cominfo=$('#cominfo');
        cominfo.html(infoList);

@@ -68,8 +68,8 @@
         <ul class="nav-list">
           <li><a href="index.html">首页</a></li>
           <li><a href="news.html">资讯</a></li>
-          <li><a href="car.html">车型库</a></li>
-          <li class="active"><a href="parts.html">配件库</a></li>
+          <li><a href="carresult.html">车型库</a></li>
+          <li class="active"><a href="partsresult.html">配件库</a></li>
           <li><a href="needmsg.html">供求信息</a></li>
           <li><a href="enterprise.html">企业库</a></li>
 			<li><a href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
@@ -80,7 +80,7 @@
         <ol class="breadcrumb" id="local">
             <span class="location">当前位置：</span>
             <li><a href="index.html">首页</a></li>
-            <li><a href="parts.html">配件库</a></li>
+            <li><a href="partsresult.html">配件库</a></li>
             <li class="active">配件详情</li>
         </ol>
     </div>
@@ -163,7 +163,7 @@
        }).done(function(data){
        	  var parts=data.response.data;
           parts.Parts.pic = parts.Parts.pics[0];
-       	  var protpl='<div class="preview-wrapper"><div class="preview"><div class="main-img picZoomer">{{#Parts}}<img src="uploadPath/{{pic}}"></div><div class="spec-list"><div class="spec-items J-img-list"><ul id="owl-sm" class="owl-carousel"> {{#pics}}<li class="item"><img src="uploadPath/{{.}}"></li>{{/pics}}</ul></div></div></div></div><div class="item-info-wrapper"><div class="header-wrapper clearfix"><div class="product-name">{{name}}</div></div><div class="guide-price"><div class="dt">配件价格<span class="price">{{price}}</span></div><div class="dd">已有<span class="view-count">{{hot}}</span>人浏览</div></div><div class="company li"><div class="dt">公&nbsp;&nbsp;司</div><div class="dd">{{company.name}}</div></div><div class="company li"><div class="dt">类&nbsp;&nbsp;型</div><div class="dd">{{ct2}}</div></div><div class="company li"><div class="dt">产&nbsp;&nbsp;地</div><div class="dd">{{^company.city}}暂无{{/company.city}}{{company.city}}</div></div><div class="contact li"><div class="dt">联 系 人</div><div class="dd">{{^company.charge}}暂无{{/company.charge}}{{company.charge}}</div></div><div class="address li"><div class="dt">地&nbsp;&nbsp;址</div><div class="dd">{{^company.address}}暂无{{/company.address}}{{company.address}}</div></div><div class="service">{{#company.url}}<a href="{{company.url}}" class="span website" rel="nofollow" target="_blank">官 网</a>{{/company.url}}<a href="company.html?id={{company.id}}" class="span home">企业库</a><a href="javascript:;" class="span tel">联系方式<span>{{^tel}}暂无{{/tel}}{{tel}}</span></a></div>{{/Parts}}</div>';
+          var protpl='<div class="preview-wrapper"><div class="preview"><div class="main-img picZoomer">{{#Parts}}<img src="uploadPath/{{pic}}"></div><div class="spec-list"><div class="spec-items J-img-list"><ul id="owl-sm" class="owl-carousel"> {{#pics}}<li class="item"><img src="uploadPath/{{.}}"></li>{{/pics}}</ul></div></div></div></div><div class="item-info-wrapper"><div class="header-wrapper clearfix"><div class="product-name">{{name}}</div></div><div class="guide-price"><div class="dt">配件价格<span class="price">{{price}}</span></div><div class="dd">已有<span class="view-count">{{hot}}</span>人浏览</div></div><div class="company li"><div class="dt">公&nbsp;&nbsp;司</div><div class="dd">{{company.name}}{{#company.vip}}<span></span>{{/company.vip}}</div></div><div class="company li"><div class="dt">类&nbsp;&nbsp;型</div><div class="dd">{{ct2}}</div></div><div class="company li"><div class="dt">产&nbsp;&nbsp;地</div><div class="dd">{{^company.city}}暂无{{/company.city}}{{company.city}}</div></div><div class="contact li"><div class="dt">联 系 人</div><div class="dd">{{^company.charge}}暂无{{/company.charge}}{{company.charge}}</div></div><div class="address li"><div class="dt">地&nbsp;&nbsp;址</div><div class="dd">{{^company.address}}暂无{{/company.address}}{{company.address}}</div></div><div class="service">{{#company.url}}<a href="{{company.url}}" class="span website" rel="nofollow" target="_blank">官 网</a>{{/company.url}}<a href="company.html?id={{company.id}}" class="span home">企业库</a><a href="javascript:;" class="span tel">联系方式<span>{{^tel}}暂无{{/tel}}{{tel}}</span></a></div>{{/Parts}}</div>';
     	  var  product=Mustache.render(protpl,parts);
           var  prodetail=$('#pdetail');
           prodetail.html(product);

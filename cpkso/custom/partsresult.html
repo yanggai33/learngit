@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="style/css/reset.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript" src="style/js/lib/jquery.page.js"></script>
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="style/js/lib/mustache.min.js"></script> 
-	<title>配件库-搜索结果</title>
+	<title>配件库</title>
 </head>
 <body>
 	<header class="header">
@@ -24,7 +24,7 @@
 		</div>
 		<div class="header-right">
 			<div class="search">
-				<input onkeydown="entersearch();" class="search-input" type="text" placeholder="">
+				<input onkeydown="entersearch();" class="search-input" type="text" placeholder="请输入配件名称" autocomplete="off">
 				<a class="search-btn" href="javascript:;"></a>
 			</div>
 		</div>
@@ -33,8 +33,8 @@
 		<ul class="nav-list">
 			<li><a href="index.html">首页</a></li>
 			<li><a href="news.html">资讯</a></li>
-			<li><a href="car.html">车型库</a></li>
-			<li class="active"><a href="parts.html">配件库</a></li>
+			<li><a href="carresult.html">车型库</a></li>
+			<li class="active"><a href="partsresult.html">配件库</a></li>
 			<li><a href="needmsg.html">供求信息</a></li>
 			<li><a href="enterprise.html">企业库</a></li>
 			<li><a href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
@@ -45,8 +45,8 @@
 		<ol class="breadcrumb">
 			<span class="location">当前位置：</span>
 			<li><a href="index.html">首页</a></li>
-			<li><a href="parts.html">配件库</a></li>
-			<li class="active">配件列表</li>
+			<!-- <li><a href="partsresult.html">配件库</a></li> -->
+			<li class="active">配件库</li>
 		</ol>
 	</div>
 	<div class="main-body">
@@ -63,14 +63,14 @@
 				<dt class="title">类型：</dt>
 				<dd class="category-item">
 					<a class="choose-all choose-on" data-value="" href="javascript:;">不限</a>
-					<a class="ct1" data-id="category_id" data-value="6" href="javascript:;">标准件</a>
-					<a class="ct1" data-id="category_id" data-value="7" href="javascript:;">辅助件</a>
-					<a class="ct1" data-id="category_id" data-value="8" href="javascript:;">车身系统</a>
-					<a class="ct1" data-id="category_id" data-value="9" href="javascript:;">电气系统</a>
-					<a class="ct1" data-id="category_id" data-value="10" href="javascript:;">转向系统</a>
-					<a class="ct1" data-id="category_id" data-value="11" href="javascript:;">底盘系统</a>
-					<a class="ct1" data-id="category_id" data-value="12" href="javascript:;">密封系统</a>
-					<a class="ct1" data-id="category_id" data-value="13" href="javascript:;">内饰系统</a>
+					<a class="ct1" data-id="partsCondition.category_id" data-value="6" href="javascript:;">标准件</a>
+					<a class="ct1" data-id="partsCondition.category_id" data-value="7" href="javascript:;">辅助件</a>
+					<a class="ct1" data-id="partsCondition.category_id" data-value="8" href="javascript:;">车身系统</a>
+					<a class="ct1" data-id="partsCondition.category_id" data-value="9" href="javascript:;">电气系统</a>
+					<a class="ct1" data-id="partsCondition.category_id" data-value="10" href="javascript:;">转向系统</a>
+					<a class="ct1" data-id="partsCondition.category_id" data-value="11" href="javascript:;">底盘系统</a>
+					<a class="ct1" data-id="partsCondition.category_id" data-value="12" href="javascript:;">密封系统</a>
+					<a class="ct1" data-id="partsCondition.category_id" data-value="13" href="javascript:;">内饰系统</a>
 				</dd>
 			</dl>
 			<dl id="ct2" class="category-list clearfix" style="display: none;">
@@ -78,109 +78,107 @@
 				<dd class="category-item">
 					<a class="choose-on choose-all" data-value="" href="javascript:;">不限</a>
 					<div class="ct2-list" style="display:none;">
-						<a data-id="ct2" data-value="拉铆螺母" href="javascript:;">拉铆螺母</a>
-						<a data-id="ct2" data-value="U型丝" href="javascript:;">U型丝</a>
-						<a data-id="ct2" data-value="车门合页" href="javascript:;">车门合页</a>
-						<a data-id="ct2" data-value="螺旋式插销扎带" href="javascript:;">螺旋式插销扎带</a>
-						<a data-id="ct2" data-value="车标车牌" href="javascript:;">车标车牌</a>
-						<a data-id="ct2" data-value="装饰条" href="javascript:;">装饰条</a>
-						<a data-id="ct2" data-value="其他6" href="javascript:;">其他</a>
+						<a data-id="partsCondition.ct2" data-value="拉铆螺母" href="javascript:;">拉铆螺母</a>
+						<a data-id="partsCondition.ct2" data-value="U型丝" href="javascript:;">U型丝</a>
+						<a data-id="partsCondition.ct2" data-value="车门合页" href="javascript:;">车门合页</a>
+						<a data-id="partsCondition.ct2" data-value="螺旋式插销扎带" href="javascript:;">螺旋式插销扎带</a>
+						<a data-id="partsCondition.ct2" data-value="车标车牌" href="javascript:;">车标车牌</a>
+						<a data-id="partsCondition.ct2" data-value="装饰条" href="javascript:;">装饰条</a>
+						<a data-id="partsCondition.ct2" data-value="其他6" href="javascript:;">其他</a>
 					</div>
 					<div class="ct2-list" style="display:none;">
-						<a data-id="ct2" data-value="刹车油" href="javascript:;">刹车油</a>
-						<a data-id="ct2" data-value="齿轮油" href="javascript:;">齿轮油</a>
-						<a data-id="ct2" data-value="充电桩" href="javascript:;">充电桩</a>
-						<a data-id="ct2" data-value="安装垫片" href="javascript:;">安装垫片</a>
-						<a data-id="ct2" data-value="比例阀" href="javascript:;">比例阀</a>
-						<a data-id="ct2" data-value="地毯毛垫" href="javascript:;">地毯毛垫</a>
-						<a data-id="ct2" data-value="胶套支架" href="javascript:;">胶套支架</a>
-						<a data-id="ct2" data-value="千斤顶" href="javascript:;">千斤顶</a>
-						<a data-id="ct2" data-value="安装卡扣" href="javascript:;">安装卡扣</a>
-						<a data-id="ct2" data-value="其他7" href="javascript:;">其他</a>
+						<a data-id="partsCondition.ct2" data-value="刹车油" href="javascript:;">刹车油</a>
+						<a data-id="partsCondition.ct2" data-value="齿轮油" href="javascript:;">齿轮油</a>
+						<a data-id="partsCondition.ct2" data-value="充电桩" href="javascript:;">充电桩</a>
+						<a data-id="partsCondition.ct2" data-value="安装垫片" href="javascript:;">安装垫片</a>
+						<a data-id="partsCondition.ct2" data-value="比例阀" href="javascript:;">比例阀</a>
+						<a data-id="partsCondition.ct2" data-value="地毯毛垫" href="javascript:;">地毯毛垫</a>
+						<a data-id="partsCondition.ct2" data-value="胶套支架" href="javascript:;">胶套支架</a>
+						<a data-id="partsCondition.ct2" data-value="千斤顶" href="javascript:;">千斤顶</a>
+						<a data-id="partsCondition.ct2" data-value="安装卡扣" href="javascript:;">安装卡扣</a>
+						<a data-id="partsCondition.ct2" data-value="其他7" href="javascript:;">其他</a>
 					</div>
 					<div class="ct2-list" style="display:none;">
-						<a data-id="ct2" data-value="桥箱" href="javascript:;">桥箱</a>
-						<a data-id="ct2" data-value="车架" href="javascript:;">车架</a>
-						<a data-id="ct2" data-value="门框" href="javascript:;">门框</a>
-						<a data-id="ct2" data-value="车门锁" href="javascript:;">车门锁</a>
-						<a data-id="ct2" data-value="倒车镜后视镜" href="javascript:;">倒车镜后视镜</a>
-						<a data-id="ct2" data-value="全车玻璃" href="javascript:;">全车玻璃</a>
-						<a data-id="ct2" data-value="挂档器" href="javascript:;">挂档器</a>
-						<a data-id="ct2" data-value="护罩" href="javascript:;">护罩</a>
-						<a data-id="ct2" data-value="脚踏板" href="javascript:;">脚踏板</a>
-						<a data-id="ct2" data-value="安全带" href="javascript:;">安全带</a>
-						<a data-id="ct2" data-value="保险杠" href="javascript:;">保险杠</a>
-						<a data-id="ct2" data-value="车门配件" href="javascript:;">车门配件</a>
-						<a data-id="ct2" data-value="护板" href="javascript:;">护板</a>
-						<a data-id="ct2" data-value="玻璃组件" href="javascript:;">玻璃组件</a>
-						<a data-id="ct2" data-value="驻车把手" href="javascript:;">驻车把手</a>
-						<a data-id="ct2" data-value="遮阳板" href="javascript:;">遮阳板</a>
-						<a data-id="ct2" data-value="其他8" href="javascript:;">其他</a>
+						<a data-id="partsCondition.ct2" data-value="桥箱" href="javascript:;">桥箱</a>
+						<a data-id="partsCondition.ct2" data-value="车架" href="javascript:;">车架</a>
+						<a data-id="partsCondition.ct2" data-value="门框" href="javascript:;">门框</a>
+						<a data-id="partsCondition.ct2" data-value="车门锁" href="javascript:;">车门锁</a>
+						<a data-id="partsCondition.ct2" data-value="倒车镜后视镜" href="javascript:;">倒车镜后视镜</a>
+						<a data-id="partsCondition.ct2" data-value="全车玻璃" href="javascript:;">全车玻璃</a>
+						<a data-id="partsCondition.ct2" data-value="挂档器" href="javascript:;">挂档器</a>
+						<a data-id="partsCondition.ct2" data-value="护罩" href="javascript:;">护罩</a>
+						<a data-id="partsCondition.ct2" data-value="脚踏板" href="javascript:;">脚踏板</a>
+						<a data-id="partsCondition.ct2" data-value="安全带" href="javascript:;">安全带</a>
+						<a data-id="partsCondition.ct2" data-value="保险杠" href="javascript:;">保险杠</a>
+						<a data-id="partsCondition.ct2" data-value="车门配件" href="javascript:;">车门配件</a>
+						<a data-id="partsCondition.ct2" data-value="护板" href="javascript:;">护板</a>
+						<a data-id="partsCondition.ct2" data-value="玻璃组件" href="javascript:;">玻璃组件</a>
+						<a data-id="partsCondition.ct2" data-value="驻车把手" href="javascript:;">驻车把手</a>
+						<a data-id="partsCondition.ct2" data-value="遮阳板" href="javascript:;">遮阳板</a>
+						<a data-id="partsCondition.ct2" data-value="其他8" href="javascript:;">其他</a>
 					</div>
 					<div class="ct2-list" style="display:none;">
-						<a data-id="ct2" data-value="电池" href="javascript:;">电池</a>
-						<a data-id="ct2" data-value="电机" href="javascript:;">电机</a>
-						<a data-id="ct2" data-value="控制器" href="javascript:;">控制器</a>
-						<a data-id="ct2" data-value="加速器" href="javascript:;">加速器</a>
-						<a data-id="ct2" data-value="灯光系统" href="javascript:;">灯光系统</a>
-						<a data-id="ct2" data-value="雨刮" href="javascript:;">雨刮</a>
-						<a data-id="ct2" data-value="电瓶连线" href="javascript:;">电瓶连线</a>
-						<a data-id="ct2" data-value="音响喇叭" href="javascript:;">音响喇叭</a>
-						<a data-id="ct2" data-value="暖风机" href="javascript:;">暖风机</a>
-						<a data-id="ct2" data-value="电容" href="javascript:;">电容</a>
-						<a data-id="ct2" data-value="增程器" href="javascript:;">增程器</a>
-						<a data-id="ct2" data-value="空调" href="javascript:;">空调</a>
-						<a data-id="ct2" data-value="天线" href="javascript:;">天线</a>
-						<a data-id="ct2" data-value="倒车影像" href="javascript:;">倒车影像</a>
-						<a data-id="ct2" data-value="车窗电动升降" href="javascript:;">车窗电动升降</a>
-						<a data-id="ct2" data-value="电源开关" href="javascript:;">电源开关</a>
-						<a data-id="ct2" data-value="遥控钥匙" href="javascript:;">遥控钥匙</a>
-						<a data-id="ct2" data-value="车载仪表" href="javascript:;">车载仪表</a>
-						<a data-id="ct2" data-value="DC转换器" href="javascript:;">DC转换器</a>
-						<a data-id="ct2" data-value="其他9" href="javascript:;">其他</a>
+						<a data-id="partsCondition.ct2" data-value="电池" href="javascript:;">电池</a>
+						<a data-id="partsCondition.ct2" data-value="电机" href="javascript:;">电机</a>
+						<a data-id="partsCondition.ct2" data-value="控制器" href="javascript:;">控制器</a>
+						<a data-id="partsCondition.ct2" data-value="灯光系统" href="javascript:;">灯光系统</a>
+						<a data-id="partsCondition.ct2" data-value="雨刮" href="javascript:;">雨刮</a>
+						<a data-id="partsCondition.ct2" data-value="电瓶连线" href="javascript:;">电瓶连线</a>
+						<a data-id="partsCondition.ct2" data-value="音响喇叭" href="javascript:;">音响喇叭</a>
+						<a data-id="partsCondition.ct2" data-value="暖风机" href="javascript:;">暖风机</a>
+						<a data-id="partsCondition.ct2" data-value="电容" href="javascript:;">电容</a>
+						<a data-id="partsCondition.ct2" data-value="增程器" href="javascript:;">增程器</a>
+						<a data-id="partsCondition.ct2" data-value="空调" href="javascript:;">空调</a>
+						<a data-id="partsCondition.ct2" data-value="天线" href="javascript:;">天线</a>
+						<a data-id="partsCondition.ct2" data-value="倒车影像" href="javascript:;">倒车影像</a>
+						<a data-id="partsCondition.ct2" data-value="车窗电动升降" href="javascript:;">车窗电动升降</a>
+						<a data-id="partsCondition.ct2" data-value="电源开关" href="javascript:;">电源开关</a>
+						<a data-id="partsCondition.ct2" data-value="遥控钥匙" href="javascript:;">遥控钥匙</a>
+						<a data-id="partsCondition.ct2" data-value="车载仪表" href="javascript:;">车载仪表</a>
+						<a data-id="partsCondition.ct2" data-value="DC转换器" href="javascript:;">DC转换器</a>
+						<a data-id="partsCondition.ct2" data-value="其他9" href="javascript:;">其他</a>
 					</div>
 					<div class="ct2-list" style="display:none;">
-						<a data-id="ct2" data-value="方向盘" href="javascript:;">方向盘</a>
-						<a data-id="ct2" data-value="方向机总成" href="javascript:;">方向机总成</a>
-						<a data-id="ct2" data-value="组合开关" href="javascript:;">组合开关</a>
-						<a data-id="ct2" data-value="变速箱" href="javascript:;">变速箱</a>
-						<a data-id="ct2" data-value="转向器" href="javascript:;">转向器</a>
-						<a data-id="ct2" data-value="其他10" href="javascript:;">其他</a>
+						<a data-id="partsCondition.ct2" data-value="方向盘" href="javascript:;">方向盘</a>
+						<a data-id="partsCondition.ct2" data-value="方向机总成" href="javascript:;">方向机总成</a>
+						<a data-id="partsCondition.ct2" data-value="组合开关" href="javascript:;">组合开关</a>
+						<a data-id="partsCondition.ct2" data-value="变速箱" href="javascript:;">变速箱</a>
+						<a data-id="partsCondition.ct2" data-value="转向器" href="javascript:;">转向器</a>
+						<a data-id="partsCondition.ct2" data-value="其他10" href="javascript:;">其他</a>
 					</div>
 					<div class="ct2-list" style="display:none;">
-						<a data-id="ct2" data-value="后桥" href="javascript:;">后桥</a>
-						<a data-id="ct2" data-value="轮胎" href="javascript:;">轮胎</a>
-						<a data-id="ct2" data-value="轮毂" href="javascript:;">轮毂</a>
-						<a data-id="ct2" data-value="制动系统" href="javascript:;">制动系统</a>
-						<a data-id="ct2" data-value="刹车系统" href="javascript:;">刹车系统</a>
-						<a data-id="ct2" data-value="倒车镜后视镜" href="javascript:;">倒车镜后视镜</a>
-						<a data-id="ct2" data-value="减震系统" href="javascript:;">减震系统</a>
-						<a data-id="ct2" data-value="点火开关" href="javascript:;">点火开关</a>
-						<a data-id="ct2" data-value="加速器" href="javascript:;">加速器</a>
-						<a data-id="ct2" data-value="车用轴承" href="javascript:;">车用轴承</a>
-						<a data-id="ct2" data-value="交流电机" href="javascript:;">交流电机</a>
-						<a data-id="ct2" data-value="电机控制器" href="javascript:;">电机控制器</a>
-						<a data-id="ct2" data-value="排气管" href="javascript:;">排气管</a>
-						<a data-id="ct2" data-value="平衡杆" href="javascript:;">平衡杆</a>
-						<a data-id="ct2" data-value="洗涤器" href="javascript:;">洗涤器</a>
-						<a data-id="ct2" data-value="其他11" href="javascript:;">其他</a>
+						<a data-id="partsCondition.ct2" data-value="后桥" href="javascript:;">后桥</a>
+						<a data-id="partsCondition.ct2" data-value="轮胎" href="javascript:;">轮胎</a>
+						<a data-id="partsCondition.ct2" data-value="轮毂" href="javascript:;">轮毂</a>
+						<a data-id="partsCondition.ct2" data-value="制动系统" href="javascript:;">制动系统</a>
+						<a data-id="partsCondition.ct2" data-value="刹车系统" href="javascript:;">刹车系统</a>
+						<a data-id="partsCondition.ct2" data-value="减震系统" href="javascript:;">减震系统</a>
+						<a data-id="partsCondition.ct2" data-value="点火开关" href="javascript:;">点火开关</a>
+						<a data-id="partsCondition.ct2" data-value="加速器" href="javascript:;">加速器</a>
+						<a data-id="partsCondition.ct2" data-value="车用轴承" href="javascript:;">车用轴承</a>
+						<a data-id="partsCondition.ct2" data-value="交流电机" href="javascript:;">交流电机</a>
+						<a data-id="partsCondition.ct2" data-value="电机控制器" href="javascript:;">电机控制器</a>
+						<a data-id="partsCondition.ct2" data-value="排气管" href="javascript:;">排气管</a>
+						<a data-id="partsCondition.ct2" data-value="平衡杆" href="javascript:;">平衡杆</a>
+						<a data-id="partsCondition.ct2" data-value="洗涤器" href="javascript:;">洗涤器</a>
+						<a data-id="partsCondition.ct2" data-value="其他11" href="javascript:;">其他</a>
 					</div>
 					<div class="ct2-list" style="display:none;">
-						<a data-id="ct2" data-value="线套" href="javascript:;">线套</a>
-						<a data-id="ct2" data-value="中央电器盒" href="javascript:;">中央电器盒</a>
-						<a data-id="ct2" data-value="玻璃扣" href="javascript:;">玻璃扣</a>
-						<a data-id="ct2" data-value="后门铰链密封件" href="javascript:;">后门铰链密封件</a>
-						<a data-id="ct2" data-value="胶套" href="javascript:;">胶套</a>
-						<a data-id="ct2" data-value="胶条" href="javascript:;">胶条</a>
-						<a data-id="ct2" data-value="其他12" href="javascript:;">其他</a>
+						<a data-id="partsCondition.ct2" data-value="线套" href="javascript:;">线套</a>
+						<a data-id="partsCondition.ct2" data-value="中央电器盒" href="javascript:;">中央电器盒</a>
+						<a data-id="partsCondition.ct2" data-value="玻璃扣" href="javascript:;">玻璃扣</a>
+						<a data-id="partsCondition.ct2" data-value="后门铰链密封件" href="javascript:;">后门铰链密封件</a>
+						<a data-id="partsCondition.ct2" data-value="胶套" href="javascript:;">胶套</a>
+						<a data-id="partsCondition.ct2" data-value="胶条" href="javascript:;">胶条</a>
+						<a data-id="partsCondition.ct2" data-value="其他12" href="javascript:;">其他</a>
 					</div>
 					<div class="ct2-list" style="display:none;">
-						<a data-id="ct2" data-value="座椅" href="javascript:;">座椅</a>
-						<a data-id="ct2" data-value="内视镜" href="javascript:;">内视镜</a>
-						<a data-id="ct2" data-value="内拉手" href="javascript:;">内拉手</a>
-						<a data-id="ct2" data-value="反光贴" href="javascript:;">反光贴</a>
-						<a data-id="ct2" data-value="铝板" href="javascript:;">铝板</a>
-						<a data-id="ct2" data-value="其他13" href="javascript:;">其他</a>
+						<a data-id="partsCondition.ct2" data-value="座椅" href="javascript:;">座椅</a>
+						<a data-id="partsCondition.ct2" data-value="内视镜" href="javascript:;">内视镜</a>
+						<a data-id="partsCondition.ct2" data-value="内拉手" href="javascript:;">内拉手</a>
+						<a data-id="partsCondition.ct2" data-value="反光贴" href="javascript:;">反光贴</a>
+						<a data-id="partsCondition.ct2" data-value="铝板" href="javascript:;">铝板</a>
+						<a data-id="partsCondition.ct2" data-value="其他13" href="javascript:;">其他</a>
 					</div>
 				</dd>
 			</dl>
@@ -301,7 +299,6 @@ $(function(){
 	        var ct2 = $('#filter .ct2-list')[index-1];
 	        $(ct2).css('display','block');//将选中的一级分类对应的二级分类展示出来
 			var results = RetSelecteds();
-			console.log(results);
 			renderPage(results);
 	    });
 	    $("#ct2").find('a').click(function () {
@@ -343,24 +340,27 @@ $(function(){
 			// var results = RetSelecteds();
 			// renderPage(results);
 	  //   });
-		var url = decodeURIComponent(window.location.search);
+		var url = decodeURIComponent(window.location.search).replace(/其他\d+/g,'其他');
 		var postUrl = 'ev/parts_search' + url;
 
-		url.indexOf('partsCondition') === -1 && chooseOn();
+		chooseOn();
 
 		function chooseOn(){
+			var argObj = getArgs();
+			$('.search-input').val(argObj['partsCondition.name']);
 			$('#filter').find('a[data-id]').each(function(){
-		  		var argObj = getArgs();
 				var id = $(this).attr('data-id');
 				var value = $(this).attr('data-value');			
 				var $this;
 				for (var name in argObj){
 					$this = $(this);
-					if(id === name && id === 'category_id' && value === argObj[name]){
+					if(id === name && id === 'partsCondition.category_id' && value === argObj[name]){
 				  		$this.siblings('a').removeClass('choose-on');
 				  		$this.addClass('choose-on');
-						// $this.trigger('click');
-					} else if (id === name && id === 'ct2' && value === argObj[name]){
+				  		var ctId = value;
+				  		$('#ct2').show();
+				  		$($('.ct2-list')[$this.index()-1]).show();
+					} else if (id === name && id === 'partsCondition.ct2' && value === argObj[name]){
 						$('#ct2').show();
 						$this.parents('.ct2-list').show();
 						$('#ct2').find('.choose-all').removeClass('choose-on');
@@ -368,10 +368,8 @@ $(function(){
 					}
 				};
 			})
-			var results = RetSelecteds();
-			renderPage(results);
 		}
-		url.indexOf('partsCondition') === 1 && $.ajax({
+		$.ajax({
 	        url: postUrl,
 	        type: 'POST',
 	        dataType: 'json',
@@ -383,40 +381,21 @@ $(function(){
 
 	    $('.search-btn').click(function(){
 	    	var inputText = $('.search-input').val();
-	    	var url = 'parts_search?partsCondition.name=' + inputText;
-			$.ajax({
-		        url: url,
-		        type: 'POST',
-		        dataType: 'json',
-		    })
-		    .done(function(data){
-		    	refresh(data);
-		    	$('#filter a').removeClass('choose-on');
-		    	$('.choose-all').addClass('choose-on');
-		    })
+	    	var url = '?partsCondition.name=' + inputText;
+	    	location.search = url;
 	    });
 
 
 	    function renderPage(args){
-	    	var url = 'ev/parts_search?' + args;
-			$.ajax({
-		        url: url,
-		        type: 'POST',
-		        dataType: 'json',
-		    })
-		    .done(function(data){
-		    	refresh(data);       
-		    });
+        	var url = '?' + args;
+			location.search = url;
 	    }
 
 	    function RetSelecteds() {
 	        var result = "";
 	        $("#filter .choose-on").each(function () {
 	        	var value = $(this).attr('data-value');
-	        	// console.log(value);
-	        	// console.log(value.indexOf('其他'));
-	        	value = value.indexOf('其他') === 0 ? '其他' : $(this).attr('data-value');
-	            result += 'partsCondition.' + $(this).attr('data-id') + '=' + value + '&';
+	            result += $(this).attr('data-id') + '=' + value + '&';
 	        });
 	        return result;
 	    };
@@ -426,6 +405,7 @@ $(function(){
 	    	var parts = data.response.data.Partss;
 	    	for (var i = 0; i < parts.length; i++) {
 		    	parts[i].pic = parts[i].pic_thumbs[0];
+		    	parts[i].price = parts[i].price || '暂无价格';
 		    	// parts[i].endurance = parts[i].params[0].mile || '';
 		    	// parts[i].speed = parts[i].params[0].max_speed || '';
 		    	// parts[i].logo = parts[i].company.logo;
@@ -433,7 +413,7 @@ $(function(){
 		    	// parts[i].price = parts[i].params[0].price || '';
 		    	// parts[i].accelerate = parts[i].params[0].accelerate || '';
 	    	}
-			var resultTpl = '<ul class="list-content">{{#Partss}}<li class="list-item"><div class="figure"><a href="partsdetail.html?id={{id}}"><img src="uploadPath/{{pic}}">{{#prompt}}<span class="recommend-icon"></span>{{/prompt}}</a><div class="car-info"><div class="info-wrapper"><a href="partsdetail.html?id={{id}}">详情</a><a href="javascript:;">客服</a><a href="{{#company.url}}{{company.url}}{{/company.url}}{{^company.url}}company.html?id={{company.id}}{{/company.url}}" rel="nofollow">官网</a></div><div class="car-detail"><p class="parts-info">简介：{{brief}}</p></div></div></div><div class="detail"><a class="desc" href="partsdetail.html?id={{id}}">{{name}}</a><div class="company-detail"><a href=="company.html?id={{company.id}}" class="company-name">{{company.name}}</a></div><div class="msg"><p class="price"><span></span>{{price}}</p><p class="view-count">已浏览<span> {{hot}}</span></p></div></div></li>{{/Partss}}</ul>';;
+			var resultTpl = '<ul class="list-content">{{#Partss}}<li class="list-item"><div class="figure"><a href="partsdetail.html?id={{id}}"><img src="uploadPath/{{pic}}">{{#prompt}}<span class="recommend-icon"></span>{{/prompt}}</a><div class="car-info"><div class="info-wrapper"><a href="partsdetail.html?id={{id}}">详情</a><a href="javascript:;">客服</a><a href="{{#company.url}}{{company.url}}{{/company.url}}{{^company.url}}company.html?id={{company.id}}{{/company.url}}" rel="nofollow">官网</a></div><div class="car-detail"><p class="parts-info">简介：{{brief}}</p></div></div></div><div class="detail"><a {{#w1}}style="text-indent: 26px;"{{/w1}} class="desc" href="partsdetail.html?id={{id}}">{{#w1}}<span class="hot-icon"></span>{{/w1}}{{name}}</a><div class="company-detail"><a href="company.html?id={{company.id}}" class="company-name">{{company.name}}{{#company.vip}}<span class="approve-icon"></span>{{/company.vip}}</a></div><div class="msg"><p class="price"><span></span>{{price}}</p><p class="view-count">已浏览<span> {{hot}}</span></p></div></div></li>{{/Partss}}</ul>';;
 	        tplRender(resultTpl, data, $('#parts-result'));
 			var pageCount = data.response.data.Parts_condition.maxPageNo;
 			var pageNo = data.response.data.Parts_condition.pageNo;

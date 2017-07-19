@@ -6,11 +6,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>供应产品</title>
-		<link href="style/css/bootstrap.min.css" rel="stylesheet">
 	    <link href="style/css/reset.css" rel="stylesheet">
 		<link href="style/css/master.css" rel="stylesheet">
 		<link href="style/css/company.css" rel="stylesheet">
-		<!--<link href="style/css/model.css" rel="stylesheet">-->
 		<link href="style/css/base1.css" rel="stylesheet">
 		<!--[if lt IE 9]>
     <script src="style/js/html5shiv.js"></script>
@@ -19,15 +17,14 @@
     <![endif]-->
     
     <style>
-    	#cominfo li.area{
-    		width: 200px; 
+    	#cominfo li.area,li.url{
+    		width: 300px; 
     		overflow: hidden; 
     		white-space: nowrap; 
     		text-overflow: ellipsis;
     	}
     	.header-left img{
-    		width:274px;
-    		height:80px;
+    		height:100px;
     	}
     </style>
 	</head>
@@ -84,24 +81,6 @@
 			</span>
 
 						<ul class="nav nav-tabs" style="margin-top:0px;border-bottom:0;border:1px solid #f5f5f5">
-							<!--<li>
-								<a href="javascript:void(0)">分类：</a>
-							</li>
-							<li>
-								<a href="#cateone" data-toggle="tab">沃尔沃系列</a>
-							</li>
-							<li class="active">
-								<a href="#catetwo" data-toggle="tab">沃尔沃系列</a>
-							</li>
-							<li>
-								<a href="#catethree" data-toggle="tab">沃尔沃系列</a>
-							</li>
-							<li>
-								<a href="#catefour" data-toggle="tab">沃尔沃系列</a>
-							</li>
-							<li>
-								<a href="#catefive" data-toggle="tab">沃尔沃系列</a>
-							</li>-->
 						</ul>
 
 						<div class="tab-content" style="margin-top:20px;">
@@ -126,7 +105,7 @@
 		<!-- ##########主体（end）########## -->
 
 		<!-- ##########页脚########## -->
-		<div class="container web-footer">
+		
 			<!-- 底部 -->
 			<footer class="footer">
 				<div class="footer-link">
@@ -143,7 +122,6 @@
 					<p class="tel">电话：0379-65171155</p>
 				</div>
 			</footer>
-		</div>
 		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript">
 	!window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
@@ -205,7 +183,7 @@
 					dataType:'json'
 				}).done(function(data){
 				var  bannerData=data.response.data;
-			    var bantpl='{{#Company}}<img src="style/image1/product.png" class="img-responsive">{{/Company}}';
+			    var bantpl='{{#Company}}<img src="style/image1/product.png">{{/Company}}';
 			    var bannerHtml=Mustache.render(bantpl,bannerData);
 			   	var banner=$('#banner');
 			   	banner.html(bannerHtml);
@@ -230,7 +208,7 @@
 			       	     		for(var i=0;i<partsData.Partss.length;i++){
 			       	     			partsData.Partss[i].pic=partsData.Partss[i].pic_thumbs[0];
 			       	     		}
-			       	     		var partsTpl = '{{#Partss}}<ul class="product-list"><li class="list-item"><div class="figure"><a href="partsdetail.html?id={{id}}"><img src="uploadPath/{{pic}}" width=199 height=133></a></div><div class="detail"><a class="desc" href="partsdetail.html?id={{id}}">{{name}}</a></div><div class="companyname">{{company.name}}</div><div class="price"><a>￥{{{price}}}</a><span>已浏览&nbsp;<a class="mount">{{hit}}</a></span></div></li></ul>{{/Partss}}';
+			       	     		var partsTpl = '{{#Partss}}<ul class="product-list"><li class="list-item"><div class="figure"><a href="partsdetail.html?id={{id}}"><img src="uploadPath/{{pic}}" width=199 height=133></a></div><div class="detail"><a class="desc" href="partsdetail.html?id={{id}}">{{name}}</a></div><div class="companyname">{{company.name}}</div><div class="price"><a>￥{{{price}}}</a><span>已浏览&nbsp;<a class="mount">{{hot}}</a></span></div></li></ul>{{/Partss}}';
 		                        var partsList = Mustache.render(partsTpl, partsData);
 			                    var parts = $('#catetwo');
 			                    parts.html(partsList);
@@ -246,7 +224,7 @@
                carData.Cars[i].price =  carData.Cars[i].car.params[0] && carData.Cars[i].car.params[0].price?'￥' + carData.Cars[i].car.params[0].price + '万':'暂无价格';
                 carData.Cars[i].car.pic=carData.Cars[i].car.pic_thumbs[0];
             }
-			       	     		var carTpl = '{{#Cars}}<ul class="product-list"><li class="list-item"><div class="figure"><a href="cardetail.html?id={{car.id}}"><img src="uploadPath/{{car.pic}}" width=199 height=133></a><a href="javascript:;"   class="car-logo"><img src="brandPath/{{car.brand.pic}}" width=30 height=30></a></div><div class="detail"><a class="desc" href="cardetail.html?id={{car.id}}">{{car.name}}</a></div><div class="companyname">{{car.company.name}}</div><div class="price"><a>{{price}}</a><span>已浏览&nbsp;<a class="mount">{{car.hit}}</a></span></div></li></ul>{{/Cars}}';
+			       	     		var carTpl = '{{#Cars}}<ul class="product-list"><li class="list-item"><div class="figure"><a href="cardetail.html?id={{car.id}}"><img src="uploadPath/{{car.pic}}" width=199 height=133></a><a href="javascript:;"   class="car-logo"><img src="brandPath/{{car.brand.pic}}" width=30 height=30></a></div><div class="detail"><a class="desc" href="cardetail.html?id={{car.id}}">{{car.name}}</a></div><div class="companyname">{{car.company.name}}</div><div class="price"><a>{{price}}</a><span>已浏览&nbsp;<a class="mount">{{car.hot}}</a></span></div></li></ul>{{/Cars}}';
 		                        var carList = Mustache.render(carTpl, carData);
 			                    var car = $('#catetwo');
 			                    car.html(carList);
@@ -270,7 +248,7 @@
 	         	cominfoData.Company.company_ct='销售型';
 	         }
 
-	        var cominfoTpl='<div class="title">{{#Company}}<a href="javascript:;" >{{name}}</a></div><div><ul class="list-unstyled procurement-li"><li><a href="javascript:;"><span>企业类型：</span>{{company_ct}}</a></li><li class="area"><a href="javascript:;"  title="{{address}}"> <span >所在地区：</span>{{address}}</a></li><li><a href="javascript:;"><span>联 系 人：</span>{{charge}}</a></li><li><a href="javascript:;"> <span>联系电话：</span>{{#contact}}{{contact}}{{/contact}}{{^contact}}{{contact2}}{{/contact}}</a></li><li><a><span>企业官网：</span></a>{{url}}</li></ul></div>{{/Company}}</div>';
+	        var cominfoTpl='<div class="title">{{#Company}}<a href="javascript:;" >{{name}}</a></div><div><ul class="list-unstyled procurement-li"><li><a href="javascript:;"><span>企业类型：</span>{{company_ct}}</a></li><li class="area"><a href="javascript:;"  title="{{address}}"> <span >所在地区：</span>{{address}}</a></li><li><a href="javascript:;"><span>联 系 人：</span>{{charge}}</a></li><li><a href="javascript:;"> <span>联系电话：</span>{{#contact}}{{contact}}{{/contact}}{{^contact}}{{contact2}}{{/contact}}</a></li><li class="url"><a title="{{url}}"><span>企业官网：</span></a>{{url}}</li></ul></div>{{/Company}}</div>';
 	        var infoList=Mustache.render(cominfoTpl,cominfoData);
 	       var cominfo=$('#cominfo');
 	       cominfo.html(infoList);

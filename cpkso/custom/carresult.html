@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="style/js/lib/enter.js"></script>
 	<script type="text/javascript" src="style/js/lib/mustache.min.js"></script> 
-	<title>车型库-搜索结果</title>
+	<title>车型库</title>
 </head>
 <body>
 	<header class="header">
@@ -23,7 +23,7 @@
 		</div>
 		<div class="header-right">
 			<div class="search">
-				<input onkeydown="entersearch();" class="search-input" type="text" placeholder="">
+				<input onkeydown="entersearch();" class="search-input" type="text" placeholder="请输入车型名称" autocomplete="off">
 				<a class="search-btn" href="javascript:;"></a>
 			</div>
 		</div>
@@ -32,8 +32,8 @@
 		<ul class="nav-list">
 			<li><a href="index.html">首页</a></li>
 			<li><a href="news.html">资讯</a></li>
-			<li class="active"><a href="car.html">车型库</a></li>
-			<li><a href="parts.html">配件库</a></li>
+			<li class="active"><a href="carresult.html">车型库</a></li>
+			<li><a href="partsresult.html">配件库</a></li>
 			<li><a href="needmsg.html">供求信息</a></li>
 			<li><a href="enterprise.html">企业库</a></li>
 			<li><a href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
@@ -44,8 +44,8 @@
 		<ol class="breadcrumb">
 			<span class="location">当前位置：</span>
 			<li><a href="index.html">首页</a></li>
-			<li><a href="car.html">车型库</a></li>
-			<li class="active">车型列表</li>
+			<!-- <li><a href="carresult.html">车型库</a></li> -->
+			<li class="active">车型库</li>
 		</ol>
 	</div>
 	<div class="main-body">
@@ -148,59 +148,52 @@
 				<dt class="title">价格：</dt>
 				<dd class="category-item">
 					<a class="choose-on choose-all" data-value="" href="javascript:;">不限</a>
-					<a data-id="price" data-value="1" href="javascript:;">10万以下</a>
-					<a data-id="price" data-value="2" href="javascript:;">10-20万</a>
-					<a data-id="price" data-value="3" href="javascript:;">20-30万</a>
-					<a data-id="price" data-value="4" href="javascript:;">30-50</a>
-					<a data-id="price" data-value="5" href="javascript:;">50万以上</a>
+					<a data-id="carCondition.price" data-value="1" href="javascript:;">10万以下</a>
+					<a data-id="carCondition.price" data-value="2" href="javascript:;">10-20万</a>
+					<a data-id="carCondition.price" data-value="3" href="javascript:;">20-30万</a>
+					<a data-id="carCondition.price" data-value="4" href="javascript:;">30-50万</a>
+					<a data-id="carCondition.price" data-value="5" href="javascript:;">50万以上</a>
 				</dd>
 			</dl>
 			<dl id="categoryType" class="category-list clearfix">
 				<dt class="title">类型：</dt>
 				<dd class="category-item">
 					<a class="choose-all choose-on" data-value="" href="javascript:;">不限</a>
-					<a data-id="energy_type" data-value="低速电动车" href="javascript:;">低速电动车</a>
-					<a data-id="energy_type" data-value="纯电动" href="javascript:;">纯电动</a>
-					<a data-id="energy_type" data-value="插电式" href="javascript:;">插电式</a>
-					<a data-id="energy_type" data-value="增程式" href="javascript:;">增程式</a>
-					<a data-id="energy_type" data-value="混合动力" href="javascript:;">混合动力</a>
-					<a data-id="energy_type" data-value="燃料电池" href="javascript:;">燃料电池</a>
+					<a data-id="carCondition.energy_type" data-value="低速电动车" href="javascript:;">低速电动车</a>
+					<a data-id="carCondition.energy_type" data-value="纯电动" href="javascript:;">纯电动</a>
+					<a data-id="carCondition.energy_type" data-value="插电式" href="javascript:;">插电式</a>
+					<a data-id="carCondition.energy_type" data-value="增程式" href="javascript:;">增程式</a>
+					<a data-id="carCondition.energy_type" data-value="混合动力" href="javascript:;">混合动力</a>
+					<a data-id="carCondition.energy_type" data-value="燃料电池" href="javascript:;">燃料电池</a>
 				</dd>
 			</dl>
 			<dl id="categoryMile" class="category-list  clearfix">
 				<dt class="title">续航：</dt>
 				<dd class="category-item ">
 					<a class="choose-all choose-on" data-value="" href="javascript:;">不限</a>
-					<a data-id="mile" data-value="1" href="javascript:;">100公里以下</a>
-					<a data-id="mile" data-value="2" href="javascript:;">100-200公里</a>
-					<a data-id="mile" data-value="3" href="javascript:;">200-300公里</a>
-					<a data-id="mile" data-value="4" href="javascript:;">300-400公里</a>
-					<a data-id="mile" data-value="5" href="javascript:;">400公里以上</a>
+					<a data-id="carCondition.mile" data-value="1" href="javascript:;">100公里以下</a>
+					<a data-id="carCondition.mile" data-value="2" href="javascript:;">100-200公里</a>
+					<a data-id="carCondition.mile" data-value="3" href="javascript:;">200-300公里</a>
+					<a data-id="carCondition.mile" data-value="4" href="javascript:;">300-400公里</a>
+					<a data-id="carCondition.mile" data-value="5" href="javascript:;">400公里以上</a>
 				</dd>
 			</dl>
 			<dl id="categoryLevel" class="category-list rank clearfix ">
 				<dt class="title">级别：</dt>
 				<dd class="category-item">
 					<a class="choose-all choose-on" data-value="" href="javascript:;">不限</a>
-					<a data-id="level" data-value="微型" href="javascript:;">微型</a>
-					<a data-id="level" data-value="小型" href="javascript:;">小型</a>
-					<a data-id="level" data-value="紧凑型" href="javascript:;">紧凑型</a>
-					<a data-id="level" data-value="中型" href="javascript:;">中型</a>
-					<a data-id="level" data-value="中大型" href="javascript:;">中大型</a>
-					<a data-id="level" data-value="豪华型" href="javascript:;">豪华型</a>
-					<a data-id="level" data-value="SUV" href="javascript:;">SUV</a>
-					<a data-id="level" data-value="MPV" href="javascript:;">MPV</a>
-					<a data-id="level" data-value="跑车" href="javascript:;">跑车</a>
-					<a data-id="level" data-value="商用" href="javascript:;">商用</a>
+					<a data-id="carCondition.level" data-value="微型" href="javascript:;">微型</a>
+					<a data-id="carCondition.level" data-value="小型" href="javascript:;">小型</a>
+					<a data-id="carCondition.level" data-value="紧凑型" href="javascript:;">紧凑型</a>
+					<a data-id="carCondition.level" data-value="中型" href="javascript:;">中型</a>
+					<a data-id="carCondition.level" data-value="中大型" href="javascript:;">中大型</a>
+					<a data-id="carCondition.level" data-value="豪华型" href="javascript:;">豪华型</a>
+					<a data-id="carCondition.level" data-value="SUV" href="javascript:;">SUV</a>
+					<a data-id="carCondition.level" data-value="MPV" href="javascript:;">MPV</a>
+					<a data-id="carCondition.level" data-value="跑车" href="javascript:;">跑车</a>
+					<a data-id="carCondition.level" data-value="商用" href="javascript:;">商用</a>
 				</dd>
 			</dl>
-			<form action="car_search" type="post" enctype="multipart/form-data">
-				<input type="hidden" id="carBrand" name="carCondition.brand.id">
-				<input type="hidden" id="carPrice" name="carCondition.price">
-				<input type="hidden" id="carType" name="carCondition.energy_type">
-				<input type="hidden" id="carMile" name="carCondition.mile">
-				<input type="hidden" id="carLevel" name="carCondition.level">
-			</form>
 		</div>
 		<div class="content-container car-search-result">
 			<div class="content-left">
@@ -278,32 +271,32 @@ $(function(){
     })
     .done(function(data){
     	var data = data.response.data;
-    	var tplA = '{{#a}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/a}}';
-    	var tplB = '{{#b}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/b}}';
-    	var tplC = '{{#c}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/c}}';
-    	var tplD = '{{#d}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/d}}';
-    	var tplE = '{{#e}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/e}}';
-    	var tplF = '{{#f}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/f}}';
-    	var tplG = '{{#g}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/g}}';
-    	var tplH = '{{#h}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/h}}';
-    	var tplI = '{{#i}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/i}}';
-    	var tplJ = '{{#j}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/j}}';
-    	var tplK = '{{#k}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/k}}';
-    	var tplL = '{{#l}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/l}}';
-    	var tplM = '{{#m}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/m}}';
-    	var tplN = '{{#n}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/n}}';
-    	var tplO = '{{#o}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/o}}';
-    	var tplP = '{{#p}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/p}}';
-    	var tplQ = '{{#q}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/q}}';
-    	var tplR = '{{#r}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/r}}';
-    	var tplS = '{{#s}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/s}}';
-    	var tplT = '{{#t}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/t}}';
-    	var tplU = '{{#u}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/u}}';
-    	var tplV = '{{#v}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/v}}';
-    	var tplW = '{{#w}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/w}}';
-    	var tplX = '{{#x}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/x}}';
-    	var tplY = '{{#y}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/y}}';
-    	var tplZ = '{{#z}}<a href="javascript:;" data-id="brand.id" data-value={{id}}>{{brand}}</a>{{/z}}';
+    	var tplA = '{{#a}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/a}}';
+    	var tplB = '{{#b}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/b}}';
+    	var tplC = '{{#c}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/c}}';
+    	var tplD = '{{#d}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/d}}';
+    	var tplE = '{{#e}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/e}}';
+    	var tplF = '{{#f}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/f}}';
+    	var tplG = '{{#g}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/g}}';
+    	var tplH = '{{#h}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/h}}';
+    	var tplI = '{{#i}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/i}}';
+    	var tplJ = '{{#j}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/j}}';
+    	var tplK = '{{#k}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/k}}';
+    	var tplL = '{{#l}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/l}}';
+    	var tplM = '{{#m}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/m}}';
+    	var tplN = '{{#n}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/n}}';
+    	var tplO = '{{#o}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/o}}';
+    	var tplP = '{{#p}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/p}}';
+    	var tplQ = '{{#q}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/q}}';
+    	var tplR = '{{#r}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/r}}';
+    	var tplS = '{{#s}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/s}}';
+    	var tplT = '{{#t}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/t}}';
+    	var tplU = '{{#u}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/u}}';
+    	var tplV = '{{#v}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/v}}';
+    	var tplW = '{{#w}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/w}}';
+    	var tplX = '{{#x}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/x}}';
+    	var tplY = '{{#y}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/y}}';
+    	var tplZ = '{{#z}}<a href="javascript:;" data-id="carCondition.brand.id" data-value={{id}}>{{brand}}</a>{{/z}}';
 		brandtplRender(tplA, $('#brandA'));
 		brandtplRender(tplB, $('#brandB'));
 		brandtplRender(tplC, $('#brandC'));
@@ -332,67 +325,32 @@ $(function(){
 		brandtplRender(tplZ, $('#brandZ'));
 
 		var url = window.location.search;
-		var str = url.slice(1);
-	    var arr = str.split('=');
-	    arr[1] = decodeURIComponent(arr[1]);
-	    switch(arr[0]){
-	    	case 'carCondition.brand.id':
-		    	$('#categoryBrand .choose-all').removeClass('choose-on');
-		    	var items = $('#tabcontent a');
-		    	var letters = $('#firstLetters a');
-		    	for (var i = 0; i < items.length; i++) {
-		    		if($(items[i]).attr('data-value')===arr[1]){
-		    			$(items[i]).siblings().removeClass('choose-on');
-		    			$(items[i]).addClass('choose-on');
-		    			for (var j = 0; j < letters.length; j++) {
-		    				if ($(letters[j]).attr('href') === '#' + $(items[i]).parent().attr('id')) {
-		    					$(letters[j]).trigger('mouseenter');
-		    				}
-		    			}
-		    		}
-		    	}
-		    	break;
-	    	case 'carCondition.price':
-		    	$('#categoryPrice .choose-all').removeClass('choose-on');
-		    	var items = $('#categoryPrice a');
-		    	for (var i = 0; i < items.length; i++) {
-		    		if($(items[i]).attr('data-value')===arr[1]){
-		    			$(items[i]).siblings().removeClass('choose-on');
-		    			$(items[i]).addClass('choose-on');
-		    		}
-		    	}
-		    	break;
-	    	case 'carCondition.energy_type':
-		    	$('#categoryType .choose-all').removeClass('choose-on');
-		    	var items = $('#categoryType a');
-		    	for (var i = 0; i < items.length; i++) {
-		    		if($(items[i]).attr('data-value')===arr[1]){
-		    			$(items[i]).siblings().removeClass('choose-on');
-		    			$(items[i]).addClass('choose-on');
-		    		}
-		    	}
-		    	break;
-	    	case 'carCondition.mile':
-		    	$('#categoryMile .choose-all').removeClass('choose-on');
-		    	var items = $('#categoryMile a');
-		    	for (var i = 0; i < items.length; i++) {
-		    		if($(items[i]).attr('data-value')===arr[1]){
-		    			$(items[i]).siblings().removeClass('choose-on');
-		    			$(items[i]).addClass('choose-on');
-		    		}
-		    	}
-		    	break;
-	    	case 'carCondition.level':
-		    	$('#categoryLevel .choose-all').removeClass('choose-on');
-		    	var items = $('#categoryLevel a');
-		    	for (var i = 0; i < items.length; i++) {
-		    		if($(items[i]).attr('data-value')===arr[1]){
-		    			$(items[i]).siblings().removeClass('choose-on');
-		    			$(items[i]).addClass('choose-on');
-		    		}
-		    	}
-		    	break;
-	    };
+
+		chooseOn();
+		function chooseOn(){
+			var argObj = getArgs();
+			$('.search-input').val(argObj['carCondition.car_name']);
+			$('#filter').find('a[data-id]').each(function(){
+				var id = $(this).attr('data-id');
+				var value = $(this).attr('data-value');			
+				var $this;
+				for (var name in argObj){
+					$this = $(this);
+					if(id === name && value === argObj[name]){
+				  		$this.parents('#categoryBrand').find('.choose-all').removeClass('choose-on');
+				  		$this.siblings('a').removeClass('choose-on');
+				  		$this.addClass('choose-on');
+					} 
+				};
+			})
+			var id = $('#categoryBrand').find('.choose-on').parents('.brand-list').attr('id');
+			$('#firstLetters').find('a').each(function(){
+				$this = $(this);
+				if ($this.attr('href') === '#' + id) {
+					$this.trigger('mouseenter');
+				}
+			})
+		}
 
 
 	    var postUrl = 'ev/car_search' + url;
@@ -435,33 +393,15 @@ $(function(){
 
 	    $('.search-btn').click(function(){
 	    	var inputText = $('.search-input').val();
-	    	var url = 'car_search?carCondition.car_name=' + inputText;
-			$.ajax({
-		        url: url,
-		        type: 'POST',
-		        dataType: 'json',
-		    })
-		    .done(function(data){
-		    	refresh(data);
-		    	$('#filter a').removeClass('choose-on');
-		    	$('.choose-all').addClass('choose-on');
-		    })
+	    	var url = '?carCondition.car_name=' + inputText;
+	    	location.search = url;
 	    });
 
 
 
-        // var result = RetSelecteds();
-        // console.log(result);
         function renderPage(args){
-        	var url = 'ev/car_search?' + args;
-			$.ajax({
-		        url: url,
-		        type: 'POST',
-		        dataType: 'json',
-		    })
-		    .done(function(data){
-		    	refresh(data);       
-		    });
+        	var url = '?' + args;
+			location.search = url;
         }
 
 
@@ -479,7 +419,7 @@ $(function(){
 		    	cars[i].price = cars[i].car.params[0] && cars[i].car.params[0].price?'￥' + cars[i].car.params[0].price + '万':'暂无价格';
 		    	cars[i].accelerate = cars[i].car.params[0]?cars[i].car.params[0].accelerate:'';
 	    	}
-			var resultTpl = '<ul class="list-content">{{#Cars}}<li class="list-item"><div class="figure"><a href="cardetail.html?id={{car.id}}"><img src="uploadPath/{{pic}}">{{#car.prompt}}<span class="recommend-icon"></span>{{/car.prompt}}</a>{{#logo}}<a href="javascript:;" class="car-logo"><img src="brandPath/{{logo}}"></a>{{/logo}}<div class="car-info"><div class="info-wrapper"><a href="cardetail.html?id={{car.id}}">详情</a><a href="javascript:;">客服</a><a href="{{#car.company.url}}{{car.company.url}}{{/car.company.url}}{{^car.company.url}}company.html?id={{car.company.id}}{{/car.company.url}}" target="_blank" rel="nofollow">官网</a></div><div class="car-detail"><ul class="detail-list"><li><p>续航里程：<span>{{endurance}}</span>km</p></li><li><p>最高时速：<span>{{speed}}</span>km/h</p></li><li><p>充电时间：<span>{{chargetime}}</span>h</p></li><li><p>百公里加速：<span>{{accelerate}}</span>s</p></li></ul></div></div></div><div class="detail"><a class="desc" href="cardetail.html?id={{car.id}}">{{car.name}}</a><div class="company-detail"><a href="company.html?id={{car.company.id}}" class="company-name" target="_blank">{{car.company.name}}</a></div><div class="msg"><p class="price"><span></span>{{price}}</p><p class="view-count">已浏览<span> {{car.hot}}</span></p></div></div></li>{{/Cars}}</ul>';
+			var resultTpl = '<ul class="list-content">{{#Cars}}<li class="list-item"><div class="figure"><a href="cardetail.html?id={{car.id}}"><img src="uploadPath/{{pic}}">{{#car.prompt}}<span class="recommend-icon"></span>{{/car.prompt}}</a>{{#logo}}<a href="javascript:;" class="car-logo"><img src="brandPath/{{logo}}"></a>{{/logo}}<div class="car-info"><div class="info-wrapper"><a href="cardetail.html?id={{car.id}}">详情</a><a href="javascript:;">客服</a><a href="{{#car.company.url}}{{car.company.url}}{{/car.company.url}}{{^car.company.url}}company.html?id={{car.company.id}}{{/car.company.url}}" target="_blank" rel="nofollow">官网</a></div><div class="car-detail"><ul class="detail-list"><li><p>续航里程：<span>{{endurance}}</span>km</p></li><li><p>最高时速：<span>{{speed}}</span>km/h</p></li><li><p>充电时间：<span>{{chargetime}}</span>h</p></li><li><p>百公里加速：<span>{{accelerate}}</span>s</p></li></ul></div></div></div><div class="detail"><a {{#car.w1}}style="text-indent: 26px;"{{/car.w1}} class="desc" href="cardetail.html?id={{car.id}}">{{#car.w1}}<span class="hot-icon"></span>{{/car.w1}}{{car.name}}</a><div class="company-detail"><a href="company.html?id={{car.company.id}}" class="company-name" target="_blank">{{car.company.name}}{{#car.company.vip}}<span class="approve-icon"></span>{{/car.company.vip}}</a></div><div class="msg"><p class="price"><span></span>{{price}}</p><p class="view-count">已浏览<span> {{car.hot}}</span></p></div></div></li>{{/Cars}}</ul>';
 	        tplRender(resultTpl, data, $('#car-result'));
 			var pageCount = data.response.data.Car_condition.maxPageNo;
 			var pageNo = data.response.data.Car_condition.pageNo;
@@ -488,7 +428,6 @@ $(function(){
 			    pageCount: pageCount /*resultData.condition.pageCount*/,
 			    current: currentPage /*resultData.condition.currentPage*/,
 			    mclick: function(p){
-			        console.log(p);
 			    }
 			});        
 		    $('.prevPage').click(function(){
@@ -552,7 +491,7 @@ $(function(){
         function RetSelecteds() {
 	        var result = "";
 	        $("#filter a[class='choose-on']").each(function () {
-	            result +='carCondition.' + $(this).attr('data-id') + '=' + $(this).attr('data-value') + '&';
+	            result += $(this).attr('data-id') + '=' + $(this).attr('data-value') + '&';
 	        });
 	        return result;
 	    };
@@ -566,7 +505,7 @@ $(function(){
 
 
 
-
+//侧边栏推荐
 $(document).ready(function(){
 	$.ajax({
         url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=LR01',
@@ -673,7 +612,7 @@ function getArgs(){
     }
     return args;
 }
-function trim(str){   
+function trim(str){
     str = str.replace(/^(\s|\u00A0)+/,'');   
     for(var i=str.length-1; i>=0; i--){   
         if(/\S/.test(str.charAt(i))){   

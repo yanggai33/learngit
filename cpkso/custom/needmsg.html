@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="style/css/reset.css">
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/css/base.css">
@@ -9,207 +10,202 @@
     <link rel="stylesheet" href="style/css/needmsg.css">
     <link rel="stylesheet" href="style/css/style.css">
     <link rel="stylesheet" href="style/css/searchresult.css">
-	<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-	<script type="text/javascript">
-	!window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
-	</script>
-	<script type="text/javascript" src="style/js/lib/Ecalendar.jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    !window.jQuery && document.write('<script src="style/js/lib/jquery-2.0.0.min.js"><\/script>');
+    </script>
+    <script type="text/javascript" src="style/js/lib/Ecalendar.jquery.min.js"></script>
     <script type="text/javascript" src="style/js/lib/jquery.page.js"></script>
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="style/js/lib/enter.js"></script>
-	<script type="text/javascript" src="style/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-	<title>求购信息</title>
-	<style>
-		.category .category-list .brand-ident li{
-			position:relative;
-		}
-		.category .category-list .brand-ident li.active a span{
-			width:0;
-			height:0;
-			position:absolute;
-			border-right:5px solid transparent;
-			border-left:5px solid transparent;
-			border-bottom:5px solid #da3a4d;
-			margin-top:10px;
-			top:17px;
-			right:10px;
-		}
-		.list-content{
-			border-top:none;
-			border-left:none;
-		}
-		.product-release-list .product-detail li{
-	        width: 236px;
-        }
-	</style>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="style/js/lib/enter.js"></script>
+    <script type="text/javascript" src="style/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+    <title>求购信息</title>
+    <style>
+    .category .category-list .brand-ident li {
+        position: relative;
+    }
+    
+    .category .category-list .brand-ident li.active a span {
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        border-bottom: 5px solid #da3a4d;
+        margin-top: 10px;
+        top: 17px;
+        right: 10px;
+    }
+    
+    .list-content {
+        border-top: none;
+        border-left: none;
+    }
+    
+    .product-release-list .product-detail li {
+        width: 236px;
+    }
+    </style>
 </head>
+
 <body>
-	<header class="header">
-		<div class="header-left">
-			<img src="style/img/search-logo.png" alt="logo">
-		</div>
-		<div class="header-right">
-			<!--<div class="search">
+    <header class="header">
+        <div class="header-left">
+            <img src="style/img/search-logo.png" alt="logo">
+        </div>
+        <div class="header-right">
+            <!--<div class="search">
 				<input type="text" placeholder="江淮IEV4"  id="needmsgSearch">
 				<a class="search-btn" href="javascript:;"></a>
 			</div>-->
-			<img src="style/img/2017.png" alt="logo">
-		</div>
-	</header>
-	<nav class="nav-wrapper">
-		<ul class="nav-list">
-			<li><a href="index.html">首页</a></li>
-			<li><a href="news.html">资讯</a></li>
-			<li><a href="car.html">车型库</a></li>
-			<li><a href="parts.html">配件库</a></li>
-			<li class="active"><a href="">供求信息</a></li>
-			<li><a href="enterprise.html">企业库</a></li>
-			<li><a href="http://www.cpkso.com">返回产品快搜</a></li>
-			<li><a href="http://www.cpkso.cn">在线支付</a></li>
-		</ul>
-	</nav>
-	<div class="main-body">
-		<div class="category"  id="filter">
-			<div class="category-list clearfix"  id="categoryCity">
-				<dt class="title">省市：</dt>
-				<a class="choose-all choose-on" href="javascript:;">不限</a>
-				<div class="brand-ident"   id="firstLetters">
-					<ul>
-						<li><a href="#brandA" data-toggle="enter">A</a></li>
-						<li><a href="#brandB" data-toggle="enter">B</a></li>
-						<li><a href="#brandC" data-toggle="enter">C</a></li>
-						<li><a href="#brandD" data-toggle="enter">D</a></li>
-						<li><a href="#brandE" data-toggle="enter">E</a></li>
-						<li><a href="#brandF" data-toggle="enter">F</a></li>
-						<li><a href="#brandG" data-toggle="enter">G</a></li>
-						<li class="active"><a href="#brandH" data-toggle="enter">H</a></li>
-						<li><a href="#brandI" data-toggle="enter">I</a></li>
-						<li><a href="#brandJ" data-toggle="enter">J</a></li>
-						<li><a href="#brandK" data-toggle="enter">K</a></li>
-						<li><a href="#brandL" data-toggle="enter">L</a></li>
-						<li><a href="#brandM" data-toggle="enter">M</a></li>
-						<li><a href="#brandN" data-toggle="enter">N</a></li>
-						<li><a href="#brandO" data-toggle="enter">O</a></li>
-						<li><a href="#brandP" data-toggle="enter">P</a></li>
-						<li><a href="#brandQ" data-toggle="enter">Q</a></li>
-						<li><a href="#brandR" data-toggle="enter">R</a></li>
-						<li><a href="#brandS" data-toggle="enter">S</a></li>
-						<li><a href="#brandT" data-toggle="enter">T</a></li>
-						<li><a href="#brandU" data-toggle="enter">U</a></li>
-						<li><a href="#brandV" data-toggle="enter">V</a></li>
-						<li><a href="#brandW" data-toggle="enter">W</a></li>
-						<li><a href="#brandX" data-toggle="enter">X</a></li>
-						<li><a href="#brandY" data-toggle="enter">Y</a></li>
-						<li><a href="#brandZ" data-toggle="enter">Z</a></li>
-					</ul>
-				</div>
-				<div class="tab-content"   id="tabcontent">
-					<div class="tab-pane  brand-list" id="brandA">
-						<a href="javascript:;" data-id="province"  data-value="安徽">安徽</a>
-						<a href="javascript:;" data-id="province" data-value="澳门">澳门</a>
-					</div>
-					
-					<div class="tab-pane brand-list" id="brandB">
-						<a href="javascript:;" data-id="province" data-value="北京">北京</a>
-						
-					</div>
-					<div class="tab-pane brand-list" id="brandC">
-						<a href="javascript:;" data-id="province" data-value="重庆">重庆</a>
-						
-					</div>
-					<div class="tab-pane brand-list" id="brandD">
-						
-					</div>
-					<div class="tab-pane brand-list" id="brandE">
-						
-					</div>
-					<div class="tab-pane brand-list" id="brandF">
-						<a href="javascript:;" data-id="province" data-value="福建">福建</a>
-					</div>
-					<div class="tab-pane brand-list" id="brandG">
-						<a href="javascript:;" data-id="province" data-value="广东">广东</a>
-						<a href="javascript:;" data-id="province" data-value="广西">广西</a>
-						<a href="javascript:;" data-id="province" data-value="贵州">贵州</a>
-						<a href="javascript:;" data-id="province" data-value="甘肃">甘肃</a>
-					</div>
-					<div class="tab-pane brand-list active" id="brandH">
-						<a href="javascript:;" data-id="province" data-value="河南">河南</a>
-						<a href="javascript:;" data-id="province" data-value="河北">河北</a>
-						<a href="javascript:;" data-id="province" data-value="黑龙江">黑龙江</a>
-						<a href="javascript:;" data-id="province" data-value="海南">海南</a>
-						<a href="javascript:;" data-id="province" data-value="湖南">湖南</a>
-						<a href="javascript:;" data-id="province" data-value="湖北">湖北</a>
-					</div>
-					<div class="tab-pane brand-list" id="brandI">
-						
-					</div>
-					<div class="tab-pane brand-list" id="brandJ">
-						<a href="javascript:;" data-id="province" data-value="江西">江西</a>
-						<a href="javascript:;" data-id="province" data-value="江苏">江苏</a>
-						<a href="javascript:;" data-id="province" data-value="吉林">吉林</a>
-						
-					</div>
-					<div class="tab-pane brand-list" id="brandK">
-						
-					</div>
-					<div class="tab-pane brand-list" id="brandL">
-						<a href="javascript:;" data-id="province" data-value="辽宁">辽宁</a>
-					</div>
-					<div class="tab-pane brand-list" id="brandM">
-					</div>
-					<div class="tab-pane brand-list" id="brandN">
-						<a href="javascript:;" data-id="province" data-value="内蒙古">内蒙古</a>
-						<a href="javascript:;" data-id="province" data-value="宁夏">宁夏</a>
-					</div>
-					<div class="tab-pane brand-list" id="brandO">
-					</div>
-					<div class="tab-pane brand-list" id="brandP">
-					</div>
-					<div class="tab-pane brand-list" id="brandQ">
-						<a href="javascript:;" data-id="province" data-value="青海">青海</a>
-					</div>
-					<div class="tab-pane brand-list" id="brandR">
-					</div>
-					<div class="tab-pane brand-list" id="brandS">
-						<a href="javascript:;" data-id="province" data-value="山东">山东</a>
-						<a href="javascript:;" data-id="province" data-value="山西">山西</a>
-						<a href="javascript:;" data-id="province" data-value="陕西">陕西</a>
-						<a href="javascript:;" data-id="province" data-value="四川">四川</a>
-						<a href="javascript:;" data-id="province" data-value="上海">上海</a>
-					</div>
-					<div class="tab-pane brand-list" id="brandT">
-						<a href="javascript:;" data-id="province" data-value="台湾">台湾</a>
-						<a href="javascript:;" data-id="province" data-value="天津">天津</a>
-					</div>
-					<div class="tab-pane brand-list" id="brandU">
-					</div>
-					<div class="tab-pane brand-list" id="brandV">
-					</div>
-					<div class="tab-pane brand-list" id="brandW">
-					</div>
-					<div class="tab-pane brand-list" id="brandX">
-						<a href="javascript:;" data-id="province" data-value="西藏">西藏</a>
-						<a href="javascript:;" data-id="province" data-value="新疆">新疆</a>
-						<a href="javascript:;" data-id="province" data-value="香港">香港</a>
-					</div>
-					<div class="tab-pane brand-list" id="brandY">
-						<a href="javascript:;" data-id="province" data-value="云南">云南</a>
-					</div>
-					<div class="tab-pane brand-list" id="brandZ">
-						<a href="javascript:;" data-id="province" data-value="浙江">浙江</a>
-						
-					</div>
-				</div>
-			</div>
-			<dl class="category-list clearfix">
-				<dt class="title">分类：</dt>
-				<dd class="category-item">
-					<a class="choose-all  choose-on" href="#">不限</a>
-					<a  href="javascript:;"  data-value="1"  data-id="category.type">整车</a>
-					<a  href="javascript:;"  data-value="2" data-id="category.type">配件</a>
-				</dd>
-			</dl>
-			<!--<dl class="category-list clearfix">
+            <img src="style/img/2017.png" alt="logo">
+        </div>
+    </header>
+    <nav class="nav-wrapper">
+        <ul class="nav-list">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="news.html">资讯</a></li>
+            <li><a href="carresult.html">车型库</a></li>
+            <li><a href="partsresult.html">配件库</a></li>
+            <li class="active"><a href="needmsg.html">供求信息</a></li>
+            <li><a href="enterprise.html">企业库</a></li>
+            <li><a href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
+            <li><a href="http://www.cpkso.cn" target="_blank">在线支付</a></li>
+        </ul>
+    </nav>
+    <div class="main-body">
+        <div class="category" id="filter">
+            <div class="category-list clearfix" id="categoryCity">
+                <dt class="title">省市：</dt>
+                <a class="choose-all choose-on" href="javascript:;">不限</a>
+                <div class="brand-ident" id="firstLetters">
+                    <ul>
+                        <li><a href="#brandA" data-toggle="enter">A</a></li>
+                        <li><a href="#brandB" data-toggle="enter">B</a></li>
+                        <li><a href="#brandC" data-toggle="enter">C</a></li>
+                        <li><a href="#brandD" data-toggle="enter">D</a></li>
+                        <li><a href="#brandE" data-toggle="enter">E</a></li>
+                        <li><a href="#brandF" data-toggle="enter">F</a></li>
+                        <li><a href="#brandG" data-toggle="enter">G</a></li>
+                        <li class="active"><a href="#brandH" data-toggle="enter">H</a></li>
+                        <li><a href="#brandI" data-toggle="enter">I</a></li>
+                        <li><a href="#brandJ" data-toggle="enter">J</a></li>
+                        <li><a href="#brandK" data-toggle="enter">K</a></li>
+                        <li><a href="#brandL" data-toggle="enter">L</a></li>
+                        <li><a href="#brandM" data-toggle="enter">M</a></li>
+                        <li><a href="#brandN" data-toggle="enter">N</a></li>
+                        <li><a href="#brandO" data-toggle="enter">O</a></li>
+                        <li><a href="#brandP" data-toggle="enter">P</a></li>
+                        <li><a href="#brandQ" data-toggle="enter">Q</a></li>
+                        <li><a href="#brandR" data-toggle="enter">R</a></li>
+                        <li><a href="#brandS" data-toggle="enter">S</a></li>
+                        <li><a href="#brandT" data-toggle="enter">T</a></li>
+                        <li><a href="#brandU" data-toggle="enter">U</a></li>
+                        <li><a href="#brandV" data-toggle="enter">V</a></li>
+                        <li><a href="#brandW" data-toggle="enter">W</a></li>
+                        <li><a href="#brandX" data-toggle="enter">X</a></li>
+                        <li><a href="#brandY" data-toggle="enter">Y</a></li>
+                        <li><a href="#brandZ" data-toggle="enter">Z</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="tabcontent">
+                    <div class="tab-pane  brand-list" id="brandA">
+                        <a href="javascript:;" data-id="province" data-value="安徽">安徽</a>
+                        <a href="javascript:;" data-id="province" data-value="澳门">澳门</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandB">
+                        <a href="javascript:;" data-id="province" data-value="北京">北京</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandC">
+                        <a href="javascript:;" data-id="province" data-value="重庆">重庆</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandD">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandE">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandF">
+                        <a href="javascript:;" data-id="province" data-value="福建">福建</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandG">
+                        <a href="javascript:;" data-id="province" data-value="广东">广东</a>
+                        <a href="javascript:;" data-id="province" data-value="广西">广西</a>
+                        <a href="javascript:;" data-id="province" data-value="贵州">贵州</a>
+                        <a href="javascript:;" data-id="province" data-value="甘肃">甘肃</a>
+                    </div>
+                    <div class="tab-pane brand-list active" id="brandH">
+                        <a href="javascript:;" data-id="province" data-value="河南">河南</a>
+                        <a href="javascript:;" data-id="province" data-value="河北">河北</a>
+                        <a href="javascript:;" data-id="province" data-value="黑龙江">黑龙江</a>
+                        <a href="javascript:;" data-id="province" data-value="海南">海南</a>
+                        <a href="javascript:;" data-id="province" data-value="湖南">湖南</a>
+                        <a href="javascript:;" data-id="province" data-value="湖北">湖北</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandI">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandJ">
+                        <a href="javascript:;" data-id="province" data-value="江西">江西</a>
+                        <a href="javascript:;" data-id="province" data-value="江苏">江苏</a>
+                        <a href="javascript:;" data-id="province" data-value="吉林">吉林</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandK">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandL">
+                        <a href="javascript:;" data-id="province" data-value="辽宁">辽宁</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandM">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandN">
+                        <a href="javascript:;" data-id="province" data-value="内蒙古">内蒙古</a>
+                        <a href="javascript:;" data-id="province" data-value="宁夏">宁夏</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandO">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandP">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandQ">
+                        <a href="javascript:;" data-id="province" data-value="青海">青海</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandR">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandS">
+                        <a href="javascript:;" data-id="province" data-value="山东">山东</a>
+                        <a href="javascript:;" data-id="province" data-value="山西">山西</a>
+                        <a href="javascript:;" data-id="province" data-value="陕西">陕西</a>
+                        <a href="javascript:;" data-id="province" data-value="四川">四川</a>
+                        <a href="javascript:;" data-id="province" data-value="上海">上海</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandT">
+                        <a href="javascript:;" data-id="province" data-value="台湾">台湾</a>
+                        <a href="javascript:;" data-id="province" data-value="天津">天津</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandU">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandV">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandW">
+                    </div>
+                    <div class="tab-pane brand-list" id="brandX">
+                        <a href="javascript:;" data-id="province" data-value="西藏">西藏</a>
+                        <a href="javascript:;" data-id="province" data-value="新疆">新疆</a>
+                        <a href="javascript:;" data-id="province" data-value="香港">香港</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandY">
+                        <a href="javascript:;" data-id="province" data-value="云南">云南</a>
+                    </div>
+                    <div class="tab-pane brand-list" id="brandZ">
+                        <a href="javascript:;" data-id="province" data-value="浙江">浙江</a>
+                    </div>
+                </div>
+            </div>
+            <dl class="category-list clearfix">
+                <dt class="title">分类：</dt>
+                <dd class="category-item">
+                    <a class="choose-all  choose-on" href="#">不限</a>
+                    <a href="javascript:;" data-value="1" data-id="requireCondition.category.type">整车</a>
+                    <a href="javascript:;" data-value="2" data-id="requireCondition.category.type">配件</a>
+                </dd>
+            </dl>
+            <!--<dl class="category-list clearfix">
 				<dt class="title">类型：</dt>
 				<dd class="category-item">
 					<a class="choose-all  choose-on" href="">不限</a>
@@ -223,153 +219,153 @@
 					<a href="">内饰系统</a>
 				</dd>
 			</dl>-->
-		</div>
-		<div class="product-release clearfix">
-			<div class="form-wrapper">
-				<form class="form-horizontal" method="post" action="require_add" enctype="multipart/form-data" id="needForm">
-					<div class="form-group clearfix">
-						<label for="pname" class="col-sm-3 control-label"><span style="color:red;">*</span>产品名称</label>
-						<div class="col-sm-8">
-							<input type="text" name="require.title" class="form-control" id="pname" placeholder="" required>
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<label  class="col-sm-3 control-label"><span style="color:red;">*</span>产品分类</label>
-						<div class="col-sm-4">
-							<select class="form-control" name="require.category.id" id="s_main" required>
-								<option value="1">整车</option>
-								<option value="2">配件</option>
-							</select>
-						</div>
-						<div class="col-sm-4">
-							<select class="form-control"  id="s_sub" required>
-							    <option value="3">电动乘用车</option>
-								<option value="4">电动客车</option>
-								<option value="5">微型电动车</option>
-							</select> 
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<label  class="col-sm-3 control-label"><span style="color:red;">*</span>选择省市</label>
-						<div class="col-sm-4">
-							<select class="form-control" name="require.province" id="province"  onChange="getCity(this.options[this.selectedIndex].value)" required>
-								<option value="">-请选择-</option>
-				                <option value="北京">北京</option>
-				                <option value="上海">上海</option>
-				                <option value="天津">天津</option>
-				                <option value="重庆">重庆</option>
-				                <option value="河北">河北</option>
-				                <option value="山西">山西</option>
-				                <option value="内蒙古">内蒙古</option>
-				                <option value="辽宁">辽宁</option>
-				                <option value="吉林">吉林</option>
-				                <option value="黑龙江">黑龙江</option>
-				                <option value="江苏">江苏</option>
-				                <option value="浙江">浙江</option>
-				                <option value="安徽">安徽</option>
-				                <option value="福建">福建</option>
-				                <option value="江西">江西</option>
-				                <option value="山东">山东</option>
-				                <option value="河南">河南</option>
-				                <option value="湖北">湖北</option>
-				                <option value="湖南">湖南</option>
-				                <option value="广东">广东</option>
-				                <option value="广西">广西</option>
-				                <option value="海南">海南</option>
-				                <option value="四川">四川</option>
-				                <option value="贵州">贵州</option>
-				                <option value="云南">云南</option>
-				                <option value="西藏">西藏</option>
-				                <option value="陕西">陕西</option>
-				                <option value="甘肃">甘肃</option>
-				                <option value="宁夏">宁夏</option>
-				                <option value="青海">青海</option>
-				                <option value="新疆">新疆</option>
-				                <option value="香港">香港</option>
-				                <option value="澳门">澳门</option>
-				                <option value="台湾">台湾</option>
-				                <option value="其它">其它</option>
-							</select>
-						</div>
-						<div class="col-sm-4">
-							<select class="form-control"  name="require.city"  id="city">
-							    <option value="">-请选择-</option>
-							</select> 
-						</div>
-					</div>
-					<div class="form-group">
-						<label  class="col-sm-3 control-label">产品图片</label>
-						<div class="col-sm-8">
-			                <input type="file" data-min-file-count="1" data-max-file-count="1"  name="pic">
-				        </div>
-					</div>
-					<div class="form-group clearfix">
-						<label  class="col-sm-3 control-label">需求说明</label>
-						<div class="col-sm-8">
-							<textarea class="form-control" rows="3" name="require.brief" required></textarea>
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<label for="ECalendar_case1" class="col-sm-3 control-label"><span style="color:red;">*</span>截止日期</label>
-						<div class="col-sm-8">
-							<input type="text" name="require.expire_date"  onfocus="WdatePicker()"  class="input-text Wdate" 	required/>
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<label  class="col-sm-3 control-label"><span style="color:red;">*</span>需求数量</label>
-						<div class="col-sm-4">
-							<select class="form-control"  name="require.buyerType" required>
-								<option value="ENTERPRISE">企业采购</option>
-								<option value="PERSONAL">个人采购</option>
-							</select>
-						</div>
-						<div class="col-sm-4">
-							<input type="number" name="require.number"  class="form-control"  placeholder="填写数量" required>
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<label for="uname" class="col-sm-3 control-label"><span style="color:red;">*</span>联系人</label>
-						<div class="col-sm-8">
-							<input type="text"  name="require.name" class="form-control" id="uname" placeholder="" required>
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<label for="tel" class="col-sm-3 control-label"><span style="color:red;">*</span>手机号</label>
-						<div class="col-sm-8">
-							<input type="text" name="require.tel"  class="form-control" id="tel" placeholder="" required>
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<label for="wechat" class="col-sm-3 control-label">微信号</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="wechat" placeholder=""  name="require.wechat">
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<label for="qq" class="col-sm-3 control-label">QQ号</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="qq" placeholder=""  name="require.qq">
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<label for="inputEmail3" class="col-sm-3 control-label">邮箱</label>
-						<div class="col-sm-8">
-							<input type="email" class="form-control" id="inputEmail3" placeholder=""  name="require.email">
-						</div>
-					</div>
-					<div class="form-group clearfix">
-						<div class="col-sm-offset-3 col-sm-8">
-							<button type="submit" class="release-btn">发布需求</button>
-						</div>
-					</div>
-				</form>
-				<img src="style/img/icon/release.png" alt="">
-			</div>
-			<div class="product-release-list"   id="productlist">
-			</div>
-		</div>
-		<div class="product-recommend">
-			<!--<div class="tab-container">
+        </div>
+        <div class="product-release clearfix">
+            <div class="form-wrapper">
+                <form class="form-horizontal" method="post" action="require_add" enctype="multipart/form-data" id="needForm">
+                    <div class="form-group clearfix">
+                        <label for="pname" class="col-sm-3 control-label"><span style="color:red;">*</span>产品名称</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="require.title" class="form-control" id="pname" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="col-sm-3 control-label"><span style="color:red;">*</span>产品分类</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="require.category.id" id="s_main" required>
+                                <option value="1">整车</option>
+                                <option value="2">配件</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <select class="form-control" id="s_sub" required>
+                                <option value="3">电动乘用车</option>
+                                <option value="4">电动客车</option>
+                                <option value="5">微型电动车</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="col-sm-3 control-label"><span style="color:red;">*</span>选择省市</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="require.province" id="province" onChange="getCity(this.options[this.selectedIndex].value)" required>
+                                <option value="">-请选择-</option>
+                                <option value="北京">北京</option>
+                                <option value="上海">上海</option>
+                                <option value="天津">天津</option>
+                                <option value="重庆">重庆</option>
+                                <option value="河北">河北</option>
+                                <option value="山西">山西</option>
+                                <option value="内蒙古">内蒙古</option>
+                                <option value="辽宁">辽宁</option>
+                                <option value="吉林">吉林</option>
+                                <option value="黑龙江">黑龙江</option>
+                                <option value="江苏">江苏</option>
+                                <option value="浙江">浙江</option>
+                                <option value="安徽">安徽</option>
+                                <option value="福建">福建</option>
+                                <option value="江西">江西</option>
+                                <option value="山东">山东</option>
+                                <option value="河南">河南</option>
+                                <option value="湖北">湖北</option>
+                                <option value="湖南">湖南</option>
+                                <option value="广东">广东</option>
+                                <option value="广西">广西</option>
+                                <option value="海南">海南</option>
+                                <option value="四川">四川</option>
+                                <option value="贵州">贵州</option>
+                                <option value="云南">云南</option>
+                                <option value="西藏">西藏</option>
+                                <option value="陕西">陕西</option>
+                                <option value="甘肃">甘肃</option>
+                                <option value="宁夏">宁夏</option>
+                                <option value="青海">青海</option>
+                                <option value="新疆">新疆</option>
+                                <option value="香港">香港</option>
+                                <option value="澳门">澳门</option>
+                                <option value="台湾">台湾</option>
+                                <option value="其它">其它</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="require.city" id="city">
+                                <option value="">-请选择-</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">产品图片</label>
+                        <div class="col-sm-8">
+                            <input type="file" data-min-file-count="1" data-max-file-count="1" name="pic">
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="col-sm-3 control-label">需求说明</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" rows="3" name="require.brief" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label for="ECalendar_case1" class="col-sm-3 control-label"><span style="color:red;">*</span>截止日期</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="require.expire_date" onfocus="WdatePicker()" class="input-text Wdate" required/>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="col-sm-3 control-label"><span style="color:red;">*</span>需求数量</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="require.buyerType" required>
+                                <option value="ENTERPRISE">企业采购</option>
+                                <option value="PERSONAL">个人采购</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="number" name="require.number" class="form-control" placeholder="填写数量" required>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label for="uname" class="col-sm-3 control-label"><span style="color:red;">*</span>联系人</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="require.name" class="form-control" id="uname" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label for="tel" class="col-sm-3 control-label"><span style="color:red;">*</span>手机号</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="require.tel" class="form-control" id="tel" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label for="wechat" class="col-sm-3 control-label">微信号</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="wechat" placeholder="" name="require.wechat">
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label for="qq" class="col-sm-3 control-label">QQ号</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="qq" placeholder="" name="require.qq">
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <label for="inputEmail3" class="col-sm-3 control-label">邮箱</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="" name="require.email">
+                        </div>
+                    </div>
+                    <div class="form-group clearfix">
+                        <div class="col-sm-offset-3 col-sm-8">
+                            <button type="submit" class="release-btn">发布需求</button>
+                        </div>
+                    </div>
+                </form>
+                <img src="style/img/icon/release.png" alt="">
+            </div>
+            <div class="product-release-list" id="productlist">
+            </div>
+        </div>
+        <div class="product-recommend">
+            <!--<div class="tab-container">
 				<ul class="nav nav-tabs"  id="tabs">
 					<li class="active" >
 						<a href="#hot-recommend" data-toggle="tab">热门推荐</a>
@@ -418,476 +414,474 @@
 					<div class="tab-pane" id="interior"></div>
 					</div>
 			</div>-->
-			<div class="page-wrapper">
-			       <div class="pagination"></div>
-	        </div>
-		</div>
-		<div class="ad-bar"  id="bar"  style="margin-top:50px;">
-			<!--<a href=""><img src="style/img/ad-pic-1.png"></a>-->
-		</div>
-		
-		<div class="cut-line"></div>
-	</div>
-	<footer class="footer">
-		<div class="footer-link">
-			<a href="aboutus.html?id=aboutus">关于我们</a>
+            <div class="page-wrapper">
+                <div class="pagination"></div>
+            </div>
+        </div>
+        <div class="ad-bar" id="bar" style="margin-top:50px;">
+            <!--<a href=""><img src="style/img/ad-pic-1.png"></a>-->
+        </div>
+        <div class="cut-line"></div>
+    </div>
+    <footer class="footer">
+        <div class="footer-link">
+            <a href="aboutus.html?id=aboutus">关于我们</a>
             <a href="aboutus.html?id=contactus">联系我们</a>
             <a href="aboutus.html?id=joinus">商务合作</a>
             <a href="aboutus.html?id=terms">服务条款</a>
             <a href="aboutus.html?id=sitemap">网站地图</a>
             <a href="http://www.cpkso.cn">在线付款</a>
-		</div>
-		<div class="site-info">
-			<p class="footer-copyright">洛阳焦点信息科技有限公司版权所有</p>
-			<p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
-			<p class="tel">电话：0379-65171155</p>
-		</div>
-	</footer>
-<script src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
-<script src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
-<script src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
-<script type="text/javascript" src="style/js/lib/mustache.min.js"></script>
-<script src="style/lib/area.js"></script>
-<script type="text/javascript">
-	$(function(){
-			$("#ECalendar_case1").ECalendar({
-					 type:"date",
-					 skin:"#233",
-					 offset:[0,2]
-			});
-			 $(".release-btn").validate();
+        </div>
+        <div class="site-info">
+            <p class="footer-copyright">洛阳焦点信息科技有限公司版权所有</p>
+            <p class="address">公司地址：河南省洛阳市洛龙区军威路1号6楼</p>
+            <p class="tel">电话：0379-65171155</p>
+        </div>
+    </footer>
+    <script src="style/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+    <script src="style/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+    <script src="style/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+    <script type="text/javascript" src="style/js/lib/mustache.min.js"></script>
+    <script src="style/lib/area.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("#ECalendar_case1").ECalendar({
+            type: "date",
+            skin: "#233",
+            offset: [0, 2]
+        });
+        $(".release-btn").validate();
     })
-	$(document).ready(function(){
-		$('#needForm').validate({
-		rules:{
-		 "require.title":{
-		 	required:true,
-		 	maxlength:100
-		 },
-		 "require.tel":{
-		 	maxlength:30
-		 },
-		 "require.qq":{
-		 	maxlength:30
-		 },
-		 "require.wechat":{
-		 	maxlength:30
-		 },
-		 "require.email":{
-		 	maxlength:40
-		 },
-		 "require.province":{
-		 	maxlength:20
-		 },
-		 "require.city":{
-		 	maxlength:20
-		 }
-		},
-		messages:{
-			"require.title":{
-				maxlength:'长度不能超过100个字符'
-			},
-			"require.tel":{
-				maxlength:'长度不能超过30个字符'
-			},
-			"require.qq":{
-				maxlength:'长度不能超过30个字符'
-			},
-			"require.wechat":{
-				maxlength:'长度不能超过30个字符'
-			},
-			"require.email":{
-				maxlength:'长度不能超过40个字符'
-			},
-			"require.province":{
-				maxlength:'长度不能超过20个字符'
-			},
-			"require.city":{
-				maxlength:'长度不能超过20个字符'
-			}
-			
-		}
-	})
-})
-	$('#s_main').change(function(){
-       var s_main = document.getElementById("s_main");
-       var s_index = s_main.selectedIndex;
-       var s_text = s_main.options[s_index].text;
-	   var s_value = s_main.options[s_index].value;
-       var f_options = $('<option value="3">电动乘用车</option><option value="4">电动客车</option><option value="5">微型电动车</option>');
-       var s_options = $('<option value="6">标准件</option><option value="7">辅助件</option><option value="8">车身系统</option><option value="9">电气系统</option><option value="10">转向系统</option><option value="11">底盘系统</option><option value="12">内饰系统</option><option value="13">密封系统</option>');
-      var obj=$('#s_sub');
-      obj.html("");
-      console.log(obj);
-      if(s_value==1){
-      	obj.html(f_options);
-      	f_options.appendTo(obj);
-       }else{
-      	obj.html(s_options);
-      }
+    $(document).ready(function() {
+        $('#needForm').validate({
+            rules: {
+                "require.title": {
+                    required: true,
+                    maxlength: 100
+                },
+                "require.tel": {
+                    maxlength: 30
+                },
+                "require.qq": {
+                    maxlength: 30
+                },
+                "require.wechat": {
+                    maxlength: 30
+                },
+                "require.email": {
+                    maxlength: 40
+                },
+                "require.province": {
+                    maxlength: 20
+                },
+                "require.city": {
+                    maxlength: 20
+                }
+            },
+            messages: {
+                "require.title": {
+                    maxlength: '长度不能超过100个字符'
+                },
+                "require.tel": {
+                    maxlength: '长度不能超过30个字符'
+                },
+                "require.qq": {
+                    maxlength: '长度不能超过30个字符'
+                },
+                "require.wechat": {
+                    maxlength: '长度不能超过30个字符'
+                },
+                "require.email": {
+                    maxlength: '长度不能超过40个字符'
+                },
+                "require.province": {
+                    maxlength: '长度不能超过20个字符'
+                },
+                "require.city": {
+                    maxlength: '长度不能超过20个字符'
+                }
+
+            }
+        })
     })
-	
-	function getCity(currProvince){
+    $('#s_main').change(function() {
+        var s_main = document.getElementById("s_main");
+        var s_index = s_main.selectedIndex;
+        var s_text = s_main.options[s_index].text;
+        var s_value = s_main.options[s_index].value;
+        var f_options = $('<option value="3">电动乘用车</option><option value="4">电动客车</option><option value="5">微型电动车</option>');
+        var s_options = $('<option value="6">标准件</option><option value="7">辅助件</option><option value="8">车身系统</option><option value="9">电气系统</option><option value="10">转向系统</option><option value="11">底盘系统</option><option value="12">内饰系统</option><option value="13">密封系统</option>');
+        var obj = $('#s_sub');
+        obj.html("");
+        console.log(obj);
+        if (s_value == 1) {
+            obj.html(f_options);
+            f_options.appendTo(obj);
+        } else {
+            obj.html(s_options);
+        }
+    })
+
+    function getCity(currProvince) {
         var currProvincecurrProvince = currProvince;
-        var i,j,k;
-        for (var i = document.getElementById("city").childNodes.length-1; i > 0; i--) {
+        var i, j, k;
+        for (var i = document.getElementById("city").childNodes.length - 1; i > 0; i--) {
             document.getElementById("city").remove(i);
         }
-        for (i = 0 ;i <cityArray.length;i++)
-        {   
-            if(cityArray[i][0]==currProvince)
-            {
+        for (i = 0; i < cityArray.length; i++) {
+            if (cityArray[i][0] == currProvince) {
                 tmpcityArray = cityArray[i][1].split("|")
-                for(j=0;j<tmpcityArray.length;j++)
-                {
+                for (j = 0; j < tmpcityArray.length; j++) {
                     var newoption = document.createElement("option");
-                    newoption.innerText=tmpcityArray[j];
+                    newoption.innerText = tmpcityArray[j];
                     newoption.value = tmpcityArray[j];
                     document.getElementById("city").appendChild(newoption);
                 }
-                document.getElementById("city").selectedIndex=0;
-                $('#city').selectmenu('refresh',true);
+                document.getElementById("city").selectedIndex = 0;
+                $('#city').selectmenu('refresh', true);
             }
         }
     }
-	
-	$('#needForm').submit(function(event){
-	     event.preventDefault();
-	     var form = $(this);
-			$.ajax({
-				type : 'post',
-				async: false,
-				url : form.attr("action"),
-				data: form.serialize(),
-				success : function(data){
-					
-					var res = data.response;
-					if(res.msg.success == true){
-						 window.location.href="needmsg.html";
-					}else{
-						alert('需求发布失败，请重试');
-					}
-				}
-			});
+
+    $('#needForm').submit(function(event) {
+        event.preventDefault();
+        var form = $(this);
+        $.ajax({
+            type: 'post',
+            async: false,
+            url: form.attr("action"),
+            data: form.serialize(),
+            success: function(data) {
+                var res = data.response;
+                if (res.msg.success == true) {
+                    window.location.href = "needmsg.html";
+                } else {
+                    alert('需求发布失败，请重试');
+                }
+            }
+        });
     });
 
 
 
 
-	$(document).ready(function(){
-		
-//		$('.search .search-btn').click(function(){
-//			var search=$('#needmsgSearch').val();
-//			console.log(search);
-//		})
+$(document).ready(function() {
+    var url = window.location.search;
+	chooseOn();
+    var postUrl = 'ev/require_search' + url;
     $.ajax({
-        url: 'ev/require_list',
+        url: postUrl,
         type: 'POST',
         dataType: 'json',
     })
-    .done(function(data){
+    .done(function(data) {
         requireRender(data);
-       
-        
-        
-        var url = window.location.search;
-//		var str = url.slice(1);
-//	    var arr = str.split('=');
-//	    arr[1] = decodeURIComponent(arr[1]);
-////		    	$('#categoryCity .choose-all').removeClass('choose-on');
-//		    	var items = $('#tabcontent a');
-//		    	var letters = $('#firstLetters a');
-//		    	for (var i = 0; i < items.length; i++) {
-//		    		if($(items[i]).attr('data-value')===arr[1]){
-//		    			$(items[i]).siblings().removeClass('choose-on');
-//		    			$(items[i]).addClass('choose-on');
-//		    			for (var j = 0; j < letters.length; j++) {
-//		    				if ($(letters[j]).attr('href') === '#' + $(items[i]).parent().attr('id')) {
-//		    					$(letters[j]).trigger('mouseenter');
-//		    				}
-//		    			}
-//		    		}
-//		    	}
+    });
 
-        var postUrl = 'ev/require_search' + url;
-		$.ajax({
-	        url: postUrl,
-	        type: 'POST',
-	        dataType: 'json',
-	    })
-	    .done(function(data){
-	    	requireRender(data);       
-	    });
-         
-        $("#filter .category-item a").click(function () {
-            $(this).parents("dl").children("dd").each(function () {
-				$('a',this).removeClass("choose-on");
-            });
-
-            $(this).addClass('choose-on');
-			var results = RetSelecteds();
-			renderPage(results);
+    $("#filter .category-item a").click(function() {
+        $(this).parents("dl").children("dd").each(function() {
+            $('a', this).removeClass("choose-on");
         });
-        $('#categoryCity .choose-all').click(function() {
-        	$("#tabcontent a").each(function(){
-        		$(this).removeClass('choose-on');
-        	})
-			var results = RetSelecteds();
-			renderPage(results);
-        	$(this).addClass('choose-on');
-        });
-         $("#filter .brand-list a").click(function () {
-            $('#categoryCity').children("a").each(function () {
-				$('#categoryCity a').removeClass("choose-on");
-            });
 
-            $(this).addClass('choose-on');
-			var results = RetSelecteds();
-			renderPage(results);
+        $(this).addClass('choose-on');
+        var results = RetSelecteds();
+        renderPage(results);
+    });
+    $('#categoryCity .choose-all').click(function() {
+        $("#tabcontent a").each(function() {
+            $(this).removeClass('choose-on');
+        })
+        var results = RetSelecteds();
+        renderPage(results);
+        $(this).addClass('choose-on');
+    });
+    $("#filter .brand-list a").click(function() {
+        $('#categoryCity').children("a").each(function() {
+            $('#categoryCity a').removeClass("choose-on");
         });
-        
 
-        function renderPage(results){
-        	var url = 'ev/require_search?' + results;
-			$.ajax({
-		        url: url,
-		        type: 'POST',
-		        dataType: 'json',
-		    })
-		    .done(function(data){
-		    	requireRender(data);       
-		    });
-        }
-         function RetSelecteds() {
-	        var result = "";
-	        $("#filter a[class='choose-on']").each(function () {
-	            result += 'requireCondition.' + $(this).attr('data-id') + '=' + $(this).attr('data-value') + '&';
-	        });
-	        console.log(result);
-	        return result;
-	    };
-        
-       
-    })
-    
-    
-    function  requireRender(data){
-    	var  listData = data.response.data;
-        for(var i=0;i<listData.Requires.length;i++){
-        	if(listData.Requires[i].buyerType=='ENTERPRISE'){
-        		listData.Requires[i].buyerType='企业采购';
-        	}else if(listData.Requires[i].buyerType=='PERSONAL'){
-        		listData.Requires[i].buyerType='个人采购';
-        	}
-        	listData.Requires[i].expire_date=stringToDate(listData.Requires[i].expire_date);
-        	function stringToDate(str){
-				var date = new Date(Date.parse(str)); 
-				var expire_date = date.toLocaleString(); 
-				return expire_date;
+        $(this).addClass('choose-on');
+        var results = RetSelecteds();
+        renderPage(results);
+    });
+
+	function chooseOn(){
+		$('#filter').find('a[data-id]').each(function(){
+	  		var argObj = getArgs();
+			var id = $(this).attr('data-id');
+			var value = $(this).attr('data-value');			
+			var $this;
+			// console.log(argObj);
+			for (var name in argObj){
+				$this = $(this);
+				if(id === name && value === argObj[name]){
+			  		$this.parents('#categoryCity').find('.choose-all').removeClass('choose-on');
+			  		$this.siblings('a').removeClass('choose-on');
+			  		$this.addClass('choose-on');
+				} 
+			};
+		})
+		var id = $('#categoryCity').find('.choose-on').parents('.brand-list').attr('id');
+		// console.log($('a[href="#id"]'));
+		$('#firstLetters').find('a').each(function(){
+			$this = $(this);
+			if ($this.attr('href') === '#' + id) {
+				console.log($this.attr('href'));
+				$this.trigger('mouseenter');
 			}
+		})
+    	// for (var i = 0; i < items.length; i++) {
+    	// 	if($(items[i]).attr('data-value')===arr[1]){
+    	// 		for (var j = 0; j < letters.length; j++) {
+    	// 			if ($(letters[j]).attr('href') === '#' + $(items[i]).parent().attr('id')) {
+    	// 				$(letters[j]).trigger('mouseenter');
+    	// 			}
+    	// 		}
+    	// 	}
+    	// }
+	}
+
+    function renderPage(args) {
+    	var url = '?' + args;
+		location.search = url;
+    }
+
+    function RetSelecteds() {
+        var result = "";
+        $("#filter a[class='choose-on']").each(function() {
+            result += $(this).attr('data-id') + '=' + $(this).attr('data-value') + '&';
+        });
+        return result;
+    };
+
+    function requireRender(data) {
+        var listData = data.response.data;
+        for (var i = 0; i < listData.Requires.length; i++) {
+            if (listData.Requires[i].buyerType == 'ENTERPRISE') {
+                listData.Requires[i].buyerType = '企业采购';
+            } else if (listData.Requires[i].buyerType == 'PERSONAL') {
+                listData.Requires[i].buyerType = '个人采购';
+            }
+            listData.Requires[i].expire_date = stringToDate(listData.Requires[i].expire_date);
+
+            function stringToDate(str) {
+                var date = new Date(Date.parse(str));
+                var expire_date = date.toLocaleString();
+                return expire_date;
+            }
         }
-    	
+
         var listTpl = '<ul>{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="{{#pic_thumb}}requirePath/{{pic_thumb}}{{/pic_thumb}}{{^pic_thumb}}style/img/no.jpg{{/pic_thumb}}"</a><div class="product-detail"><a href="purchaseInfo.html?id={{id}}" class="desc">{{title}}</a><ul><li><dt>类别：</dt><dd>{{category.name}}</dd></li><li><dt>采购数量：</dt><dd>【{{buyerType}}】{{number}}台</dd></li><li><dt>联系人：</dt><dd>{{name}}</dd></li><li><dt>所在地：</dt><dd>{{city}}</dd></li><li><dt>截止日期：</dt><dd>{{expire_date}}</dd></li><li><a href="purchaseInfo.html?id={{id}}"  class="a_post">点击查看详情>></a></li></ul></div></li>{{/Requires}}</ul>';
         var listHtml = Mustache.render(listTpl, listData);
-        var plist= $('#productlist');
-          plist.html( listHtml );
-       var pageCount = data.response.data.Require_condition.maxPageNo;
-            var currentPage = data.response.data.Require_condition.pageNo;
-			$('.pagination').Mpage({
-		        pageCount: pageCount /*resultData.condition.pageCount*/,
-		        current: currentPage /*resultData.condition.currentPage*/,
-			    mclick: function(p){
-			        console.log(p);
-			    }
-			});
-			$('.prevPage').click(function(){
-				$.ajax({
-			        url: 'ev/require_prevPage',
-			        type: 'POST',
-			        dataType: 'json',
-			    })
-			    .done(function(data){
-			    	requireRender(data);
-			    })
-		    })
-			$('.nextPage').click(function(){
-				$.ajax({
-			        url: 'ev/require_nextPage',
-			        type: 'POST',
-			        dataType: 'json',
-			    })
-			    .done(function(data){
-			    	requireRender(data);
-			    })
-		    })
-			
-			 $('.pageNumber').click(function(){
-		    	var num = $(this).text();
-		    	var url = 'require_skipPage?requireCondition.pageNo=' + num;
-				$.ajax({
-			        url: url,
-			        type: 'POST',
-			        dataType: 'json',
-			    })
-			    .done(function(data){
-			    	requireRender(data);
-			    })
-		    })
-			 $('.page-submit').click(function(){
-	    	var inputVal = $(this).siblings('.input-mini').val();
-	    	var num = +inputVal > pageCount ? pageCount : +inputVal;
-	    	if (typeof num !== 'number') {
-	    		return false
-	    	}
-	    	var url = 'require_skipPage?requireCondition.pageNo=' + num;
-			$.ajax({
-		        url: url,
-		        type: 'POST',
-		        dataType: 'json',
-		    })
-		    .done(function(data){
-		    	requireRender(data);
-		    })
-		})
+        var plist = $('#productlist');
+        plist.html(listHtml);
+        var pageCount = data.response.data.Require_condition.maxPageNo;
+        var currentPage = data.response.data.Require_condition.pageNo;
+        $('.pagination').Mpage({
+            pageCount: pageCount /*resultData.condition.pageCount*/ ,
+            current: currentPage /*resultData.condition.currentPage*/ ,
+            mclick: function(p) {
+                console.log(p);
+            }
+        });
+        $('.prevPage').click(function() {
+            $.ajax({
+                    url: 'ev/require_prevPage',
+                    type: 'POST',
+                    dataType: 'json',
+                })
+                .done(function(data) {
+                    requireRender(data);
+                })
+        })
+        $('.nextPage').click(function() {
+            $.ajax({
+                    url: 'ev/require_nextPage',
+                    type: 'POST',
+                    dataType: 'json',
+                })
+                .done(function(data) {
+                    requireRender(data);
+                })
+        })
 
+        $('.pageNumber').click(function() {
+            var num = $(this).text();
+            var url = 'require_skipPage?requireCondition.pageNo=' + num;
+            $.ajax({
+                    url: url,
+                    type: 'POST',
+                    dataType: 'json',
+                })
+                .done(function(data) {
+                    requireRender(data);
+                })
+        })
+        $('.page-submit').click(function() {
+            var inputVal = $(this).siblings('.input-mini').val();
+            var num = +inputVal > pageCount ? pageCount : +inputVal;
+            if (typeof num !== 'number') {
+                return false
+            }
+            var url = 'require_skipPage?requireCondition.pageNo=' + num;
+            $.ajax({
+                    url: url,
+                    type: 'POST',
+                    dataType: 'json',
+                })
+                .done(function(data) {
+                    requireRender(data);
+                })
+        })
     }
-    
-    
-    
 })
-	
-	
-	
-	
-	
-	$(document).ready(function(){
-		$.ajax({
-        url: 'ev/require_listByTenderI?require.category.type=2',
-        type: 'POST',
-        dataType: 'json',
+
+
+
+
+
+    $(document).ready(function() {
+        $.ajax({
+                url: 'ev/require_listByTenderI?require.category.type=2',
+                type: 'POST',
+                dataType: 'json',
+            })
+            .done(function(data) {
+                var resData = data.response.data;
+                var tenderTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="cardetail.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="cardetail.html?id={{id}}">{{title}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                var tenderHtml = Mustache.render(tenderTpl, resData);
+                var tender = $('#hot-recommend');
+                tender.html(tenderHtml);
+
+            });
+        $.ajax({
+                url: 'ev/require_listByType?require.category.type=1',
+                type: 'POST',
+                dataType: 'json',
+            })
+            .done(function(data) {
+                var productData = data.response.data;
+                var productTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="cardetail.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc"  href="cardetail.html?id={{id}}">{{title}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                var productHtml = Mustache.render(productTpl, productData);
+                var product = $('#hot-product');
+                product.html(productHtml);
+            });
+
+        $('#tabs .tab').click(function() {
+            var id = $(this).attr('data-id');
+            var url = 'ev/require_listByCtId?require.category.id=' + id;
+
+            $.ajax({
+                    url: url,
+                    type: 'POST',
+                    dataType: 'json',
+                })
+                .done(function(data) {
+                    switch (id) {
+                        case '6':
+                            var standardData = data.response.data;
+                            var standardTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc"  href="purchaseInfo.html?id={{id}}">{{title}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                            var stanardHtml = Mustache.render(standardTpl, standardData);
+                            var standard = $('#standard');
+                            standard.html(stanardHtml);
+
+                            break;
+                        case '7':
+                            var auxData = data.response.data;
+                            var auxTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                            var auxHtml = Mustache.render(auxTpl, auxData);
+                            var aux = $('#auxiliary');
+                            aux.html(auxHtml);
+
+
+                            break;
+                        case '8':
+                            var bodyData = data.response.data;
+                            var bodyTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                            var bodyHtml = Mustache.render(bodyTpl, bodyData);
+                            var body = $('#body');
+                            body.html(bodyHtml);
+
+                            break;
+                        case '9':
+                            var elecData = data.response.data;
+                            var elecTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                            var elecHtml = Mustache.render(elecTpl, elecData);
+                            var elec = $('#electric');
+                            elec.html(elecHtml);
+
+                            break;
+                        case '10':
+                            var steerData = data.response.data;
+                            var steerTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                            var steerHtml = Mustache.render(steerTpl, steerData);
+                            var steer = $('#steering');
+                            steer.html(steerHtml);
+
+                            break;
+                        case '11':
+                            var underData = data.response.data;
+                            var underTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                            var underHtml = Mustache.render(underTpl, underData);
+                            var underpan = $('#underpan');
+                            underpan.html(underHtml);
+
+                            break;
+                        case '12':
+                            var sealData = data.response.data;
+                            var sealTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                            var sealHtml = Mustache.render(sealTpl, sealData);
+                            var seal = $('#sealing');
+                            seal.html(sealHtml);
+
+                            break;
+                        case '13':
+                            var interData = data.response.data;
+                            var interTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
+                            var interHtml = Mustache.render(interTpl, interData);
+                            var inter = $('#interior');
+                            inter.html(interHtml);
+
+                            break;
+                    }
+                });
+
+        })
+
     })
-    .done(function(data){
-		var resData = data.response.data;
-        var   tenderTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="cardetail.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="cardetail.html?id={{id}}">{{title}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-        var tenderHtml = Mustache.render(tenderTpl, resData);
-        var tender = $('#hot-recommend');
-        tender.html(tenderHtml );
 
-    });
-    $.ajax({
-        url: 'ev/require_listByType?require.category.type=1',
-        type: 'POST',
-        dataType: 'json',
+
+
+
+    //底部广告位
+    $(document).ready(function() {
+        $.ajax({
+                url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=RQU',
+                type: 'POST',
+                dataType: 'json',
+            })
+            .done(function(data) {
+                var barData = data.response.data;
+                var adTpl = '{{#PlaceCars}}<a href="cardetail.html?id={{car.id}}"><img src="adsPath/{{pic}}"></a>{{/PlaceCars}}';
+                var adHtml = Mustache.render(adTpl, barData);
+                var adbar = $('#bar');
+                adbar.html(adHtml);
+            })
     })
-    .done(function(data){
-		var productData = data.response.data;
-        var   productTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="cardetail.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc"  href="cardetail.html?id={{id}}">{{title}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-        var productHtml = Mustache.render(productTpl, productData);
-        var product = $('#hot-product');
-        product.html(productHtml );
-    });
-    
-	  $('#tabs .tab').click(function(){
-	  	var  id = $(this).attr('data-id');
-    	var url = 'ev/require_listByCtId?require.category.id=' + id;
-    	
-    	$.ajax({
-	        url: url,
-	        type: 'POST',
-	        dataType: 'json',
-	    })
-	    .done(function(data){
-		    switch(id){
-		    	case '6':
-	      var standardData = data.response.data;
-           var standardTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc"  href="purchaseInfo.html?id={{id}}">{{title}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-          var stanardHtml = Mustache.render(standardTpl, standardData);
-          var standard = $('#standard');
-          standard.html( stanardHtml );
-
-			    	break;
-		    	case '7':
-			    	 var auxData = data.response.data;
-        var auxTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-        var auxHtml = Mustache.render(auxTpl, auxData);
-        var aux = $('#auxiliary');
-        aux.html( auxHtml );
-         
-
-			    	break;
-		    	case '8':
-			    	var bodyData = data.response.data;
-                    var bodyTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-                    var bodyHtml = Mustache.render(bodyTpl, bodyData);
-                   var body = $('#body');
-                   body.html( bodyHtml );
-
-			    	break;
-		    	case '9':
-			    	var elecData = data.response.data;
-        			var elecTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-			        var elecHtml = Mustache.render(elecTpl, elecData);
-			        var elec = $('#electric');
-			        elec.html( elecHtml );
-
-			    	break;
-			    	case '10':
-			    	var steerData = data.response.data;
-			        var steerTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-			        var steerHtml = Mustache.render(steerTpl, steerData);
-			        var steer = $('#steering');
-			        steer.html( steerHtml );
-
-			    	break;
-			    	case '11':
-			    	var underData = data.response.data;
-			        var underTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-			        var underHtml = Mustache.render(underTpl, underData);
-			        var underpan = $('#underpan');
-			        underpan.html( underHtml );
-
-			    	break;
-			    	case '12':
-			    	var sealData = data.response.data;
-			        var sealTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-			        var sealHtml = Mustache.render(sealTpl, sealData);
-			        var seal = $('#sealing');
-			        seal.html( sealHtml );
-
-			    	break;
-			    	case '13':
-			    	 var interData = data.response.data;
-			        var interTpl = '<ul class="list-content">{{#Requires}}<li class="list-item"><a href="purchaseInfo.html?id={{id}}"><img src="requirePath/{{pic}}"></a><div class="product-detail"><a class="desc" href="purchaseInfo.html?id={{id}}">{{name}}</a><p class="price">{{price}}</p><dl><dt>省份：</dt><dd>{{province}}</dd></dl></div></li>{{/Requires}}</ul>';
-			        var interHtml = Mustache.render(interTpl, interData);
-			        var inter = $('#interior');
-			        inter.html( interHtml );
-
-			    	break;
-		    }
-	    });
-	  	
-	  })
-	  
-	})
-	
 
 
 
-//底部广告位
-$(document).ready(function(){
-    $.ajax({
-        url: 'ev/placeCar_findByAdsUniqueId?ads_unique_id=RQU',
-        type: 'POST',
-        dataType: 'json',
-    })
-    .done(function(data){
-        var barData = data.response.data;
-        var adTpl = '{{#PlaceCars}}<a href="cardetail.html?id={{car.id}}"><img src="adsPath/{{pic}}"></a>{{/PlaceCars}}';
-        var adHtml = Mustache.render(adTpl, barData);
-        var adbar = $('#bar');
-        adbar.html( adHtml );
-    })
-})
-</script>
+    function getArgs() {
+        var args = {};
+        var match = null;
+        var search = decodeURIComponent(location.search.substring(1));
+        var reg = /(?:([^&]+)=([^&]+))/g;
+        while ((match = reg.exec(search)) !== null) {
+            args[match[1]] = match[2];
+        }
+        return args;
+    }
+    </script>
 </body>
+
 </html>

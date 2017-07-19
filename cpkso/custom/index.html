@@ -35,10 +35,10 @@
 	</header>
 	<nav class="nav-wrapper">
 		<ul class="nav-list">
-			<li class="active"><a title="首页">首页</a></li>
+			<li class="active"><a href="index.html" title="首页">首页</a></li>
 			<li><a title="资讯" href="news.html">资讯</a></li>
-			<li><a title="车型库" href="car.html">车型库</a></li>
-			<li><a title="配件库" href="parts.html">配件库</a></li>
+			<li><a title="车型库" href="carresult.html">车型库</a></li>
+			<li><a title="配件库" href="partsresult.html">配件库</a></li>
 			<li><a title="供求信息" href="needmsg.html">供求信息</a></li>
 			<li><a title="企业库" href="enterprise.html">企业库</a></li>
 			<li><a title="返回产品快搜" href="http://www.cpkso.com" target="_blank">返回产品快搜</a></li>
@@ -57,11 +57,11 @@
 							</p>
 						</div>
 						<!-- <form action="" method="post"> -->
-							<input onkeydown="entersearch(1);" id="car-input" type="text" placeholder="请输入相关内容" autocomplete="off">
+							<input onkeydown="entersearch(1);" id="car-input" type="text" placeholder="请输入车型名称" autocomplete="off">
 							<a id="car-search-btn" target="_blank" title="我要搜车">我要搜车</a>
 						<!-- </form> -->
 						<!-- <form action="" method="post"> -->
-							<input onkeydown="entersearch(2);" id="parts-input" type="text" placeholder="请输入相关内容" autocomplete="off">
+							<input onkeydown="entersearch(2);" id="parts-input" type="text" placeholder="请输入配件名称" autocomplete="off">
 							<a id="parts-search-btn" target="_blank" title="配件搜索">配件搜索</a>
 						<!-- </form> -->
 					</div>
@@ -85,13 +85,13 @@
 										<li class="filter-type">
 											<h3 class="title">品牌</h3>
 											<ul id="brand" class="type-list brand">
-												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-1.png"></a></li>
-												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-2.png"></a></li>
-												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-3.png"></a></li>
-												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-4.png"></a></li>
-												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-5.png"></a></li>
-												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-6.png"></a></li>
-												<li><a title="logo" href="carresult.html"><img src="style/img/icon/logo-7.png"></a></li>
+												<li><a title="特斯拉" href="carresult.html?carCondition.brand.id=99"><img src="style/img/icon/logo-1.png"></a></li>
+												<li><a title="比亚迪" href="carresult.html?carCondition.brand.id=7"><img src="style/img/icon/logo-2.png"></a></li>
+												<li><a title="雷克萨斯" href="carresult.html?carCondition.brand.id=60"><img src="style/img/icon/logo-3.png"></a></li>
+												<li><a title="北汽新能源" href="carresult.html?carCondition.brand.id=8"><img src="style/img/icon/logo-4.png"></a></li>
+												<li><a title="福特" href="carresult.html?carCondition.brand.id=34"><img src="style/img/icon/logo-5.png"></a></li>
+												<li><a title="日产" href="carresult.html?carCondition.brand.id=88"><img src="style/img/icon/logo-6.png"></a></li>
+												<li><a title="雪佛兰" href="carresult.html?carCondition.brand.id=107"><img src="style/img/icon/logo-7.png"></a></li>
 											</ul>
 										</li>
 										<li class="filter-type">
@@ -164,7 +164,7 @@
 				<li><a title="行业" href="news.html?id=3">行业</a></li>
 				<li><a title="政策" href="news.html?id=4">政策</a></li>
 				<li><a title="用车" href="news.html?id=6">用车</a></li>
-				<li><a title="查看更多" href="news.html">查看更多</a></li>
+				<li class="fr-li"><a title="查看更多" href="news.html">查看更多</a></li>
 			</ul>
 			<div class="news-container">
 				<div class="tab-content">
@@ -191,7 +191,9 @@
 					<li>
 						<a title="乘用车型" id="ev-tab" href="#ev-car" data-toggle="tab">乘用车型</a>
 					</li>
-					
+					<li class="fr-li">
+						<a title="进入车型库" href="carresult.html">进入车型库</a>
+					</li>
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active" id="new-car">
@@ -203,15 +205,20 @@
 			</div>
 			<div class="content-right">
 				<div id="needCar" class="recommend">
-					<div class="pics">
+					<div class="header">
 						<h3 class="title">热门整车求购</h3>
-						<div class="carousel-wrapper">
-							<div id="slider-sm-1" class="owl-carousel">
+						<a href="needmsg.html?requireCondition.category.type=1" title="查看更多">查看更多</a>
+					</div>
+					<div class="msg-wrapper">
+						<div class="pics">
+							<div class="carousel-wrapper">
+								<div id="slider-sm-1" class="owl-carousel">
+								</div>
 							</div>
 						</div>
-					</div>
-					<p class="slogan">整车求购</p>
-					<div id="needCarMsg" class="msg">
+						<p class="slogan">整车求购</p>
+						<div id="needCarMsg" class="msg">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -222,6 +229,9 @@
 			<div class="content-left">
 				<div class="tab-container">
 					<ul id="partsTabs" class="nav nav-tabs">
+						<!-- <li class="active">
+							<a title="热门配件" href="#new-product" data-toggle="tab">热门配件</a>
+						</li> -->
 						<li class="active">
 							<a title="最新配件" href="#new-product" data-toggle="tab">最新配件</a>
 						</li>
@@ -252,6 +262,9 @@
 						<li>
 							<a title="内饰系统" class="tab" data-id="13" href="#interior" data-toggle="tab">内饰系统</a>
 						</li>
+						<li class="fr-li">
+							<a title="进入配件库" href="partsresult.html">进入配件库</a>
+						</li>
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="new-product">
@@ -270,15 +283,20 @@
 			</div>
 			<div class="content-right">
 				<div id="needParts" class="recommend">
-					<div class="pics">
+					<div class="header">
 						<h3 class="title">热门配件求购</h3>
-						<div class="carousel-wrapper">
-							<div id="slider-sm-2" class="owl-carousel">
+						<a href="needmsg.html?requireCondition.category.type=2" title="查看更多">查看更多</a>
+					</div>
+					<div class="msg-wrapper">
+						<div class="pics">
+							<div class="carousel-wrapper">
+								<div id="slider-sm-2" class="owl-carousel">
+								</div>
 							</div>
 						</div>
-					</div>
-					<p class="slogan">配件求购</p>
-					<div id="needPartsMsg" class="msg">
+						<p class="slogan">配件求购</p>
+						<div id="needPartsMsg" class="msg">
+						</div>
 					</div>
 				</div>
 			</div>
