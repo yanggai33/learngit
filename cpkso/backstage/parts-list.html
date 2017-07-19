@@ -213,9 +213,10 @@
 								<th width="30">审核</th>
 								<th width="30">上架</th>
 								<th width="30">推荐</th>
-								<th width="30">热销</th>
+								<th width="30">热品</th>
+<!-- 								<th width="30">热销</th>
 								<th width="30">新品</th>
-								<!-- <th width="100">上传时间</th> -->
+ -->								<!-- <th width="100">上传时间</th> -->
 								<th width="140">操作</th>
 							</tr>
 						</thead>
@@ -357,7 +358,7 @@ $(function(){
     });
     function tplRender(data){
         var partsData = data.response.data;
-        var partsListTpl = '{{#Partss}}<tr class="text-c va-m"><td><input name="" type="checkbox" value=""></td><td>{{id}}</td><td><a href="">{{name}}</a></td><td>{{hit}}</td><td class="td-status"><a data-id="{{id}}" data-value="verify" href="#" class="btn {{^valid}}btn-danger{{/valid}} {{#valid}}btn-primary{{/valid}}">{{^valid}}否{{/valid}}{{#valid}}是{{/valid}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="launch" href="#" class="btn {{^launch}}btn-danger{{/launch}} {{#launch}}btn-primary{{/launch}}">{{^launch}}否{{/launch}}{{#launch}}是{{/launch}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="prompt" href="#" class="btn {{^prompt}}btn-danger{{/prompt}} {{#prompt}}btn-primary{{/prompt}}">{{^prompt}}否{{/prompt}}{{#prompt}}是{{/prompt}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="well_sell" href="#" class="btn {{^well_sell}}btn-danger{{/well_sell}} {{#well_sell}}btn-primary{{/well_sell}}">{{^well_sell}}否{{/well_sell}}{{#well_sell}}是{{/well_sell}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="new_good" href="#" class="btn {{^new_good}}btn-danger{{/new_good}} {{#new_good}}btn-primary{{/new_good}}">{{^new_good}}否{{/new_good}}{{#new_good}}是{{/new_good}}</a></td><td class="td-manage"><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-add-detail?parts_id={{id}}" title="添加详情">添加详情</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modify?parts.id={{id}}" title="编辑">编辑</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modifypic?id={{id}}" title="修改产品图">修改产品图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modifythumb?id={{id}}" title="修改缩略图">修改缩略图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modify-config?id={{id}}" title="修改参数">修改参数</a><a class="btn btn-danger radius ml-5 mt-5" onClick="parts_del(this,{{id}})" href="#" title="删除">删除</a></td></tr>{{/Partss}}';
+        var partsListTpl = '{{#Partss}}<tr class="text-c va-m"><td><input name="" type="checkbox" value=""></td><td>{{id}}</td><td><a href="">{{name}}</a></td><td>{{hit}}</td><td class="td-status"><a data-id="{{id}}" data-value="verify" href="#" class="btn {{^valid}}btn-danger{{/valid}} {{#valid}}btn-primary{{/valid}}">{{^valid}}否{{/valid}}{{#valid}}是{{/valid}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="launch" href="#" class="btn {{^launch}}btn-danger{{/launch}} {{#launch}}btn-primary{{/launch}}">{{^launch}}否{{/launch}}{{#launch}}是{{/launch}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="prompt" href="#" class="btn {{^prompt}}btn-danger{{/prompt}} {{#prompt}}btn-primary{{/prompt}}">{{^prompt}}否{{/prompt}}{{#prompt}}是{{/prompt}}</a></td><td class="td-status"><a data-id="{{id}}" data-value="w1" href="#" class="btn {{^w1}}btn-danger{{/w1}} {{#w1}}btn-primary{{/w1}}">{{^w1}}否{{/w1}}{{#w1}}是{{/w1}}</a></td><td class="td-manage"><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-add-detail?parts_id={{id}}" title="添加详情">添加详情</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modify?parts.id={{id}}" title="编辑">编辑</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modifypic?id={{id}}" title="修改产品图">修改产品图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modifythumb?id={{id}}" title="修改缩略图">修改缩略图</a><a class="btn btn-primary radius ml-5 mt-5" href="b-parts-modify-config?id={{id}}" title="修改参数">修改参数</a><a class="btn btn-danger radius ml-5 mt-5" onClick="parts_del(this,{{id}})" href="#" title="删除">删除</a></td></tr>{{/Partss}}';
 		var partsListHtml = Mustache.render(partsListTpl, partsData);
 		var partsList = $('#parts-list');
 		partsList.html(partsListHtml);

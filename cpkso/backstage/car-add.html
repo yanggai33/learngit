@@ -20,7 +20,8 @@
 <link rel="stylesheet" type="text/css" href="style/static/h-ui.admin/css/style.css" />
 <link rel="stylesheet" type="text/css" href="style/main.css" />
 <style type="text/css">
-    #search-result{
+    #company-search-result,
+    #brand-search-result{
         display: none;
         position: absolute;
         top: 30px;
@@ -29,10 +30,12 @@
         background-color: #eee;
         z-index: 99;
     }
-    #search-result li:hover{
+    #company-search-result li:hover,
+    #brand-search-result li:hover{
         background-color: #a9a9a9;
     }
-    #search-result li{
+    #company-search-result li,
+    #brand-search-result li{
         line-height: 30px;
     }
 </style>
@@ -89,16 +92,17 @@
 			            <div style="position: relative;" class="formControls col-xs-8 col-sm-9">
 			                <input type="text" class="input-text" value="" placeholder="" id="choose-company" autocomplete="off" >
 			                <input type="hidden" value="" id="companyId" name="car.company.id">
-			                <div id="search-result">
+			                <div id="company-search-result">
 			                </div>
 			            </div>
 			        </div>
 					<div class="row cl">
 						<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>品牌</label>
-						<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-							<select id="brand" name="car.brand.id" class="select" >
-							</select>
-							</span>
+						<div style="position: relative;" class="formControls col-xs-8 col-sm-9"> 
+			                <input type="text" class="input-text" value="" id="choose-brand" autocomplete="off" >
+			                <input type="hidden" value="" id="brandId" name="car.brand.id">
+			                <div id="brand-search-result">
+			                </div>
 						</div>
 					</div>
 					<div class="row cl">
@@ -232,37 +236,6 @@
 					</div>
 				</form>
 			</div>
-			<!--<div class="tabCon">
-		            <div>
-						<div class="pd-20">
-							<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a class="btn btn-primary radius"  href="b-news-release"> 发布新闻</a><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> </span> <span class="r">共有数据：<strong></strong> 条</span> </div>
-							<div class="mt-20">
-								<table class="table table-border table-bordered table-bg table-hover table-sort">
-									<thead>
-										<tr class="text-c">
-											<th width="40"><input name="" type="checkbox" value="">选择</th>
-											<th width="100">新闻标题</th>
-											<th width="30">点击量</th>
-											<th width="30">显示</th>
-											<th width="100">上传时间</th>
-											<th width="140">操作</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class="text-c va-m">
-											<td><input name="" type="checkbox" value=""></td>
-											<td><a style="text-decoration:none" href="javascript:;">志道集团创世360新品发布，敬请期待！</a></td>
-											<td>25</td>
-											<td class="td-status"><a onclick="toggleState(this)" href="#" class="toggle btn btn-danger">否</a></td>
-											<td class="td-time"><span>2016-10-15</span></td>
-											<td class="td-manage"><a style="text-decoration:none" class="ml-5" onClick="product_del(this,'10001')" href="javascript:;" title="删除">【删除】</a> </td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-		            </div>
-			</div>-->
 		</div>
 	</div>
 </div>
@@ -358,65 +331,99 @@ $(function(){
         var brand = $('#brand');
         brand.html( resHtml );
     })
-    .fail(function() {
-        // console.log("error");
-    })
-    .always(function() {
-        // console.log("complete");
-    });
 
 
 
 
-	var lastTime = 0;
 	$('#choose-company').bind('input',function(){
-			var now = new Date().getTime();
-			var interval = now - lastTime;
-			if (interval > 2000) {
-				lastTime = now;
-			    $('#companyId').val('');
-			    var text = $(this).val();
-			    $.ajax({
-			        url: 'ev/company_findByName',
-			        type: 'POST',
-			        dataType: 'json',
-			        data: {'company.name': text}
-			    })
-			    .done(function(data){
-			        console.log(data);
-			        var resData = data.response.data;
-			        var resTpl = '<ul>{{#Companys}}<li data-value="{{id}}">{{name}}</li>{{/Companys}}</ul>';
-			        var resHtml = Mustache.render(resTpl, resData);
-			        var result = $('#search-result');
-			        result.html( resHtml );
-			    })
-			}
+		var lastTime = 0;
+		var now = new Date().getTime();
+		var interval = now - lastTime;
+		if (interval > 2000) {
+			lastTime = now;
+		    $('#companyId').val('');
+		    var text = $(this).val();
+		    $.ajax({
+		        url: 'ev/company_findByName',
+		        type: 'POST',
+		        dataType: 'json',
+		        data: {'company.name': text}
+		    })
+		    .done(function(data){
+		        var resData = data.response.data;
+		        var resTpl = '<ul>{{#Companys}}<li data-value="{{id}}">{{name}}</li>{{/Companys}}</ul>';
+		        var resHtml = Mustache.render(resTpl, resData);
+		        var result = $('#company-search-result');
+		        result.html( resHtml );
+		    })
+		}
+	});
+	$('#choose-brand').bind('input',function(){
+		var lastTime = 0;
+		var now = new Date().getTime();
+		var interval = now - lastTime;
+		if (interval > 2000) {
+			lastTime = now;
+		    $('#brandId').val('');
+		    var text = $(this).val();
+		    $.ajax({
+		        url: 'ev/b_brand_findByBrand',
+		        type: 'POST',
+		        dataType: 'json',
+		        data: {'brand.brand': text}
+		    })
+		    .done(function(data){
+		        var resData = data.response.data;
+		        var resTpl = '<ul>{{#Brands}}<li data-value="{{id}}">{{brand}}</li>{{/Brands}}</ul>';
+		        var resHtml = Mustache.render(resTpl, resData);
+		        var result = $('#brand-search-result');
+		        result.html( resHtml );
+		    })
+		}
 	})
-
-    
 })
 
 
 
-$('#search-result').delegate('li','click',function(){
+$('#company-search-result').delegate('li','click',function(){
     var value = $(this).html();
     var dataValue = $(this).attr('data-value');
     $('#choose-company').val(value);
     $('#companyId').attr('value',dataValue);
-})
+});
+
 $('#choose-company').click(function(event){
     event.stopPropagation();
-    $('#search-result').show();
+    $('#company-search-result').show();
 });
+
 $(document).click(function(){
-    $('#search-result').hide();
+    $('#company-search-result').hide();
+});
+
+
+
+$('#brand-search-result').delegate('li','click',function(){
+    var value = $(this).html();
+    var dataValue = $(this).attr('data-value');
+    $('#choose-brand').val(value);
+    $('#brandId').attr('value',dataValue);
+});
+
+$('#choose-brand').click(function(event){
+    event.stopPropagation();
+    $('#brand-search-result').show();
+});
+
+$(document).click(function(){
+    $('#brand-search-result').hide();
 });
 
 function checkState(event){
 	var value = $('input[type="hidden"]').val();
 	if (!value) {
 		event.preventDefault();
-		alert('请在生产企业的下拉列表中选择企业');
+		alert('请在生产企业或品牌的下拉列表中选择企业和品牌');
 	}
 }
 
